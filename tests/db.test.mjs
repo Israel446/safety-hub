@@ -62,10 +62,24 @@ try {
   await denied('inactive','insert into progress (user_id) values ($1)',[ids.inactive]);
   await denied('inactive',"insert into assignments (user_id,lesson_id,text) values ($1,'x','x')",[ids.inactive]);
   assert.equal((await as('inactive',"update hub_settings set team_note='bad' returning *")).rows.length,0);
+  for (const key of ['a', 'b']) {
+    assert.equal((await as(key, 'select tutor_take(2) as allowed')).rows[0].allowed, true);
+    assert.equal((await as(key, 'select tutor_take(2) as allowed')).rows[0].allowed, true);
+    assert.equal((await as(key, 'select tutor_take(2) as allowed')).rows[0].allowed, false);
+    assert.equal((await as(key, 'select * from tutor_usage')).rows.length, 0);
+  }
+  assert.equal((await db.query('select count from tutor_usage where user_id=$1', [ids.a])).rows[0].count, 2);
+  assert.equal((await as('inactive', 'select tutor_take(2) as allowed')).rows[0].allowed, false);
+  assert.equal((await as('', 'select tutor_take(2) as allowed')).rows[0].allowed, false);
+  assert.equal((await as('a', 'select tutor_take(0) as allowed')).rows[0].allowed, false);
+  await assert.rejects(as('', 'select tutor_take(2)', [], 'anon'), /permission denied/);
+  await denied('a', 'insert into tutor_usage (user_id,day,count) values ($1,current_date,0)', [ids.a]);
+  await denied('a', 'update tutor_usage set count=0');
+  await denied('a', 'delete from tutor_usage');
   await db.query('update profiles set active=false where id=$1',[ids.a]);
   assert.equal((await as('a','select * from progress')).rows.length,0);
   assert.equal((await as('a',"update progress set done='{}' returning *")).rows.length,0);
   await as('b','delete from assignments where user_id=$1',[ids.b]);
   await as('b','delete from progress where user_id=$1',[ids.b]);
-  console.log('All database checks passed: team reads, personal writes, private profiles, settings roles, constraints, inactive accounts and anonymous access.');
+  console.log('All database checks passed: team reads, personal writes, private profiles, settings roles, constraints, inactive accounts, anonymous access and private daily tutor limits.');
 } finally { await db.close(); }

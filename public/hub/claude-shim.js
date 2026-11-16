@@ -33,12 +33,56 @@
     me: function () { return request('me'); },
     profiles: function (ids) { return request('profiles', {ids: ids}); }
   };
+  var workCache = Object.create(null);
+  function workList(uid) {
+    if (!workCache[uid]) {
+      var entry = {};
+      workCache[uid] = entry;
+      entry.promise = request('doc/members/' + encodeURIComponent(uid) + '/work').then(function (result) {
+        setTimeout(function () { if (workCache[uid] === entry) delete workCache[uid]; }, 10000);
+        return result.items;
+      }).catch(function (error) { if (workCache[uid] === entry) delete workCache[uid]; throw error; });
+    }
+    return workCache[uid].promise;
+  }
+  async function sample(messages, options) {
+    var response = await fetch('/api/hub/tutor', {
+      method: 'POST', credentials: 'same-origin', cache: 'no-store',
+      headers: {'Content-Type': 'application/json'}, body: JSON.stringify({messages: messages})
+    });
+    if (!response.ok) {
+      var error = new Error('Tutor request failed');
+      error.code = response.status === 429 ? 'rate_limited' : response.status === 403 || response.status === 503 ? 'not_granted' : 'request_failed';
+      throw error;
+    }
+    var reader = response.body.getReader(), decoder = new TextDecoder(), text = '';
+    try {
+      while (true) {
+        var chunk = await reader.read();
+        text += decoder.decode(chunk.value, {stream: !chunk.done});
+        if (options && options.onText) options.onText({text: text});
+        if (chunk.done) break;
+      }
+    } catch (error) { await reader.cancel().catch(function () {}); throw error; }
+    finally { reader.releaseLock(); }
+    return {text: text};
+  }
   var db = {
     doc: function (path) {
+      var work = /^members\/([^/]+)\/work\/([^/]+)$/.exec(path);
       var url = 'doc/' + path.split('/').map(encodeURIComponent).join('/');
       return {
-        get: function () { return request(url).then(snapshot); },
-        set: function (body) { return request(url, body); },
+        get: function () {
+          if (!work) return request(url).then(snapshot);
+          return workList(work[1]).then(function (items) {
+            var exists = Object.prototype.hasOwnProperty.call(items, work[2]);
+            return snapshot({exists: exists, data: exists ? items[work[2]] : null});
+          });
+        },
+        set: function (body) {
+          if (work) delete workCache[work[1]];
+          return request(url, body).finally(function () { if (work) delete workCache[work[1]]; });
+        },
         onSnapshot: function (cb, err) { return poll(function () { return request(url); }, snapshot, cb, err); }
       };
     },
@@ -51,5 +95,5 @@
       }};
     }
   };
-  window.claude = {use: function (name) { return Promise.resolve(name === 'user' ? user : name === 'db' ? db : null); }};
+  window.claude = {use: function (name) { if (name === 'sample') return request('me').then(function (me) { return me.tutor ? sample : null; }); return Promise.resolve(name === 'user' ? user : name === 'db' ? db : null); }};
 })();

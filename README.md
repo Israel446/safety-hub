@@ -1,6 +1,6 @@
 # Five Percent Safety Hub
 
-Daily learning for safety professionals at a Ghanaian surface mine. This foundation provides staff ID and PIN authentication, people administration, and protected learning-record tables. The learning UI and tutor will follow later. The original artifact and lesson data remain in `data/`.
+Daily learning for safety professionals at a Ghanaian surface mine. This foundation provides staff ID and PIN authentication, people administration, and protected learning-record tables. The hub includes a streaming AI tutor. The original artifact and lesson data remain in `data/`.
 
 ## Setting it up
 
@@ -21,7 +21,8 @@ The database sets itself up. Every build runs `scripts/migrate.mjs`, applying ne
 | `DATABASE_URL` | Secret Session pooler URL |
 | `STAFF_EMAIL_DOMAIN` | `staff.safetyhub.local` (default); keep stable after creating accounts |
 | `INITIAL_ADMIN` | `STAFFID\|Full Name\|PIN\|email`; used only when there are no admins |
-| `ANTHROPIC_API_KEY` | Reserved for the later tutor; may be blank for this foundation |
+| `ANTHROPIC_API_KEY` | Optional; enables the tutor |
+| `TUTOR_DAILY_LIMIT` | Tutor requests per user per day; default `40` |
 
 7. Deploy and check the build log for migrations and the first administrator creation. Use a private 6–12 digit PIN without all-identical digits or ascending/descending runs. **Remove `INITIAL_ADMIN` from Vercel after successful bootstrap.** Its optional email is stored as private contact information, not the login address.
 8. Sign in with that staff ID and PIN, then choose your own PIN. Open Admin to add people individually or paste `STAFFID, Full Name, PIN` per line (up to 200). Bulk accounts start as members. Deliver initial PINs privately; users must replace them at first sign-in. Resetting a PIN forces another change.
@@ -45,4 +46,4 @@ Active signed-in people can read everyone's progress, assignments and profile na
 
 Members learn; owners and admins can update the singleton `hub_settings` row through the authenticated API. Only admins access `/admin` and manage people. SQL helper functions use a fixed search path. Updated timestamps and the settings editor ID are recorded by database triggers. Assignments allow 1,200 characters; team notes allow 200.
 
-No learning UI, tutor endpoint, signup, push configuration or lesson-data migration is included in this foundation. Plain global CSS is ready for the artifact's later UI port.
+The tutor uses Claude Opus 5.5 with automatic refusal fallback. Without an Anthropic API key, the hub shows the existing tutor unavailable message.

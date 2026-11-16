@@ -1,42 +1,19 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@/lib/supabase/server';
+import { body, HttpError, hubGuard } from '@/lib/hub-guard';
 export const dynamic = 'force-dynamic';
 const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const lesson = /^w\d+-l\d+$/;
 const object = (v: unknown): v is Record<string, unknown> => !!v && typeof v === 'object' && !Array.isArray(v);
 const stamp = (v: string) => new Date(v).getTime();
 const progress = (r: Record<string, any>) => ({ done: r.done, quiz: r.quiz, days: r.days, review: r.review, updatedAt: stamp(r.updated_at) });
-class HttpError extends Error { constructor(public status: number, message: string) { super(message); } }
-async function body(request: Request) {
-  if (!(request.headers.get('content-type') || '').toLowerCase().startsWith('application/json')) throw new HttpError(415, 'JSON required');
-  if (Number(request.headers.get('content-length')) > 65536) throw new HttpError(413, 'Body too large');
-  const reader = request.body?.getReader();
-  if (!reader) throw new HttpError(400, 'JSON body required');
-  const chunks: Uint8Array[] = []; let size = 0;
-  while (true) {
-    const { done, value } = await reader.read(); if (done) break;
-    size += value.byteLength;
-    if (size > 65536) { await reader.cancel(); throw new HttpError(413, 'Body too large'); }
-    chunks.push(value);
-  }
-  let value: unknown;
-  try { value = JSON.parse(Buffer.concat(chunks).toString('utf8')); } catch { throw new HttpError(400, 'Invalid JSON'); }
-  if (!object(value)) throw new HttpError(400, 'Object required');
-  return value;
-}
 function check(ok: unknown) { if (!ok) throw new HttpError(400, 'Invalid input'); }
 async function handle(request: Request, { params }: { params: { path: string[] } }) {
   try {
-    const db = createClient();
-    const { data: { user } } = await db.auth.getUser();
-    if (!user) throw new HttpError(401, 'Not signed in');
-    const { data: profile } = await db.from('profiles').select('id,full_name,role,active,must_change_pin').eq('id', user.id).single();
-    if (!profile?.active) throw new HttpError(403, 'Inactive member');
-    if (profile.must_change_pin) throw new HttpError(403, 'Change your PIN first');
+    const { db, user, profile } = await hubGuard();
     const path = params.path.join('/'), method = request.method;
     const result = (value: unknown) => NextResponse.json(value, { headers: { 'Cache-Control': 'no-store' } });
     const fail = (error: { code?: string } | null) => { if (error) throw new HttpError(error.code === '42501' ? 403 : 500, 'Database request failed'); };
-    if (path === 'me' && method === 'GET') return result({ id: user.id, name: profile.full_name, isOwner: ['owner', 'admin'].includes(profile.role) });
+    if (path === 'me' && method === 'GET') return result({ tutor: Boolean(process.env.ANTHROPIC_API_KEY), id: user.id, name: profile.full_name, isOwner: ['owner', 'admin'].includes(profile.role) });
     if (path === 'profiles' && method === 'POST') {
       const b = await body(request); check(Array.isArray(b.ids) && b.ids.length <= 1000 && b.ids.every(id => typeof id === 'string' && uuid.test(id)));
       if (!(b.ids as string[]).length) return result({});
@@ -50,6 +27,10 @@ async function handle(request: Request, { params }: { params: { path: string[] }
     const parts = params.path;
     const team = path === 'doc/hub/team';
     const member = parts[0] === 'doc' && parts[1] === 'members' && uuid.test(parts[2] || '');
+    if (member && parts.length === 4 && parts[3] === 'work' && method === 'GET') {
+      const { data, error } = await db.from('assignments').select('lesson_id,text,updated_at').eq('user_id', parts[2]); fail(error);
+      return result({ items: Object.fromEntries((data || []).map(r => [r.lesson_id, { text: r.text, ts: stamp(r.updated_at) }])) });
+    }
     const work = member && parts.length === 5 && parts[3] === 'work' && lesson.test(parts[4]);
     if (!team && !(member && parts.length === 3) && !work) throw new HttpError(404, 'Unknown document');
     const table = team ? 'hub_settings' : work ? 'assignments' : 'progress';
