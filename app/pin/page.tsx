@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { requireProfile } from '@/lib/auth';
 import { signOut } from '@/app/login/actions';
 import { changePin } from './actions';
@@ -13,5 +12,5 @@ export default async function PinPage({ searchParams }: { searchParams: { err?: 
       <label htmlFor="pin2">New PIN again</label><input id="pin2" name="pin2" type="password" inputMode="numeric" pattern="[0-9]{6,12}" autoComplete="new-password" required />
       <p>6 to 12 digits. Avoid repeated digits and runs like 123456.</p>
       {searchParams.err && <p role="alert">{searchParams.err}</p>}<button>Save new PIN</button>
-    </form>{!profile.must_change_pin && <Link href="/">Cancel</Link>}<form action={signOut}><button>Sign out</button></form></main>;
+    </form>{!profile.must_change_pin && <a href="/">Cancel</a>}<form action={signOut}><button>Sign out</button></form></main>;
 }

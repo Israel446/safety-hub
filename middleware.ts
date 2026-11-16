@@ -17,6 +17,11 @@ export async function middleware(request: NextRequest) {
   const { data: { user } } = await supabase.auth.getUser();
   const path = request.nextUrl.pathname;
   const isLogin = path === '/login';
+  if (!user && path.startsWith('/api/hub/')) {
+    const unauthorized = NextResponse.json({ error: 'Not signed in' }, { status: 401 });
+    response.cookies.getAll().forEach(cookie => unauthorized.cookies.set(cookie));
+    return unauthorized;
+  }
   if (!user && !isLogin) {
     const url = request.nextUrl.clone();
     url.pathname = '/login';
