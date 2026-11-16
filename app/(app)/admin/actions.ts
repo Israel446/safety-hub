@@ -8,7 +8,7 @@ import type { Role } from '@/lib/types';
 const roles = ['member', 'owner', 'admin'];
 const back = (message: string, error = false): never => redirect(`/admin?${error ? 'err' : 'msg'}=${encodeURIComponent(message)}`);
 function validate(staff: string, name: string, pin: string) {
-  if (!/^[a-zA-Z0-9._-]+$/.test(staff)) return 'Staff ID may contain only letters, numbers, dots, underscores and hyphens.';
+  if (!/^[a-zA-Z0-9._-]+$/.test(staff)) return 'Staff ID may contain only letters, numbers, dots, underscores and hyphens (spaces are ignored).';
   if (!name) return 'Full name is required.';
   return pinProblem(pin);
 }
@@ -22,7 +22,7 @@ async function createOne(staff: string, name: string, pin: string, role: Role) {
 }
 export async function addUser(form: FormData) {
   await requireAdmin();
-  const staff = String(form.get('staff_id') ?? '').trim(), name = String(form.get('full_name') ?? '').trim(), pin = String(form.get('pin') ?? '');
+  const staff = String(form.get('staff_id') ?? '').replace(/\s+/g, ''), name = String(form.get('full_name') ?? '').trim(), pin = String(form.get('pin') ?? '');
   const role = String(form.get('role')) as Role;
   if (!roles.includes(role)) back('Choose a valid role.', true);
   const problem = validate(staff, name, pin); if (problem) back(problem, true);
@@ -36,7 +36,7 @@ export async function bulkAdd(form: FormData) {
   let added = 0; const errors: string[] = [];
   for (const [i, line] of lines.entries()) {
     const cells = line.split(',').map(x => x.trim());
-    const [staff = '', name = '', pin = ''] = cells;
+    const [rawStaff = '', name = '', pin = ''] = cells; const staff = rawStaff.replace(/\s+/g, '');
     const problem = cells.length !== 3 ? 'Expected STAFFID, Full Name, PIN.' : validate(staff, name, pin);
     if (problem) { errors.push(`Line ${i+1}: ${problem}`); continue; }
     const error = await createOne(staff, name, pin, 'member');

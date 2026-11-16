@@ -48,7 +48,8 @@ try {
   if (initial) {
     const [admins] = await sql`select count(*)::int n from public.profiles where role = 'admin'`;
     if (admins.n === 0) {
-      const [staffId, fullName, pin, email] = initial.split('|').map(s => (s ?? '').trim());
+      const [rawStaffId, fullName, pin, email] = initial.split('|').map(s => (s ?? '').trim());
+      const staffId = (rawStaffId || '').replace(/\s+/g, ''); // GMC staff IDs may contain a space ("AD 71" is stored as AD71)
       if (!/^[a-zA-Z0-9._-]+$/.test(staffId || '') || !fullName || !/^\d{6,12}$/.test(pin || '') || /^(\d)\1+$/.test(pin) || [...pin].every((x,i,a) => !i || +x === (+a[i-1]+1)%10) || [...pin].every((x,i,a) => !i || +x === (+a[i-1]+9)%10)) throw new Error('Invalid INITIAL_ADMIN staff ID, name or PIN');
       const domain = process.env.STAFF_EMAIL_DOMAIN || 'staff.safetyhub.local';
       const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, { auth: { persistSession: false } });
