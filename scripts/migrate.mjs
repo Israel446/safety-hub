@@ -13,8 +13,19 @@ const dir = new URL('../supabase/', import.meta.url);
 
 try {
   // Safety: never run the hub's setup on a database that already belongs to another app (e.g. the risk assessment app).
-  const [state] = await sql`select to_regclass('public._hub_migrations') is not null as ours, to_regclass('public.profiles') is not null as has_profiles`;
-  if (!state.ours && state.has_profiles) {
+  const [state] = await sql`select to_regclass('public._hub_migrations') is not null as ours,
+    to_regclass('public.profiles') is not null as has_profiles,
+    to_regclass('public.hub_settings') is not null as legacy_hub,
+    to_regclass('public._migrations') is not null as legacy_ledger`;
+  // Databases set up by the first version of this runner kept their history in public._migrations.
+  // hub_settings exists only in the Safety Hub, so it identifies that history as ours; adopt it.
+  if (!state.ours && state.legacy_hub && state.legacy_ledger) {
+    await sql.begin(async tx => {
+      await tx`create table public._hub_migrations (name text primary key, applied_at timestamptz not null default now())`;
+      await tx`insert into public._hub_migrations (name, applied_at) select name, applied_at from public._migrations`;
+    });
+    console.log('[migrate] adopted existing Safety Hub migration history');
+  } else if (!state.ours && state.has_profiles) {
     throw new Error('This Supabase database already has another app\'s tables (public.profiles exists). Use a separate, new Supabase project for the Safety Hub.');
   }
   await sql`create table if not exists public._hub_migrations (name text primary key, applied_at timestamptz not null default now())`;
