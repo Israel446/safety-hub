@@ -8,7 +8,7 @@ import { createClient } from '@supabase/supabase-js';
 
 // Tolerate common copy-paste slips: surrounding spaces or quotes, or the "DATABASE_URL=" name pasted into the value.
 const url = (process.env.DATABASE_URL || '').trim().replace(/^DATABASE_URL\s*=\s*/, '').replace(/^['"]|['"]$/g, '').trim();
-if (url && !/^postgres(ql)?:\/\/[^/@\s]+@[^/\s]+/.test(url)) {
+if (url && !/^postgres(ql)?:\/\/\S+$/.test(url)) {
   console.error('[migrate] FAILED: DATABASE_URL is not a valid connection string. It must look like ' +
     'postgresql://postgres.PROJECTCODE:PASSWORD@aws-...pooler.supabase.com:5432/postgres (Supabase: Connect -> Session pooler). ' +
     'Check for a missing "://", [YOUR-PASSWORD] still in it, or symbols in the password (use letters and numbers).');
