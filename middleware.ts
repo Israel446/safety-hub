@@ -4,7 +4,11 @@ import { NextResponse, type NextRequest } from 'next/server';
 // Keeps the login fresh on every request and sends signed-out people to /login.
 export async function middleware(request: NextRequest) {
   // Without the Supabase settings nothing can work; say which ones are missing instead of crashing.
-  const missing = ['NEXT_PUBLIC_SUPABASE_URL', 'NEXT_PUBLIC_SUPABASE_ANON_KEY'].filter(name => !process.env[name]);
+  // Direct references so Next.js inlines the build-time values (dynamic process.env[name] is not inlined).
+  const missing = [
+    !process.env.NEXT_PUBLIC_SUPABASE_URL && 'NEXT_PUBLIC_SUPABASE_URL',
+    !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY && 'NEXT_PUBLIC_SUPABASE_ANON_KEY',
+  ].filter((name): name is string => Boolean(name));
   if (missing.length) {
     return new NextResponse(
       `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Setup needed</title>` +

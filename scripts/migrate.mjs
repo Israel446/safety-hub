@@ -12,9 +12,14 @@ const sql = postgres(url, { ssl: 'require', max: 1, onnotice: () => {}, prepare:
 const dir = new URL('../supabase/', import.meta.url);
 
 try {
-  await sql`create table if not exists public._migrations (name text primary key, applied_at timestamptz not null default now())`;
-  await sql`alter table public._migrations enable row level security`;
-  const done = new Set((await sql`select name from public._migrations`).map(r => r.name));
+  // Safety: never run the hub's setup on a database that already belongs to another app (e.g. the risk assessment app).
+  const [state] = await sql`select to_regclass('public._hub_migrations') is not null as ours, to_regclass('public.profiles') is not null as has_profiles`;
+  if (!state.ours && state.has_profiles) {
+    throw new Error('This Supabase database already has another app\'s tables (public.profiles exists). Use a separate, new Supabase project for the Safety Hub.');
+  }
+  await sql`create table if not exists public._hub_migrations (name text primary key, applied_at timestamptz not null default now())`;
+  await sql`alter table public._hub_migrations enable row level security`;
+  const done = new Set((await sql`select name from public._hub_migrations`).map(r => r.name));
   const files = readdirSync(new URL('migrations/', dir)).filter(f => f.endsWith('.sql')).sort().map(f => ['migrations/' + f, f]);
 
   for (const [path, name] of files) {
@@ -23,7 +28,7 @@ try {
     const text = readFileSync(new URL(path, dir), 'utf8');
     await sql.begin(async tx => {
       await tx.unsafe(text);
-      await tx`insert into public._migrations (name) values (${name})`;
+      await tx`insert into public._hub_migrations (name) values (${name})`;
     });
     console.log('done');
   }
