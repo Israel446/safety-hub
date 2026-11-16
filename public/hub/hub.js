@@ -244,7 +244,7 @@ function md(t){
   return out.join("");
 }
 function tutorHtml(l){
-  if(!sample) return '<p class="muted">The tutor appears when the hub is opened by someone signed in. It can go deeper, quiz you, teach interactively and build a teaching edition with teacher notes.</p>';
+  if(!sample) return '<p class="muted">The AI tutor isn&#39;t switched on for this hub yet. Everything else works as normal. When it&#39;s on, it can go deeper, quiz you, teach interactively and build a teaching edition with teacher notes.</p>';
   if(chat.lesson!==l.id){ chat={lesson:l.id,msgs:[],busy:false,label:""}; }
   var h='<div class="row">'+Object.keys(MODES).map(function(k){return '<button data-act="tutor" data-mode="'+k+'">'+MODES[k].label+'</button>';}).join("")+'</div>';
   h+='<div class="tutor-log" id="tlog">'+logHtml()+'</div>';
