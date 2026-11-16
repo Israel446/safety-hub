@@ -221,3 +221,7 @@ nav.tabs a svg{display:none}
 .hub-account { display:flex; align-items:center; justify-content:flex-end; flex-wrap:wrap; gap:14px; padding:12px 0; font:12px var(--display); color:var(--muted); }
 .hub-account a { color:inherit; }
 .hub-account button { padding:0; background:none; color:inherit; font:inherit; }
+
+.hub-install { display:flex; align-items:center; justify-content:space-between; gap:12px; margin:0 0 12px; padding:10px 12px; border:1px solid var(--line); border-radius:8px; background:var(--surface); color:var(--ink); font:12px var(--display); }
+.hub-install button { min-height:36px; padding:6px 10px; border:1px solid var(--line); border-radius:6px; background:var(--bg); color:var(--ink); font:inherit; cursor:pointer; }
+.hub-install .hub-install-dismiss { color:var(--muted); flex-shrink:0; }
