@@ -6,7 +6,15 @@ import { readFileSync, readdirSync } from 'node:fs';
 import postgres from 'postgres';
 import { createClient } from '@supabase/supabase-js';
 
-const url = process.env.DATABASE_URL;
+// Tolerate common copy-paste slips: surrounding spaces or quotes, or the "DATABASE_URL=" name pasted into the value.
+const url = (process.env.DATABASE_URL || '').trim().replace(/^DATABASE_URL\s*=\s*/, '').replace(/^['"]|['"]$/g, '').trim();
+if (url && !/^postgres(ql)?:\/\/[^/@\s]+@[^/\s]+/.test(url)) {
+  console.error('[migrate] FAILED: DATABASE_URL is not a valid connection string. It must look like ' +
+    'postgresql://postgres.PROJECTCODE:PASSWORD@aws-...pooler.supabase.com:5432/postgres (Supabase: Connect -> Session pooler). ' +
+    'Check for a missing "://", [YOUR-PASSWORD] still in it, or symbols in the password (use letters and numbers).');
+  process.exit(1);
+}
+if (url.includes('[YOUR-PASSWORD]')) { console.error('[migrate] FAILED: replace [YOUR-PASSWORD] in DATABASE_URL with the database password.'); process.exit(1); }
 if (!url) { console.log('[migrate] DATABASE_URL not set, skipping database setup'); process.exit(0); }
 const sql = postgres(url, { ssl: 'require', max: 1, onnotice: () => {}, prepare: false });
 const dir = new URL('../supabase/', import.meta.url);
