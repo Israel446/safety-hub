@@ -3,6 +3,19 @@ import { NextResponse, type NextRequest } from 'next/server';
 
 // Keeps the login fresh on every request and sends signed-out people to /login.
 export async function middleware(request: NextRequest) {
+  // Without the Supabase settings nothing can work; say which ones are missing instead of crashing.
+  const missing = ['NEXT_PUBLIC_SUPABASE_URL', 'NEXT_PUBLIC_SUPABASE_ANON_KEY'].filter(name => !process.env[name]);
+  if (missing.length) {
+    return new NextResponse(
+      `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Setup needed</title>` +
+      `<body style="font-family:system-ui,sans-serif;max-width:560px;margin:48px auto;padding:0 16px;line-height:1.5">` +
+      `<h1 style="font-size:1.4rem">The hub is not connected to its database yet</h1>` +
+      `<p>Add these environment variables in Vercel (Project → Settings → Environment Variables), then redeploy:</p>` +
+      `<ul>${missing.map(name => `<li><code>${name}</code></li>`).join('')}</ul>` +
+      `<p>Variables starting with NEXT_PUBLIC_ only take effect after a new deployment.</p></body>`,
+      { status: 503, headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' } },
+    );
+  }
   let response = NextResponse.next({ request });
   const supabase = createServerClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!, {
     cookies: {
