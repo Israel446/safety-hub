@@ -1,8 +1,27 @@
 import { createServerClient } from '@supabase/ssr';
 import { NextResponse, type NextRequest } from 'next/server';
 
-// Keeps the login fresh on every request and sends signed-out people to /login.
+const page = (title: string, body: string, status: number) => new NextResponse(
+  `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${title}</title>` +
+  `<body style="font-family:system-ui,sans-serif;max-width:560px;margin:48px auto;padding:0 16px;line-height:1.5">${body}</body>`,
+  { status, headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' } },
+);
+const escapeHtml = (text: string) => text.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]!));
+
+// Any unexpected failure shows its message (never keys) instead of Vercel's generic MIDDLEWARE_INVOCATION_FAILED.
 export async function middleware(request: NextRequest) {
+  try {
+    return await handle(request);
+  } catch (error) {
+    const message = escapeHtml(error instanceof Error ? error.message : String(error));
+    console.error('[middleware]', error);
+    return page('Setup problem', `<h1 style="font-size:1.4rem">The hub could not start</h1><p>Error: <code>${message}</code></p>` +
+      `<p>Check the Supabase environment variables in Vercel (no spaces or line breaks, URL starting with https://), then redeploy.</p>`, 503);
+  }
+}
+
+// Keeps the login fresh on every request and sends signed-out people to /login.
+async function handle(request: NextRequest) {
   // Without the Supabase settings nothing can work; say which ones are missing instead of crashing.
   // Direct references so Next.js inlines the build-time values (dynamic process.env[name] is not inlined).
   const missing = [
@@ -10,18 +29,13 @@ export async function middleware(request: NextRequest) {
     !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY && 'NEXT_PUBLIC_SUPABASE_ANON_KEY',
   ].filter((name): name is string => Boolean(name));
   if (missing.length) {
-    return new NextResponse(
-      `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Setup needed</title>` +
-      `<body style="font-family:system-ui,sans-serif;max-width:560px;margin:48px auto;padding:0 16px;line-height:1.5">` +
-      `<h1 style="font-size:1.4rem">The hub is not connected to its database yet</h1>` +
+    return page('Setup needed', `<h1 style="font-size:1.4rem">The hub is not connected to its database yet</h1>` +
       `<p>Add these environment variables in Vercel (Project → Settings → Environment Variables), then redeploy:</p>` +
       `<ul>${missing.map(name => `<li><code>${name}</code></li>`).join('')}</ul>` +
-      `<p>Variables starting with NEXT_PUBLIC_ only take effect after a new deployment.</p></body>`,
-      { status: 503, headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' } },
-    );
+      `<p>Variables starting with NEXT_PUBLIC_ only take effect after a new deployment.</p>`, 503);
   }
   let response = NextResponse.next({ request });
-  const supabase = createServerClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!, {
+  const supabase = createServerClient(process.env.NEXT_PUBLIC_SUPABASE_URL!.trim(), process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!.trim(), {
     cookies: {
       getAll: () => request.cookies.getAll(),
       setAll: (list) => {
