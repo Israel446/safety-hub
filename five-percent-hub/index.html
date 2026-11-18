@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f2f4f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f151b" media="(prefers-color-scheme: dark)">
+<title>Five Percent Safety Hub</title>
+<meta name="description" content="Daily lessons for safety professionals: safety science, human behaviour and professional craft.">
+<link rel="preload" href="fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/newsreader-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Fonts are bundled so the hub does not wait on Google Fonts over mobile data. SIL Open Font License, see fonts/. */
+@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-display:swap;font-weight:200 800;src:url(fonts/bricolage.woff2) format("woff2-variations"),url(fonts/bricolage.woff2) format("woff2")}
+@font-face{font-family:"Newsreader";font-style:normal;font-display:swap;font-weight:400;src:url(fonts/newsreader-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Newsreader";font-style:normal;font-display:swap;font-weight:600;src:url(fonts/newsreader-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Newsreader";font-style:italic;font-display:swap;font-weight:400;src:url(fonts/newsreader-latin-400-italic.woff2) format("woff2")}
+
+/* Layout idea: one phone-width column; hi-vis amber is the only accent; an ink panel marks the one thing to do next. */
+:root{
+  --bg:#f2f4f6; --surface:#ffffff; --ink:#16202a; --muted:#56636f; --line:#d9dfe5; --line-strong:#b8c2cc;
+  --accent:#f0b400; --accent-ink:#16202a; --accent-soft:#fdf1cc;
+  --panel:#16202a; --panel-ink:#f4f6f8; --panel-muted:#b3bec9; --panel-line:#2e3b48;
+  --t-safety:#865c00; --t-people:#0b6b65; --t-craft:#4048a8;
+  --good:#1a7a43; --bad:#b0352a;
+  --display:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --body:"Newsreader",Georgia,"Times New Roman",serif;
+  --r:10px; --nav-h:64px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f151b; --surface:#17202a; --ink:#e8edf2; --muted:#9aa7b4; --line:#26323e; --line-strong:#3a4856;
+    --accent:#f5bd1f; --accent-ink:#16202a; --accent-soft:#3a3218;
+    --panel:#1f2c39; --panel-ink:#eef2f5; --panel-muted:#a9b6c3; --panel-line:#344454;
+    --t-safety:#f0c04a; --t-people:#5cc9c1; --t-craft:#a3aaf5;
+    --good:#5cc489; --bad:#f08a80; color-scheme:dark;
+  }
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+html{-webkit-text-size-adjust:100%;scrollbar-color:var(--line-strong) transparent}
+body{background:var(--bg);color:var(--ink);font-family:var(--display);font-size:16px;line-height:1.45;padding-bottom:calc(var(--nav-h) + 24px + env(safe-area-inset-bottom,0px));caret-color:var(--accent)}
+::selection{background:var(--accent);color:var(--accent-ink)}
+a{color:inherit;text-underline-offset:3px;text-decoration-thickness:1px}
+.wrap{max-width:680px;margin:0 auto;padding:0 16px}
+
+/* header */
+header.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0 8px}
+.mark{font-weight:800;font-size:20px;letter-spacing:-.02em;white-space:nowrap;text-decoration:none;display:flex;align-items:center;gap:6px}
+.mark b{background:var(--accent);color:var(--accent-ink);padding:1px 6px;border-radius:5px}
+.sync{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px;text-align:right;min-width:0}
+.sync i{width:7px;height:7px;border-radius:50%;background:var(--line-strong);flex:none}
+.sync.ok i{background:var(--good)} .sync.err i{background:var(--bad)}
+
+main{display:flex;flex-direction:column;gap:14px;padding:6px 0 24px}
+h1{font-size:30px;line-height:1.1;letter-spacing:-.025em;margin:0;text-wrap:balance;font-weight:800}
+h2{font-size:20px;line-height:1.2;letter-spacing:-.01em;margin:22px 0 2px;font-weight:700;text-wrap:balance;scroll-margin-top:64px}
+h2.sm{font-size:15px;margin-top:14px;color:var(--muted);font-weight:600;letter-spacing:0}
+h3,.h3{font-size:18px;line-height:1.25;margin:0;font-weight:700;text-wrap:balance;letter-spacing:0}
+p{margin:0;text-wrap:pretty}
+li{text-wrap:pretty}
+.muted{color:var(--muted)} .small{font-size:13.5px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.stack{display:flex;flex-direction:column;gap:10px}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:10px}
+.panel{background:var(--panel);color:var(--panel-ink);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px;box-shadow:0 10px 30px -18px rgba(10,20,30,.55)}
+.panel .meta{color:var(--panel-muted);font-size:13.5px}
+.panel .h3{font-size:22px;letter-spacing:-.01em}
+.panel .big{color:var(--panel-ink)}
+
+.chip{display:inline-flex;align-items:center;font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px;border:1px solid currentColor;line-height:1.5}
+.chip.safety{color:var(--t-safety)} .chip.people{color:var(--t-people)} .chip.craft{color:var(--t-craft)}
+.chip.plain{color:var(--muted)} .chip.done{color:var(--good)} .chip.fill{background:var(--accent-soft);border-color:transparent;color:var(--ink)}
+
+button,.btn{font:inherit;font-weight:650;font-size:15.5px;border-radius:9px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);padding:0 16px;min-height:44px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:background-color .15s ease,border-color .15s ease,transform .1s ease}
+button:hover,.btn:hover{border-color:var(--ink)}
+button.primary,.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+button.primary:hover,.btn.primary:hover{background:#ffc61a;border-color:#ffc61a}
+button.link{border:0;background:none;padding:0 2px;min-height:36px;text-decoration:underline;color:var(--muted);font-weight:500}
+button:disabled{opacity:.55;cursor:default;border-color:var(--line)}
+button:active:not(:disabled),.btn:active{transform:translateY(1px)}
+:focus-visible{outline:3px solid var(--t-craft);outline-offset:2px;border-radius:6px}
+
+.list{display:flex;flex-direction:column}
+.item{display:flex;gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--line);text-decoration:none;min-height:52px}
+.item:first-child{border-top:0}
+a.item:hover .t{text-decoration:underline}
+.item .grow{flex:1;min-width:0;overflow-wrap:anywhere}
+.item .t{font-weight:600}
+.num{font-variant-numeric:tabular-nums;color:var(--muted);font-size:13.5px;flex:none}
+.tick{width:22px;height:22px;border-radius:50%;border:2px solid var(--line-strong);flex:none;display:flex;align-items:center;justify-content:center}
+.tick.on{background:var(--good);border-color:var(--good)}
+.tick.on::after{content:"";width:9px;height:5px;border:2px solid #fff;border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px)}
+
+.bar{height:6px;border-radius:999px;background:var(--line);overflow:hidden}
+.bar > span{display:block;height:100%;background:var(--accent);border-radius:999px}
+
+/* today */
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center}
+.week div{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;color:var(--muted);font-weight:600}
+.week i{width:30px;height:30px;border-radius:50%;border:2px solid var(--line-strong);display:block}
+.week .on i{background:var(--accent);border-color:var(--accent)}
+.week .now{color:var(--ink)} .week .now i{box-shadow:0 0 0 3px var(--bg),0 0 0 5px var(--ink)}
+.line-stats{display:flex;gap:18px;flex-wrap:wrap;font-size:14.5px;color:var(--muted)}
+.line-stats b{color:var(--ink);font-variant-numeric:tabular-nums}
+
+/* reading */
+.prose{font-family:var(--body);font-size:19px;line-height:1.6;display:flex;flex-direction:column;gap:14px;max-width:65ch}
+.prose b{font-weight:600}
+.big{font-family:var(--body);font-size:22px;line-height:1.42}
+.idea{font-family:var(--body);font-size:24px;line-height:1.38;letter-spacing:-.005em;padding:18px 0 4px;border-top:2px solid var(--ink);max-width:30ch}
+.ev{border:1px dashed var(--line-strong);border-radius:8px;padding:10px 12px;font-family:var(--display);font-size:14.5px;line-height:1.5}
+.tech{display:flex;flex-direction:column;gap:14px}
+.tech div b{display:block;margin-bottom:2px}
+ol.q, ul.src, ul.pts{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px}
+ul.src{font-size:14px;color:var(--muted)}
+
+/* lesson section bar */
+.secbar{position:sticky;top:0;z-index:5;background:var(--bg);margin:0 -16px;padding:0 16px;border-bottom:1px solid var(--line)}
+.secbar .chips{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:8px 0}
+.secbar .chips::-webkit-scrollbar{display:none}
+.secbar button{min-height:34px;font-size:13.5px;font-weight:600;padding:0 11px;border-radius:999px;border-color:transparent;background:none;color:var(--muted);flex:none}
+.secbar button:hover{color:var(--ink);border-color:transparent;background:var(--surface)}
+.secbar button.on{background:var(--ink);color:var(--bg)}
+.secbar .prog{position:absolute;left:0;bottom:-1px;height:2px;background:var(--accent);width:0}
+
+/* visual system */
+figure.sys{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:10px}
+figure.sys .hd{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+figure.sys .nm{font-size:21px;font-weight:800;letter-spacing:-.015em}
+figure.sys svg{width:100%;height:auto;display:block;max-width:440px;margin:0 auto}
+figure.sys figcaption{font-size:14.5px;display:flex;flex-direction:column;gap:4px}
+.sys-box{fill:var(--surface);stroke:var(--ink);stroke-width:1.5}
+.sys-box.c{fill:var(--accent-soft);stroke:var(--ink)}
+.sys-hid{fill:none;stroke:var(--line-strong);stroke-width:1.5;stroke-dasharray:5 4}
+.sys-txt{fill:var(--ink);font-family:var(--display);font-size:13.5px;font-weight:600}
+.sys-txt.c{font-size:14.5px;font-weight:800}
+.sys-q{fill:var(--muted);font-family:var(--display);font-size:16px;font-weight:700}
+.sys-num{fill:var(--accent);stroke:var(--ink);stroke-width:1.5}
+.sys-numt{fill:var(--accent-ink);font-family:var(--display);font-size:12.5px;font-weight:800}
+.sys-ln{stroke:var(--ink);stroke-width:1.5;fill:none}
+.sys-ln.soft{stroke:var(--line-strong)}
+.sys-ring{stroke:var(--accent);stroke-width:4;fill:none}
+.sys-head{fill:var(--ink)}
+.sys-headring{fill:var(--accent)}
+
+/* quiz */
+fieldset{border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
+legend{font-weight:650;padding:0;margin-bottom:6px;line-height:1.35}
+label.opt{display:flex;gap:10px;align-items:flex-start;padding:11px 12px;border:1px solid var(--line);border-radius:9px;cursor:pointer;min-height:44px;transition:border-color .15s ease,background-color .15s ease}
+label.opt:hover{border-color:var(--line-strong)}
+label.opt input{accent-color:var(--ink);margin-top:3px;flex:none}
+label.opt:has(input:checked){border-color:var(--ink)}
+label.opt.right{border-color:var(--good);background:color-mix(in srgb,var(--good) 9%,transparent)}
+label.opt.wrong{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 8%,transparent)}
+.why{font-size:14.5px;color:var(--muted)}
+.score{font-size:17px;font-weight:700}
+
+label.f{font-size:13.5px;color:var(--muted);display:flex;flex-direction:column;gap:5px}
+textarea,input[type=text],input[type=email],input[type=password]{font:inherit;font-size:16px;width:100%;border:1px solid var(--line-strong);border-radius:9px;background:var(--bg);color:var(--ink);padding:11px 12px;min-height:44px}
+textarea{min-height:120px;resize:vertical;line-height:1.5}
+.msgline{font-size:14px;min-height:1.2em}
+.msgline.err{color:var(--bad)} .msgline.ok{color:var(--good)}
+.initial{width:34px;height:34px;border-radius:50%;flex:none;background:var(--accent-soft);color:var(--ink);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
+
+details.wk{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.wk > summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:12px;min-height:56px}
+details.wk > summary::-webkit-details-marker{display:none}
+details.wk > summary .grow{flex:1}
+details.wk > summary .chev{width:10px;height:10px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);transition:transform .2s ease;flex:none;margin-right:4px}
+details.wk[open] > summary .chev{transform:rotate(-135deg)}
+details.wk .list{padding:0 16px 6px}
+.wkbar{width:64px}
+
+table.map{width:100%;border-collapse:collapse;font-size:14px}
+table.map td{padding:9px 6px;border-top:1px solid var(--line);vertical-align:top}
+table.map td:first-child{white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--muted)}
+.scroll{overflow-x:auto}
+
+/* teaching edition */
+.slide{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px;break-inside:avoid}
+.slide .sn{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums;font-weight:600}
+.slide .h3{font-size:24px;font-weight:800;letter-spacing:-.015em}
+.slide .sb{font-size:18px;display:flex;flex-direction:column;gap:10px}
+.notes{border-top:1px dashed var(--line-strong);padding-top:12px;font-size:15px;color:var(--muted);display:flex;flex-direction:column;gap:7px}
+.notes b{color:var(--ink)}
+.hide-notes .notes{display:none}
+.slide figure.sys{border:0;padding:0;background:none}
+.print-only{display:none}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* bottom nav */
+nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:10;background:color-mix(in srgb,var(--surface) 94%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+nav.tabs .in{max-width:680px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr)}
+nav.tabs a{height:var(--nav-h);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;text-decoration:none;font-weight:600;font-size:12px;color:var(--muted);position:relative}
+nav.tabs svg{width:24px;height:24px;stroke:currentColor;stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round}
+nav.tabs a.on{color:var(--ink)}
+nav.tabs a.on::before{content:"";position:absolute;top:0;left:28%;right:28%;height:3px;border-radius:0 0 3px 3px;background:var(--accent)}
+nav.tabs .badge[hidden]{display:none}
+nav.tabs .badge{position:absolute;top:8px;left:calc(50% + 6px);min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--accent);color:var(--accent-ink);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums}
+
+@media (min-width:720px){ h1{font-size:36px} .idea{font-size:27px} }
+@media (prefers-reduced-motion:reduce){ *{transition:none !important;scroll-behavior:auto !important} }
+@media print{
+  :root{--bg:#fff;--surface:#fff;--ink:#000;--muted:#333;--line:#bbb;--line-strong:#999;--accent-soft:#fff3c4;color-scheme:light}
+  nav.tabs,.sync,.noprint,.secbar{display:none !important}
+  .print-only{display:block}
+  body{padding:0} .wrap{max-width:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="#today" aria-label="Five Percent, home"><b>5%</b>Five Percent</a>
+    <div class="sync" id="sync" role="status"><i></i><span></span></div>
+  </header>
+  <main id="view"></main>
+</div>
+<nav class="tabs" aria-label="Sections"><div class="in">
+  <a href="#today" data-tab="today"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3"/></svg>Today</a>
+  <a href="#path" data-tab="path"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8 18h6a3.5 3.5 0 0 0 0-7H10a3.5 3.5 0 0 1 0-7h6"/></svg>Path</a>
+  <a href="#review" data-tab="review"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12a7.5 7.5 0 0 1 13-5.1"/><path d="M18 3.5v3.8h-3.8"/><path d="M19.5 12a7.5 7.5 0 0 1-13 5.1"/><path d="M6 20.5v-3.8h3.8"/></svg>Review<span class="badge" id="rv-badge" hidden></span></a>
+  <a href="#team" data-tab="team"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3.2"/><path d="M3 19.5c.6-3.3 3-5 6-5s5.4 1.7 6 5"/><circle cx="17" cy="9.5" r="2.5"/><path d="M16.5 14.6c2.3.2 4 1.7 4.5 4.4"/></svg>Team</a>
+  <a href="#me" data-tab="me"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="3.6"/><path d="M5 20c.8-3.8 3.6-5.8 7-5.8s6.2 2 7 5.8"/></svg>Me</a>
+</div></nav>
+
+<script src="vendor/supabase.js"></script>
+<script src="config.js"></script>
+<script src="lessons.js"></script>
+<script src="lessons-b.js"></script>
+<script src="lessons-c.js"></script>
+<script src="lessons-d.js"></script>
+<script src="lessons-e.js"></script>
+<script src="lessons-f.js"></script>
+<script src="lessons-g.js"></script>
+<script src="lessons-h.js"></script>
+<script src="teaching.js"></script>
+<script src="teaching-b.js"></script>
+<script src="teaching-c.js"></script>
+<script src="teaching-d.js"></script>
+<script src="systems.js"></script>
+<script src="curriculum.js"></script>
+<script>
+(function(){
+"use strict";
+var L = window.LESSONS || [], C = window.CURRICULUM || {}, T = window.TEACH || {}, SYS = window.SYSTEMS || {}, CFG = window.HUB_CONFIG || {};
+var byId = {}; L.forEach(function(l){ byId[l.id] = l; });
+/* Quiz options are shuffled once, the same way on every device, so the right answer is not always in the same position. */
+L.forEach(function(l){ l.quiz.forEach(function(q,i){
+  var s=0, key=l.id+":"+i, k, j, r, t, idx=q.options.map(function(_,n){return n;}), correct=q.options[q.answer];
+  for(k=0;k<key.length;k++) s=(s*31+key.charCodeAt(k))>>>0;
+  for(j=idx.length-1;j>0;j--){ s=(Math.imul(s,1664525)+1013904223)>>>0; r=(s>>>8)%(j+1); t=idx[j]; idx[j]=idx[r]; idx[r]=t; }
+  q.options=idx.map(function(n){return q.options[n];}); q.answer=q.options.indexOf(correct);
+}); });
+var TRACK = {safety:"Safety science", people:"People", craft:"Craft"};
+var SHAPE = {steps:"Steps: the order matters", loop:"Loop: the end feeds the start", map:"Map: the parts affect each other"};
+var DAY = 86400000, INTERVALS = [1,7,30];
+var $view = document.getElementById("view"), $sync = document.getElementById("sync"), $badge = document.getElementById("rv-badge");
+
+var sb = null;
+try{ if(CFG.supabaseUrl && CFG.supabaseKey && window.supabase){ sb = window.supabase.createClient(CFG.supabaseUrl, CFG.supabaseKey); } }catch(e){ sb = null; }
+
+/* ---------- state ---------- */
+function blank(){ return {done:{}, quiz:{}, work:{}, days:[], rev:{}}; }
+function loadLocal(){ try{ return Object.assign(blank(), JSON.parse(localStorage.getItem("fp-state")||"{}")); }catch(e){ return blank(); } }
+function saveLocal(){ try{ localStorage.setItem("fp-state", JSON.stringify(S)); }catch(e){} }
+var S = loadLocal(); if(!S.rev || typeof S.rev!=="object") S.rev={};
+seedReviews();
+var uid=null, profile=null, recovering=false, authMode="signin", authMsg=null;
+var members=null, membersAt=0, hub={}, subCache={}, quizShown={}, teamScope="org", pending=false, writeChain=Promise.resolve(), syncErr=false, revColumn=true;
+var reveal={}, recallOpen={};
+
+function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];}); }
+function ymd(d){ return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+function dayOffset(n){ var d=new Date(); d.setDate(d.getDate()-n); return ymd(d); }
+function streakOf(days){ var set={}; (days||[]).forEach(function(x){set[x]=1;}); var n=0, i=set[dayOffset(0)]?0:1; while(set[dayOffset(i)]){ n++; i++; } return n; }
+function doneCount(done){ return L.filter(function(l){ return done && done[l.id]; }).length; }
+function nextLesson(){ for(var i=0;i<L.length;i++){ if(!S.done[L[i].id]) return L[i]; } return null; }
+function ago(ts){ if(!ts) return "not yet"; var d=Math.floor((Date.now()-ts)/DAY); return d<=0?"today":d===1?"yesterday":d+" days ago"; }
+function inDays(ts){ var d=Math.ceil((ts-Date.now())/DAY); return d<=0?"today":d===1?"tomorrow":"in "+d+" days"; }
+function norm(s){ return String(s||"").trim().toLowerCase(); }
+function isAdmin(){ return !!(profile && profile.is_admin); }
+function markActive(){ var t=dayOffset(0); if(S.days.indexOf(t)<0) S.days.push(t); }
+
+/* ---------- review queue: back after 1 day, 1 week, 1 month ---------- */
+function seedReviews(){ Object.keys(S.done).forEach(function(id){ if(byId[id] && !S.rev[id]) S.rev[id]={s:0, due:(S.done[id]||Date.now())+DAY}; }); }
+function dueList(){ var now=Date.now(); return L.filter(function(l){ var r=S.rev[l.id]; return r && r.s<3 && r.due<=now; }).sort(function(a,b){ return S.rev[a.id].due-S.rev[b.id].due; }); }
+function nextDue(){ var best=null; L.forEach(function(l){ var r=S.rev[l.id]; if(r && r.s<3 && r.due>Date.now() && (!best || r.due<best.due)) best={l:l, due:r.due}; }); return best; }
+function mastered(){ return L.filter(function(l){ var r=S.rev[l.id]; return r && r.s>=3; }).length; }
+function stageLabel(r){ return !r ? "" : r.s>=3 ? "Mastered" : ["First review","One-week review","One-month review"][r.s]; }
+function finishReview(id, score, total){
+  var r=S.rev[id]||{s:0,due:0}, pass = score >= Math.ceil(total*2/3);
+  if(pass){ r.s=Math.min(3,r.s+1); r.due = r.s<3 ? Date.now()+INTERVALS[r.s]*DAY : null; }
+  else { r.s=0; r.due=Date.now()+DAY; }
+  r.last=Date.now(); S.rev[id]=r; markActive(); commit(); return pass;
+}
+function paintBadge(){ var n=dueList().length; $badge.hidden=!n; $badge.textContent=n>9?"9+":String(n); }
+
+/* ---------- sync ---------- */
+function merge(r){
+  var changed=false; r=r||{};
+  Object.keys(r.done||{}).forEach(function(k){ if(!S.done[k]){ S.done[k]=r.done[k]; changed=true; } });
+  Object.keys(r.quiz||{}).forEach(function(k){ if(S.quiz[k]==null || r.quiz[k]>S.quiz[k]){ S.quiz[k]=r.quiz[k]; changed=true; } });
+  Object.keys(r.reviews||{}).forEach(function(k){ var a=S.rev[k], b=r.reviews[k]; if(b && (!a || (b.last||0)>(a.last||0))){ S.rev[k]=b; changed=true; } });
+  var set={}; S.days.concat(Array.isArray(r.days)?r.days:[]).forEach(function(d){ set[d]=1; });
+  var days=Object.keys(set).sort(); if(days.length!==S.days.length){ S.days=days; changed=true; }
+  seedReviews();
+  return changed;
+}
+function localAhead(r){ r=r||{}; var rv=r.reviews||{};
+  return Object.keys(S.done).some(function(k){return !(r.done||{})[k];}) || Object.keys(S.quiz).some(function(k){return (r.quiz||{})[k]!==S.quiz[k];}) ||
+    Object.keys(S.rev).some(function(k){ return !rv[k] || (S.rev[k].last||0)>(rv[k].last||0); }); }
+function pushRemote(){
+  if(!sb || !uid || pending) return;
+  pending=true;
+  setTimeout(function(){
+    pending=false; if(!uid) return;
+    var row={user_id:uid, done:S.done, quiz:S.quiz, days:S.days.slice(-120), updated_at:new Date().toISOString()};
+    if(revColumn) row.reviews=S.rev;
+    writeChain=writeChain.then(function(){ return sb.from("progress").upsert(row); })
+      .then(function(r){
+        if(r && r.error && revColumn && /reviews/i.test(r.error.message||"")){ revColumn=false; return sb.from("progress").upsert((delete row.reviews, row)); }
+        return r;
+      })
+      .then(function(r){ syncErr=!!(r&&r.error); paintSync(); })
+      .catch(function(){ syncErr=true; paintSync(); });
+  },700);
+}
+function paintSync(){
+  var txt = !sb ? "Saved on this device" : !uid ? "Not signed in" : syncErr ? "Not synced, saved here" : "Synced";
+  $sync.className = "sync" + (sb && uid ? (syncErr?" err":" ok") : "");
+  $sync.querySelector("span").textContent = txt;
+}
+function commit(){ saveLocal(); pushRemote(); paintBadge(); }
+
+/* ---------- account ---------- */
+function onSession(session){
+  var newUid = session && session.user ? session.user.id : null;
+  if(newUid===uid) return;
+  uid=newUid; profile=null; members=null; subCache={}; hub={};
+  if(!uid){ render(); return; }
+  loadProfile(0);
+  sb.from("progress").select("*").eq("user_id",uid).maybeSingle().then(function(r){
+    var row=r&&r.data; if(row && !("reviews" in row)) revColumn=false;
+    var changed=merge(row);
+    if(changed){ saveLocal(); softRender(); }
+    if(!row || localAhead(row)) pushRemote();
+  });
+  sb.from("settings").select("value").eq("key","team").maybeSingle().then(function(r){ hub=(r&&r.data&&r.data.value)||{}; softRender(); });
+}
+function loadProfile(tries){
+  sb.from("profiles").select("id,display_name,org,is_admin").eq("id",uid).maybeSingle().then(function(r){
+    if(r && r.data){ profile=r.data; teamScope = norm(profile.org) ? "org" : "all"; softRender(); paintSync(); }
+    else if(tries<3){ setTimeout(function(){ if(uid) loadProfile(tries+1); }, 1200); }
+  });
+}
+function redirectUrl(){ return location.origin + location.pathname; }
+function setAuthMsg(text, kind){ authMsg={text:text, kind:kind||""}; var el=document.getElementById("auth-msg"); if(el){ el.textContent=text; el.className="msgline "+(kind||""); } }
+
+function authHtml(){
+  if(!sb) return '<section class="card"><p>Accounts are not switched on for this copy of the hub. Your progress is kept on this device.</p></section>';
+  if(recovering){
+    return '<section class="card"><h2 class="h3">Choose a new password</h2><label class="f" for="np">New password (8 characters or more)<input type="password" id="np" autocomplete="new-password"></label>'+
+      '<div class="row"><button class="primary" data-act="set-password">Save password</button></div><div class="msgline" id="auth-msg" role="alert"></div></section>';
+  }
+  var up = authMode==="signup";
+  return '<section class="card"><h2 class="h3">'+(up?"Create your account":"Sign in")+'</h2>'+
+    '<p class="muted small">An account saves your progress across devices and adds you to the team view. Anyone may join.</p>'+
+    (up?'<label class="f" for="au-name">Your name<input type="text" id="au-name" maxlength="60" autocomplete="name"></label>'+
+        '<label class="f" for="au-org">Company or team (optional, groups you with colleagues)<input type="text" id="au-org" maxlength="80" autocomplete="organization" placeholder="For example: GMC Safety"></label>':'')+
+    '<label class="f" for="au-email">Email<input type="email" id="au-email" autocomplete="email" inputmode="email"></label>'+
+    '<label class="f" for="au-pass">Password'+(up?" (8 characters or more)":"")+'<input type="password" id="au-pass" autocomplete="'+(up?"new-password":"current-password")+'"></label>'+
+    '<div class="row"><button class="primary" data-act="auth-submit">'+(up?"Create account":"Sign in")+'</button><button data-act="auth-google">Continue with Google</button></div>'+
+    '<div class="msgline '+(authMsg?authMsg.kind:"")+'" id="auth-msg" role="alert">'+(authMsg?esc(authMsg.text):"")+'</div>'+
+    '<div class="row"><button class="link" data-act="auth-toggle">'+(up?"I already have an account":"Create a new account")+'</button>'+(up?"":'<button class="link" data-act="auth-reset">Forgot password</button>')+'</div></section>';
+}
+
+/* ---------- visual systems ---------- */
+var svgN=0;
+function wrapText(text, max){
+  var words=String(text).split(/\s+/), lines=[], cur="";
+  words.forEach(function(w){ if(!cur) cur=w; else if((cur+" "+w).length<=max) cur+=" "+w; else { lines.push(cur); cur=w; } });
+  if(cur) lines.push(cur); return lines;
+}
+function tspans(lines, x, y, lh){ return lines.map(function(t,i){ return '<tspan x="'+x+'" y="'+(y+i*lh)+'">'+esc(t)+'</tspan>'; }).join(""); }
+function nodeBox(cx, cy, w, label, shown, max, cls){
+  var lines=wrapText(label, max), h=Math.max(38, 18+lines.length*17), x=cx-w/2, y=cy-h/2;
+  if(!shown) return '<rect class="sys-hid" x="'+x+'" y="'+(cy-19)+'" width="'+w+'" height="38" rx="9"/><text class="sys-q" x="'+cx+'" y="'+(cy+6)+'" text-anchor="middle">?</text>';
+  return '<rect class="sys-box'+(cls?" "+cls:"")+'" x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="9"/>'+
+    '<text class="sys-txt'+(cls?" "+cls:"")+'" text-anchor="middle">'+tspans(lines, cx, cy-(lines.length-1)*8.5+5, 17)+'</text>';
+}
+function sysSvg(sys, shownCount){
+  var n=sys.parts.length, shown=function(i){ return shownCount==null || i<shownCount; }, id="ah"+(++svgN), out="", W=340, H;
+  var defs='<defs><marker id="'+id+'" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="sys-head" d="M0 0L10 5L0 10z"/></marker></defs>';
+  if(sys.shape==="steps"){
+    var y=8, gap=22;
+    sys.parts.forEach(function(p,i){
+      var lines=wrapText(p, 30), h=shown(i)?Math.max(40,18+lines.length*17):40, cy=y+h/2;
+      out+='<circle class="sys-num" cx="18" cy="'+cy+'" r="13"/><text class="sys-numt" x="18" y="'+(cy+4.5)+'" text-anchor="middle">'+(i+1)+'</text>';
+      out+=shown(i) ? '<rect class="sys-box" x="42" y="'+y+'" width="290" height="'+h+'" rx="9"/><text class="sys-txt" text-anchor="start">'+tspans(lines, 56, cy-(lines.length-1)*8.5+5, 17)+'</text>'
+                    : '<rect class="sys-hid" x="42" y="'+y+'" width="290" height="40" rx="9"/><text class="sys-q" x="187" y="'+(cy+6)+'" text-anchor="middle">?</text>';
+      if(i<n-1) out+='<line class="sys-ln" x1="187" y1="'+(y+h+2)+'" x2="187" y2="'+(y+h+gap-3)+'" marker-end="url(#'+id+')"/>';
+      y+=h+gap;
+    });
+    H=y-gap+8;
+  } else if(sys.shape==="loop"){
+    W=384; var cx=192, cy=172, R=116; H=344;
+    out+='<circle class="sys-ring" cx="'+cx+'" cy="'+cy+'" r="'+R+'"/>';
+    for(var i=0;i<n;i++){
+      var a=-Math.PI/2+(i+.5)*2*Math.PI/n, ax=cx+R*Math.cos(a), ay=cy+R*Math.sin(a), deg=a*180/Math.PI+90;
+      out+='<path class="sys-headring" transform="translate('+ax.toFixed(1)+' '+ay.toFixed(1)+') rotate('+deg.toFixed(1)+')" d="M-6 -7L7 0L-6 7z"/>';
+    }
+    sys.parts.forEach(function(p,i){ var a=-Math.PI/2+i*2*Math.PI/n; out+=nodeBox(cx+R*Math.cos(a), cy+R*Math.sin(a), 120, p, shown(i), 15); });
+  } else {
+    W=392; var mx=196, my=176, MR=124; H=352;
+    sys.parts.forEach(function(p,i){ var a=-Math.PI/2+i*2*Math.PI/n, b=-Math.PI/2+((i+1)%n)*2*Math.PI/n;
+      if(n>3) out+='<line class="sys-ln soft" x1="'+(mx+MR*Math.cos(a)).toFixed(1)+'" y1="'+(my+MR*Math.sin(a)).toFixed(1)+'" x2="'+(mx+MR*Math.cos(b)).toFixed(1)+'" y2="'+(my+MR*Math.sin(b)).toFixed(1)+'"/>';
+      out+='<line class="sys-ln" x1="'+mx+'" y1="'+my+'" x2="'+(mx+MR*Math.cos(a)).toFixed(1)+'" y2="'+(my+MR*Math.sin(a)).toFixed(1)+'"/>'; });
+    out+=nodeBox(mx, my, 120, sys.name, true, 14, "c");
+    sys.parts.forEach(function(p,i){ var a=-Math.PI/2+i*2*Math.PI/n; out+=nodeBox(mx+MR*Math.cos(a), my+MR*Math.sin(a), 118, p, shown(i), 15); });
+  }
+  var desc=sys.name+". "+SHAPE[sys.shape]+". "+sys.parts.map(function(p,i){return (i+1)+": "+p;}).join("; ");
+  return '<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+esc(desc)+'">'+defs+out+'</svg>';
+}
+function sysFigure(l, opts){
+  var s=SYS[l.id]; if(!s) return ""; opts=opts||{};
+  return '<figure class="sys"'+(opts.id?' id="'+opts.id+'"':'')+'><div class="hd"><span class="nm">'+esc(s.name)+'</span><span class="small muted">'+esc(SHAPE[s.shape])+'</span></div>'+
+    sysSvg(s, opts.shown)+
+    (opts.bare?'':'<figcaption><span>'+esc(s.note)+'</span><span class="small muted">'+esc(s.credit)+'</span></figcaption>')+'</figure>';
+}
+
+/* ---------- views ---------- */
+function chip(l){ return '<span class="chip '+l.track+'">'+TRACK[l.track]+'</span>'; }
+function lessonNo(l){ return "Week "+l.week+" · Lesson "+l.n; }
+function showHub(){ return hub.lesson && byId[hub.lesson] && (!norm(hub.org) || isAdmin() || (profile && norm(profile.org)===norm(hub.org))); }
+function weekStrip(){
+  var set={}; S.days.forEach(function(d){ set[d]=1; });
+  var now=new Date(), dow=(now.getDay()+6)%7, names=["M","T","W","T","F","S","S"], h='<div class="week" aria-label="This week">';
+  for(var i=0;i<7;i++){ var d=new Date(now); d.setDate(now.getDate()-dow+i); var k=ymd(d);
+    h+='<div class="'+(set[k]?"on ":"")+(i===dow?"now":"")+'" title="'+k+'"><i></i>'+names[i]+'</div>'; }
+  return h+'</div>';
+}
+function viewToday(){
+  var n=nextLesson(), dc=doneCount(S.done), due=dueList(), h="", first=profile && profile.display_name && profile.display_name!=="Member" ? profile.display_name.split(" ")[0] : "";
+  h+='<h1>'+(first ? "Good to see you, "+esc(first) : "Get 5% better today")+'</h1>';
+  if(n){
+    var s=SYS[n.id];
+    h+='<section class="panel"><div class="meta">Up next · '+lessonNo(n)+' · '+n.minutes+' min · '+TRACK[n.track]+'</div>'+
+       '<h2 class="h3">'+esc(n.title)+'</h2><p class="big">'+esc(n.bigIdea)+'</p>'+
+       (s?'<p class="meta">You will learn: '+esc(s.name)+'</p>':'')+
+       '<div><a class="btn primary" href="#'+n.id+'">'+(dc? "Continue":"Start")+' with lesson '+(dc+1)+'</a></div></section>';
+  } else {
+    h+='<section class="panel"><h2 class="h3">You are up to date</h2><p>You have finished every lesson published so far. The next batch starts at week '+((C.upcoming&&C.upcoming[0]||{}).week||"")+'. Your reviews keep going in the meantime.</p></section>';
+  }
+  if(due.length){
+    h+='<a class="card" href="#review" style="text-decoration:none;flex-direction:row;align-items:center;gap:14px"><span class="initial" aria-hidden="true">'+due.length+'</span><span class="grow" style="flex:1"><b>'+(due.length===1?"1 lesson is":due.length+" lessons are")+' due for review</b><br><span class="small muted">About '+Math.max(2,due.length*2)+' minutes. Recalling it now is what makes it stick.</span></span></a>';
+  }
+  h+='<h2 class="sm">This week</h2>'+weekStrip()+
+     '<div class="line-stats"><span><b>'+dc+'</b> of '+L.length+' lessons</span><span><b>'+streakOf(S.days)+'</b> day streak</span><span><b>'+mastered()+'</b> mastered</span></div>';
+  if(showHub()){
+    var t=byId[hub.lesson];
+    h+='<h2 class="sm">Next team session</h2><a class="card" href="#'+t.id+'" style="text-decoration:none"><div class="row">'+chip(t)+'<span class="small muted">'+lessonNo(t)+'</span></div><h2 class="h3">'+esc(t.title)+'</h2>'+
+       '<p class="small muted">Read it before the session so the time together goes on discussion.</p></a>';
+  }
+  if(sb && !uid){ h+='<section class="card"><p><b>Save your progress and join your team.</b> <span class="muted">You can read every lesson without an account.</span></p><div><a class="btn" href="#me">Sign in or create an account</a></div></section>'; }
+  if(!dc){ h+='<section class="card"><h2 class="h3">How it works</h2><p class="muted">'+esc(C.rhythm||"")+' Lessons run in order, so a missed day costs nothing. Each finished lesson comes back for short reviews after a day, a week and a month.</p></section>'; }
+  return h;
+}
+
+var SECTIONS=[["idea","Idea"],["system","System"],["science","Science"],["site","On site"],["tech","Techniques"],["quiz","Quiz"],["task","Task"],["team","Team"],["sources","Sources"]];
+function viewLesson(l){
+  var done=!!S.done[l.id], w=S.work[l.id], r=S.rev[l.id];
+  var h='<div class="secbar noprint" id="secbar"><div class="chips">'+SECTIONS.map(function(s){ return '<button data-jump="sec-'+s[0]+'">'+s[1]+'</button>'; }).join("")+'</div><div class="prog" id="prog"></div></div>';
+  h+='<div class="row">'+chip(l)+'<span class="chip plain">'+esc(l.area)+'</span><span class="chip plain">'+l.minutes+' min</span>'+(done?'<span class="chip done">'+(r&&r.s>=3?"Mastered":"Completed")+'</span>':'')+'</div>';
+  h+='<div class="small muted">'+lessonNo(l)+'</div><h1>'+esc(l.title)+'</h1>';
+  if(l.book) h+='<p class="small muted">Book reference: '+esc(l.book)+'</p>';
+  h+='<p class="idea" id="sec-idea">'+esc(l.bigIdea)+'</p>';
+  h+='<h2>Why it matters</h2><div class="prose"><p>'+esc(l.why)+'</p></div>';
+  if(SYS[l.id]) h+='<h2 id="sec-system">The system to remember</h2>'+sysFigure(l)+'<p class="small muted">Try drawing it from memory after the lesson. Your reviews will ask you to.</p>';
+  h+='<h2 id="sec-science">The science</h2><div class="prose">'+l.science.map(function(p){return "<p>"+p+"</p>";}).join("")+
+     '<div class="ev"><b>Evidence: '+esc(l.evidence)+'.</b> '+esc(l.evidenceNote)+'</div></div>';
+  h+='<h2 id="sec-site">On site</h2><div class="prose">'+l.work.map(function(p){return "<p>"+p+"</p>";}).join("")+'</div>';
+  h+='<h2 id="sec-tech">Techniques to use</h2><section class="card tech">'+l.techniques.map(function(t){return "<div><b>"+esc(t.name)+"</b>"+esc(t.how)+"</div>";}).join("")+'</section>';
+  h+='<h2 class="noprint" id="sec-quiz">Check yourself</h2><section class="card noprint" id="quiz" data-key="'+l.id+'">'+quizHtml(l, l.id)+'</section>';
+  h+='<h2 id="sec-task">Assignment · '+esc(l.assignment.level)+'</h2><section class="card"><p>'+esc(l.assignment.task)+'</p>'+
+     (l.assignment.stretch?'<p class="muted"><b>Stretch:</b> '+esc(l.assignment.stretch)+'</p>':'')+
+     '<label class="f noprint" for="work">What you did and what you found'+(uid?" (other members can read this)":"")+
+     '<textarea id="work" maxlength="1200">'+esc(w?w.text:"")+'</textarea></label>'+
+     '<div class="row noprint"><button data-act="save-work">Save assignment</button><span class="small muted" id="work-msg" role="status">'+(w?"Saved "+ago(w.ts):"")+'</span></div></section>';
+  h+='<h2 id="sec-team">For the team session</h2><section class="card"><ol class="q">'+l.discuss.map(function(q){return "<li>"+esc(q)+"</li>";}).join("")+'</ol>'+
+     '<p class="muted"><b>Reflect:</b> '+esc(l.reflect)+'</p>'+
+     '<div class="row noprint"><a class="btn" href="#teach-'+l.id+'">Open teaching edition</a>'+
+     (isAdmin()?'<button data-act="set-team">Set as next team session</button><span class="small muted" id="team-msg" role="status">'+(hub.lesson===l.id?"This is the current team lesson":"")+'</span>':'')+'</div></section>';
+  h+='<h2 id="sec-sources">Sources</h2><ul class="src">'+l.sources.map(function(s){return "<li>"+esc(s)+"</li>";}).join("")+'</ul>';
+  var idx=L.indexOf(l), nx=L[idx+1];
+  h+='<div class="row noprint" style="margin-top:14px">'+(done?'<span class="chip done">Completed '+ago(S.done[l.id])+(r&&r.s<3&&r.due?" · next review "+inDays(r.due):"")+'</span>':'<button class="primary" data-act="complete">Mark lesson complete</button>')+
+     (nx?'<a class="btn" href="#'+nx.id+'">Next lesson</a>':'')+'<button data-act="print">Print or save as PDF</button></div>';
+  return h;
+}
+
+function quizHtml(l, key){
+  var shown=quizShown[key], h="";
+  l.quiz.forEach(function(q,i){
+    h+='<fieldset><legend>'+(i+1)+". "+esc(q.q)+'</legend>';
+    q.options.forEach(function(o,j){
+      var cls="opt", picked=shown && shown[i]===j, fid=key.replace(/[^a-z0-9]/gi,"")+"q"+i+"o"+j;
+      if(shown){ if(j===q.answer) cls+=" right"; else if(picked) cls+=" wrong"; }
+      h+='<label class="'+cls+'" for="'+fid+'"><input type="radio" id="'+fid+'" name="'+key+'-q'+i+'" value="'+j+'" '+(picked?"checked":"")+' '+(shown?"disabled":"")+'><span>'+esc(o)+'</span></label>';
+    });
+    if(shown) h+='<div class="why">'+(shown[i]===q.answer?"Correct. ":"The answer is "+esc(q.options[q.answer])+". ")+esc(q.why)+'</div>';
+    h+='</fieldset>';
+  });
+  var isRev=key.indexOf("rv:")===0;
+  if(shown){
+    var sc=l.quiz.filter(function(q,i){return shown[i]===q.answer;}).length;
+    h+='<div class="row"><span class="score">'+sc+' of '+l.quiz.length+' correct</span>'+(isRev?'':'<button data-act="quiz-retry" data-key="'+key+'">Try again</button>')+'</div>';
+  } else {
+    h+='<div class="row"><button class="'+(isRev?"primary":"")+'" data-act="quiz-check" data-key="'+key+'">Check answers</button>'+(!isRev&&S.quiz[l.id]!=null?'<span class="small muted">Best so far: '+S.quiz[l.id]+' of '+l.quiz.length+'</span>':'')+'<span class="small muted" id="quiz-msg" role="alert"></span></div>';
+  }
+  return h;
+}
+
+/* ---------- review ---------- */
+function viewReview(){
+  var due=dueList(), nd=nextDue(), h='<h1>Review</h1><p class="muted">Finished lessons come back after a day, a week and a month. Each review takes about two minutes: recall the system, then answer three questions.</p>';
+  if(due.length){
+    h+='<section class="card"><div class="list">'+due.map(function(l){ var r=S.rev[l.id];
+      return '<a class="item" href="#rv-'+l.id+'"><span class="initial" aria-hidden="true">'+(r.s+1)+'</span><span class="grow"><span class="t">'+esc(l.title)+'</span><br><span class="small muted">'+stageLabel(r)+' · '+esc((SYS[l.id]||{}).name||"")+'</span></span><span class="num">Start</span></a>'; }).join("")+'</div></section>';
+    h+='<div><a class="btn primary" href="#rv-'+due[0].id+'">Start with the first one</a></div>';
+  } else {
+    h+='<section class="card"><h2 class="h3">Nothing due right now</h2><p class="muted">'+(nd?"Next up: "+esc(nd.l.title)+", "+inDays(nd.due)+".":"Finish a lesson and it will come back here tomorrow.")+'</p></section>';
+  }
+  var m=L.filter(function(l){ var r=S.rev[l.id]; return r && r.s>=3; });
+  h+='<h2 class="sm">Mastered ('+m.length+')</h2>'+(m.length?'<section class="card"><div class="list">'+m.map(function(l){ return '<a class="item" href="#'+l.id+'"><span class="tick on" aria-hidden="true"></span><span class="grow t">'+esc(l.title)+'</span></a>'; }).join("")+'</div></section>':'<p class="small muted">A lesson is mastered after you pass its one-month review.</p>');
+  return h;
+}
+function viewReviewItem(l){
+  var key="rv:"+l.id, r=S.rev[l.id], s=SYS[l.id], open=recallOpen[l.id];
+  var h='<div class="small muted">'+stageLabel(r)+' · '+lessonNo(l)+'</div><h1>'+esc(l.title)+'</h1>';
+  if(s){
+    h+='<h2>1. Recall the system</h2><p class="muted">'+esc(s.name)+' has '+s.parts.length+' parts. '+esc(SHAPE[s.shape])+'. Say them aloud or jot them down, then check.</p>';
+    h+=sysFigure(l, {shown: open ? null : 0, bare:!open});
+    if(!open) h+='<div><button data-act="recall-show" data-id="'+l.id+'">Show the system</button></div>';
+  }
+  h+='<h2>'+(s?"2. ":"")+'Answer three questions</h2><section class="card" id="quiz" data-key="'+key+'">'+quizHtml(l, key)+'</section>';
+  if(quizShown[key]){
+    var sc=l.quiz.filter(function(q,i){return quizShown[key][i]===q.answer;}).length, pass=sc>=Math.ceil(l.quiz.length*2/3);
+    h+='<section class="card"><p><b>'+(pass?"Good recall.":"Worth another look.")+'</b> '+(pass?(r && r.s>=2?"Pass this and the lesson is mastered.":"It will come back on a longer gap."):"It will come back tomorrow. Rereading the lesson first will help.")+'</p>'+
+       '<div class="row"><button class="primary" data-act="rv-finish" data-id="'+l.id+'">Save and continue</button>'+(pass?'':'<a class="btn" href="#'+l.id+'">Reread the lesson</a>')+'</div></section>';
+  }
+  return h;
+}
+
+/* ---------- teaching edition: slides and teacher notes from the checked lesson content ---------- */
+function slidesFor(l){
+  var t=T[l.id]||{}, s=[], sys=SYS[l.id];
+  var ul=function(a){ return '<ul class="pts">'+a.map(function(x){return "<li>"+esc(x)+"</li>";}).join("")+'</ul>'; };
+  s.push({title:l.title, body:'<p class="muted">'+esc(TRACK[l.track])+' · '+esc(l.area)+'</p>'+(t.opener?'<p>'+esc(t.opener)+'</p>':''),
+    notes:'<p><b>2 min.</b> Do not introduce the topic yet. Ask the question on the slide and take three or four answers. Write them where everyone can see. You will come back to them at the end.</p>'});
+  if(t.story) s.push({title:t.story.title, body:'<p class="muted">A short story</p>',
+    notes:'<p><b>3 min.</b> Tell it, do not read it. This is an illustrative story, not a real case, and you should say so if asked.</p><p>'+esc(t.story.text)+'</p><p>Then ask: <b>what does this have to do with our work?</b> Let the group make the link before you do.</p>'});
+  s.push({title:"The big idea", body:'<p>'+esc(l.bigIdea)+'</p>',
+    notes:'<p><b>2 min.</b> Show the slide only after the group has reached most of it themselves. Ask: does this match what you just said?</p><p>'+esc(l.why)+'</p>'});
+  if(sys) s.push({title:"Build it together", sys:true,
+    notes:'<p><b>4 min.</b> Reveal one part at a time with the button. Before each reveal, ask the group: <b>what comes next?</b> Let them name it. When they get it, say so; when they miss, reveal and ask why it belongs there.</p><p>Shape: '+esc(SHAPE[sys.shape])+'. '+esc(sys.note)+'</p><p>Credit: '+esc(sys.credit)+'.</p>'});
+  s.push({title:"What the evidence says", body:ul(t.points||[]),
+    notes:'<p><b>5 min.</b> Explain in your own words. The detail:</p>'+l.science.map(function(p){return "<p>"+p+"</p>";}).join("")+'<p><b>How sure are we? '+esc(l.evidence)+'.</b> '+esc(l.evidenceNote)+' Say this out loud. It builds trust.</p>'});
+  s.push({title:"Where do we see this here?", body:'<p>Name one place on our site where this applies.</p>',
+    notes:'<p><b>4 min.</b> Ask before you tell. Collect examples from the group first. If they are slow to start, offer this:</p>'+l.work.map(function(p){return "<p>"+p+"</p>";}).join("")});
+  s.push({title:"Techniques to use", body:ul(l.techniques.map(function(x){return x.name;})),
+    notes:'<p><b>4 min.</b> For each one, ask who has already tried something like it.</p>'+l.techniques.map(function(x){return "<p><b>"+esc(x.name)+".</b> "+esc(x.how)+"</p>";}).join("")});
+  s.push({title:"Quick check", body:'<ol class="q">'+l.quiz.map(function(q){return "<li>"+esc(q.q)+"</li>";}).join("")+'</ol>',
+    notes:'<p><b>3 min.</b> Ask the group to answer aloud before you show anything. Recalling is what makes it stick.</p>'+l.quiz.map(function(q,i){return "<p><b>"+(i+1)+". "+esc(q.options[q.answer])+".</b> "+esc(q.why)+"</p>";}).join("")});
+  s.push({title:"Let us talk", body:'<ol class="q">'+l.discuss.map(function(q){return "<li>"+esc(q)+"</li>";}).join("")+'</ol>',
+    notes:'<p><b>5 min.</b> These questions are written so the group reaches the conclusion without being told. Ask one, then wait. Silence is working time. Resist answering your own question.</p>'});
+  s.push({title:"What can we expect from each other?", body:'<p>In your own words: what will you do differently this week?</p>'+(sys?'<p class="muted">Then: who can draw '+esc(sys.name)+' from memory?</p>':''),
+    notes:'<p><b>3 min.</b> Go round the room. Each person states one thing others can expect from them. Do not suggest answers. A commitment people word themselves, in front of colleagues, is the one they keep.</p>'+(sys?'<p>Ask one volunteer to sketch the system on the board without looking. The group corrects it.</p>':'')+'<p>Return to the answers from the first slide. Ask what they would now change.</p>'});
+  s.push({title:"This week's task", body:'<p>'+esc(l.assignment.task)+'</p>',
+    notes:'<p><b>2 min.</b> Level: '+esc(l.assignment.level)+'. Agree when you will hear back, and ask who will go first.'+(l.assignment.stretch?' Stretch for anyone who wants it: '+esc(l.assignment.stretch):'')+'</p><p>'+esc(l.reflect)+'</p>'});
+  return s;
+}
+function teachSysBody(l){
+  var sys=SYS[l.id], k=reveal[l.id]||0, n=sys.parts.length;
+  return '<div id="teach-sys">'+sysFigure(l,{shown:k, bare:true})+
+    '<div class="row noprint"><button class="primary" data-act="reveal-next" data-id="'+l.id+'" '+(k>=n?"disabled":"")+'>'+(k>=n?"All parts shown":"Reveal part "+(k+1)+" of "+n)+'</button>'+
+    '<button data-act="reveal-all" data-id="'+l.id+'" '+(k>=n?"disabled":"")+'>Show all</button><button data-act="reveal-reset" data-id="'+l.id+'" '+(k?"":"disabled")+'>Start again</button></div></div>'+
+    '<div class="print-only">'+sysFigure(l,{bare:true})+'</div>';
+}
+function viewTeach(l){
+  var sl=slidesFor(l);
+  var h='<div class="small muted">Teaching edition · '+lessonNo(l)+'</div><h1>'+esc(l.title)+'</h1>'+
+    '<p class="muted">About 30 minutes. Slides are in the boxes, teacher notes underneath each one. Let the group reach each point before you show it.</p>'+
+    '<div class="row noprint"><button data-act="toggle-notes">Hide teacher notes</button><button data-act="print">Print or save as PDF</button><a class="btn" href="#'+l.id+'">Back to lesson</a></div>'+
+    '<div id="slides" class="stack" style="gap:14px">';
+  sl.forEach(function(x,i){
+    h+='<section class="slide"><div class="sn">Slide '+(i+1)+' of '+sl.length+'</div><h2 class="h3">'+esc(x.title)+'</h2><div class="sb">'+(x.sys?teachSysBody(l):x.body)+'</div><div class="notes"><b>Teacher notes</b>'+x.notes+'</div></section>';
+  });
+  h+='</div><h2 class="sm">Sources</h2><ul class="src">'+l.sources.map(function(s){return "<li>"+esc(s)+"</li>";}).join("")+'</ul>';
+  return h;
+}
+
+/* ---------- path ---------- */
+function viewPath(){
+  var dc=doneCount(S.done), weeks={}, cur=(nextLesson()||L[L.length-1]).week;
+  L.forEach(function(l){ (weeks[l.week]=weeks[l.week]||[]).push(l); });
+  var h='<h1>The learning path</h1><p class="muted">'+esc(C.rhythm||"")+'</p>';
+  h+='<div class="stack" style="gap:6px"><div class="row" style="justify-content:space-between"><b>'+dc+' of '+L.length+' lessons</b><span class="small muted">'+mastered()+' mastered</span></div><div class="bar"><span style="width:'+Math.round(100*dc/Math.max(1,L.length))+'%"></span></div></div>';
+  Object.keys(weeks).sort(function(a,b){return a-b;}).forEach(function(wk){
+    var ls=weeks[wk], d=ls.filter(function(l){return S.done[l.id];}).length, theme=(C.year1||[]).filter(function(r){ return +wk>=r[0] && +wk<=r[1]; })[0];
+    h+='<details class="wk"'+(+wk===cur?" open":"")+'><summary><span class="grow"><span class="t" style="font-weight:700">Week '+wk+'</span><br><span class="small muted">'+esc(theme?theme[2]:"")+'</span></span><span class="num">'+d+'/'+ls.length+'</span><span class="chev" aria-hidden="true"></span></summary><div class="list">'+
+      ls.map(function(l){ var r=S.rev[l.id];
+        return '<a class="item" href="#'+l.id+'"><span class="tick '+(S.done[l.id]?"on":"")+'" aria-hidden="true"></span><span class="grow"><span class="t">'+esc(l.title)+'</span><br><span class="small muted">'+(l.n>=6?"Weekend":"Lesson "+l.n)+' · '+TRACK[l.track]+(r&&r.s>=3?' · Mastered':'')+'</span></span><span class="sr-only">'+(S.done[l.id]?"Completed":"Not started")+'</span></a>'; }).join("")+
+      '</div></details>';
+  });
+  if(C.upcoming && C.upcoming.length){
+    h+='<h2 class="sm">Coming next</h2><section class="card"><div class="list">'+C.upcoming.map(function(u){
+      return '<div class="item"><span class="num">W'+u.week+' L'+u.n+'</span><span class="grow">'+esc(u.title)+'<br><span class="small muted">'+TRACK[u.track]+'</span></span></div>';
+    }).join("")+'</div></section>';
+  }
+  h+='<details class="wk"><summary><span class="grow" style="font-weight:700">Year 1 map</span><span class="chev" aria-hidden="true"></span></summary><div class="scroll" style="padding:0 16px 10px"><table class="map">'+(C.year1||[]).map(function(r){
+    var wk = r[0]===r[1] ? "Week "+r[0] : "Weeks "+r[0]+"–"+r[1];
+    return '<tr><td>'+wk+'</td><td><b>'+esc(r[2])+'</b>'+(r[3]?' <span class="muted">('+esc(r[3])+')</span>':'')+(r[4]?'<br><span class="muted">People: '+esc(r[4])+' · Craft: '+esc(r[5])+'</span>':'')+'</td></tr>';
+  }).join("")+'</table><p class="small muted" style="margin-top:8px">Year 2 book chapters: '+esc(C.year2chapters||"")+'</p></div></details>';
+  h+='<details class="wk"><summary><span class="grow" style="font-weight:700">Five-year arc</span><span class="chev" aria-hidden="true"></span></summary><div class="list">'+(C.arc||[]).map(function(a){
+    return '<div class="item"><span class="num">Year '+a.year+'</span><span class="grow"><span class="t">'+esc(a.title)+'</span><br><span class="small muted">'+esc(a.note)+'</span></span></div>';
+  }).join("")+'</div></details>';
+  return h;
+}
+
+/* ---------- team ---------- */
+function memberRow(m, right){
+  var name=m.name||"Member";
+  return '<div class="item" style="align-items:flex-start"><span class="initial" aria-hidden="true">'+esc(name.charAt(0).toUpperCase())+'</span><span class="grow"><span class="t">'+esc(name)+(m.id===uid?" (you)":"")+'</span>'+(m.org?' <span class="small muted">· '+esc(m.org)+'</span>':'')+'<br>'+right+'</span></div>';
+}
+function inScope(m){ return teamScope==="all" || !profile || !norm(profile.org) || norm(m.org)===norm(profile.org); }
+function viewTeam(){
+  var h='<h1>Team</h1>';
+  if(!sb) return h+'<section class="card"><p>The team view needs accounts, which are not switched on for this copy of the hub.</p></section>';
+  if(!uid) return h+'<section class="card"><p>Sign in to see how your colleagues are getting on and to share your assignments.</p><div><a class="btn primary" href="#me">Sign in or create an account</a></div></section>';
+  if(showHub()){
+    var t=byId[hub.lesson];
+    h+='<section class="panel"><div class="meta">Next team session · '+lessonNo(t)+'</div><h2 class="h3">'+esc(t.title)+'</h2><div class="row"><a class="btn primary" href="#'+t.id+'">Read the lesson</a><a class="btn" href="#teach-'+t.id+'">Teaching edition</a></div></section>';
+  } else if(isAdmin()){
+    h+='<section class="card"><p class="muted">No team session is set. Open a lesson and choose "Set as next team session".</p></section>';
+  }
+  var hasOrg = profile && norm(profile.org);
+  h+='<div class="row">'+(hasOrg?'<button data-act="scope" data-scope="org" aria-pressed="'+(teamScope==="org")+'" '+(teamScope==="org"?"disabled":"")+'>'+esc(profile.org)+'</button><button data-act="scope" data-scope="all" aria-pressed="'+(teamScope==="all")+'" '+(teamScope==="all"?"disabled":"")+'>Everyone</button>':'')+'<button data-act="team-refresh">Refresh</button></div>';
+  if(!hasOrg) h+='<p class="small muted">Add your company or team name under Me to see only your colleagues here.</p>';
+  if(members===null){ h+='<section class="card"><p class="muted">Loading members…</p></section>'; return h; }
+  var list=members.filter(inScope).sort(function(a,b){ return doneCount(b.done)-doneCount(a.done); });
+  h+='<h2 class="sm">Members ('+list.length+')</h2><section class="card"><div class="list">'+(list.length?list.map(function(m){
+    return memberRow(m,'<span class="small muted">'+doneCount(m.done)+' of '+L.length+' lessons · '+streakOf(m.days)+' day streak · active '+ago(m.updatedAt)+'</span>');
+  }).join(""):'<p class="muted">Nobody has saved progress yet.</p>')+'</div></section>';
+  if(showHub()){
+    var sc=subCache[hub.lesson];
+    h+='<h2 class="sm">Assignments for this session</h2><section class="card"><div class="list">';
+    if(!sc){ h+='<p class="muted">Loading…</p>'; loadSubs(hub.lesson); }
+    else { var f=sc.filter(inScope); h+= f.length ? f.map(function(s){ return memberRow(s,'<span>'+esc(s.text)+'</span>'); }).join("") : '<p class="muted">No assignments shared yet.</p>'; }
+    h+='</div></section>';
+  }
+  return h;
+}
+function loadTeam(force){
+  if(!sb || !uid) return;
+  if(!force && members && Date.now()-membersAt<60000) return;
+  sb.from("progress").select("user_id,done,days,updated_at,profiles(display_name,org)").order("updated_at",{ascending:false}).limit(500).then(function(r){
+    members=((r&&r.data)||[]).map(function(x){ var p=x.profiles||{}; return {id:x.user_id, done:x.done||{}, days:Array.isArray(x.days)?x.days:[], updatedAt:Date.parse(x.updated_at)||0, name:p.display_name||"Member", org:p.org||""}; });
+    membersAt=Date.now(); if(route()==="team") render();
+  });
+}
+function loadSubs(lessonId){
+  if(subCache["_loading_"+lessonId]) return; subCache["_loading_"+lessonId]=true;
+  sb.from("work").select("user_id,body,profiles(display_name,org)").eq("lesson_id",lessonId).order("updated_at",{ascending:false}).limit(200).then(function(r){
+    subCache[lessonId]=((r&&r.data)||[]).map(function(x){ var p=x.profiles||{}; return {id:x.user_id, text:x.body||"", name:p.display_name||"Member", org:p.org||""}; });
+    delete subCache["_loading_"+lessonId]; if(route()==="team") render();
+  });
+}
+
+/* ---------- me ---------- */
+function viewMe(){
+  var h='<h1>'+(uid?"Your progress":"Your account")+'</h1>';
+  if(!uid || recovering) h+=authHtml();
+  h+='<section class="card">'+["safety","people","craft"].map(function(t){
+    var all=L.filter(function(l){return l.track===t;}), d=all.filter(function(l){return S.done[l.id];}).length;
+    return '<div class="stack" style="gap:6px"><div class="row" style="justify-content:space-between"><span class="chip '+t+'">'+TRACK[t]+'</span><span class="num">'+d+' of '+all.length+'</span></div><div class="bar"><span style="width:'+Math.round(100*d/Math.max(1,all.length))+'%"></span></div></div>';
+  }).join("")+'</section>';
+  var qs=L.filter(function(l){return S.quiz[l.id]!=null;});
+  var tot=qs.reduce(function(a,l){return a+l.quiz.length;},0), got=qs.reduce(function(a,l){return a+S.quiz[l.id];},0);
+  h+='<div class="line-stats"><span><b>'+(tot?Math.round(100*got/tot)+"%":"–")+'</b> quiz accuracy</span><span><b>'+streakOf(S.days)+'</b> day streak</span><span><b>'+mastered()+'</b> mastered</span></div>'+
+     '<p class="small muted">'+(uid?"Your lesson count, streak and saved assignments are visible to other members. Your email is not.":"Progress is stored on this device. Clearing browser data will remove it.")+'</p>';
+  var ws=L.filter(function(l){return S.work[l.id];});
+  h+='<h2 class="sm">Your assignments</h2><section class="card"><div class="list">'+(ws.length?ws.map(function(l){
+    return '<a class="item" href="#'+l.id+'" style="align-items:flex-start"><span class="grow"><span class="t">'+esc(l.title)+'</span><br><span class="small muted">'+esc(S.work[l.id].text)+'</span></span></a>';
+  }).join(""):'<p class="muted">Nothing saved yet. Each lesson ends with a task to try on site.</p>')+'</div></section>';
+  if(uid && !recovering){
+    h+='<h2 class="sm">Your details</h2><section class="card"><label class="f" for="pf-name">Name shown to other members<input type="text" id="pf-name" maxlength="60" value="'+esc(profile?profile.display_name:"")+'"></label>'+
+       '<label class="f" for="pf-org">Company or team<input type="text" id="pf-org" maxlength="80" value="'+esc(profile?profile.org:"")+'"></label>'+
+       '<div class="row"><button data-act="save-profile">Save details</button><button data-act="signout">Sign out</button><span class="small muted" id="pf-msg" role="status"></span></div></section>';
+  }
+  return h;
+}
+
+/* ---------- routing and events ---------- */
+function route(){ var h=(location.hash||"").replace(/^#/,""); if(!h || /[=&\/]/.test(h)) return "today"; return h; }
+var lastRoute=null;
+function render(){
+  var r=route(), l=byId[r], tl = r.indexOf("teach-")===0 ? byId[r.slice(6)] : null, rl = r.indexOf("rv-")===0 ? byId[r.slice(3)] : null;
+  $view.innerHTML = l ? viewLesson(l) : tl ? viewTeach(tl) : rl ? viewReviewItem(rl) : r==="path" ? viewPath() : r==="review" ? viewReview() : r==="team" ? viewTeam() : r==="me" ? viewMe() : viewToday();
+  var tab = (l||tl) ? "path" : rl ? "review" : (["today","path","review","team","me"].indexOf(r)>=0 ? r : "today");
+  document.querySelectorAll("nav.tabs a").forEach(function(a){ var on=a.getAttribute("data-tab")===tab; a.classList.toggle("on", on); if(on) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
+  if(r==="team") loadTeam(false);
+  if(r!==lastRoute){ window.scrollTo(0,0); lastRoute=r; }
+  paintSync(); paintBadge(); onScroll();
+}
+function softRender(){ var r=route(); if(!byId[r] || !document.activeElement || ["TEXTAREA","INPUT"].indexOf(document.activeElement.tagName)<0) render(); }
+window.addEventListener("hashchange", render);
+
+/* reading progress and current section in the lesson bar */
+var ticking=false;
+function onScroll(){
+  if(ticking) return; ticking=true;
+  requestAnimationFrame(function(){
+    ticking=false; var p=document.getElementById("prog"); if(!p) return;
+    var max=document.documentElement.scrollHeight-innerHeight; p.style.width=(max>0?Math.min(100,100*scrollY/max):0)+"%";
+    var cur=null; SECTIONS.forEach(function(s){ var el=document.getElementById("sec-"+s[0]); if(el && el.getBoundingClientRect().top<120) cur=s[0]; });
+    document.querySelectorAll("#secbar button").forEach(function(b){ var on=b.getAttribute("data-jump")==="sec-"+cur; if(on!==b.classList.contains("on")){ b.classList.toggle("on",on); if(on) b.scrollIntoView({block:"nearest",inline:"nearest"}); } });
+  });
+}
+window.addEventListener("scroll", onScroll, {passive:true});
+
+function val(id){ var el=document.getElementById(id); return el ? el.value.trim() : ""; }
+function scoreOf(l, picks){ return l.quiz.filter(function(q,i){return picks[i]===q.answer;}).length; }
+$view.addEventListener("click", function(ev){
+  var j=ev.target.closest("[data-jump]");
+  if(j){ var t=document.getElementById(j.getAttribute("data-jump")); if(t){ var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches; window.scrollTo({top:t.getBoundingClientRect().top+scrollY-56, behavior:reduce?"auto":"smooth"}); } return; }
+  var b=ev.target.closest("[data-act]"); if(!b) return;
+  var act=b.getAttribute("data-act"), r=route(), l=byId[r], key=b.getAttribute("data-key"), idv=b.getAttribute("data-id");
+  if(act==="complete" && l){
+    S.done[l.id]=Date.now(); if(!S.rev[l.id]) S.rev[l.id]={s:0, due:Date.now()+DAY}; markActive(); commit(); render();
+  } else if(act==="quiz-check" && key){
+    var ql=byId[key.replace(/^rv:/,"")];
+    var picks=ql.quiz.map(function(q,i){ var el=document.querySelector('input[name="'+key+'-q'+i+'"]:checked'); return el?Number(el.value):-1; });
+    if(picks.indexOf(-1)>=0){ var m=document.getElementById("quiz-msg"); if(m) m.textContent="Answer every question first."; return; }
+    quizShown[key]=picks; var sc=scoreOf(ql,picks);
+    if(key===ql.id && (S.quiz[ql.id]==null || sc>S.quiz[ql.id])){ S.quiz[ql.id]=sc; commit(); }
+    if(key.indexOf("rv:")===0){ recallOpen[ql.id]=true; render(); var q=document.getElementById("quiz"); if(q) q.scrollIntoView({block:"start"}); }
+    else document.getElementById("quiz").innerHTML=quizHtml(ql, key);
+  } else if(act==="quiz-retry" && key){
+    delete quizShown[key]; document.getElementById("quiz").innerHTML=quizHtml(byId[key], key);
+  } else if(act==="recall-show" && idv){
+    recallOpen[idv]=true; render();
+  } else if(act==="rv-finish" && idv){
+    var rl=byId[idv], k2="rv:"+idv; finishReview(idv, scoreOf(rl, quizShown[k2]||[]), rl.quiz.length);
+    delete quizShown[k2]; delete recallOpen[idv];
+    var nx=dueList()[0]; location.hash = nx ? "#rv-"+nx.id : "#review";
+  } else if(act==="reveal-next" && idv){
+    reveal[idv]=Math.min(SYS[idv].parts.length,(reveal[idv]||0)+1); document.getElementById("teach-sys").outerHTML=teachSysBody(byId[idv]);
+  } else if(act==="reveal-all" && idv){
+    reveal[idv]=SYS[idv].parts.length; document.getElementById("teach-sys").outerHTML=teachSysBody(byId[idv]);
+  } else if(act==="reveal-reset" && idv){
+    reveal[idv]=0; document.getElementById("teach-sys").outerHTML=teachSysBody(byId[idv]);
+  } else if(act==="save-work" && l){
+    var text=val("work").slice(0,1200), msg=document.getElementById("work-msg");
+    if(!text){ msg.textContent="Write a few lines first."; return; }
+    S.work[l.id]={text:text, ts:Date.now()}; saveLocal(); msg.textContent="Saved on this device";
+    if(sb && uid){
+      sb.from("work").upsert({user_id:uid, lesson_id:l.id, body:text, updated_at:new Date().toISOString()}).then(function(res){
+        msg.textContent = res && res.error ? "Saved on this device. It could not be shared." : "Saved and shared with other members"; delete subCache[l.id];
+      });
+    }
+  } else if(act==="set-team" && l && sb && isAdmin()){
+    var tm=document.getElementById("team-msg"), value={lesson:l.id, org:(profile&&profile.org)||""};
+    sb.from("settings").upsert({key:"team", value:value, updated_at:new Date().toISOString()}).then(function(res){
+      if(res && res.error){ tm.textContent="Could not save. Try again."; } else { hub=value; tm.textContent="Set as the next team session"; }
+    });
+  } else if(act==="print"){
+    window.print();
+  } else if(act==="toggle-notes"){
+    var box=document.getElementById("slides"), hidden=box.classList.toggle("hide-notes"); b.textContent = hidden ? "Show teacher notes" : "Hide teacher notes";
+  } else if(act==="scope"){
+    teamScope=b.getAttribute("data-scope"); render();
+  } else if(act==="team-refresh"){
+    members=null; subCache={}; render(); loadTeam(true);
+  } else if(act==="auth-toggle"){
+    authMode = authMode==="signup" ? "signin" : "signup"; authMsg=null; render();
+  } else if(act==="auth-submit" && sb){
+    var email=val("au-email"), pass=document.getElementById("au-pass").value;
+    if(!email || !pass){ setAuthMsg("Enter your email and password.","err"); return; }
+    if(authMode==="signup"){
+      var name=val("au-name"), org=val("au-org");
+      if(!name){ setAuthMsg("Enter your name.","err"); return; }
+      if(pass.length<8){ setAuthMsg("Use a password of 8 characters or more.","err"); return; }
+      setAuthMsg("Creating your account…");
+      sb.auth.signUp({email:email, password:pass, options:{data:{full_name:name, org:org}, emailRedirectTo:redirectUrl()}}).then(function(res){
+        if(res.error){ setAuthMsg(res.error.message,"err"); }
+        else if(!res.data.session){ setAuthMsg("Check your email and open the confirmation link to finish.","ok"); }
+      });
+    } else {
+      setAuthMsg("Signing in…");
+      sb.auth.signInWithPassword({email:email, password:pass}).then(function(res){ if(res.error) setAuthMsg(res.error.message==="Invalid login credentials"?"Email or password is not correct.":res.error.message,"err"); });
+    }
+  } else if(act==="auth-google" && sb){
+    sb.auth.signInWithOAuth({provider:"google", options:{redirectTo:redirectUrl()}}).then(function(res){ if(res.error) setAuthMsg(res.error.message,"err"); });
+  } else if(act==="auth-reset" && sb){
+    var em=val("au-email"); if(!em){ setAuthMsg("Type your email above first, then choose Forgot password.","err"); return; }
+    sb.auth.resetPasswordForEmail(em,{redirectTo:redirectUrl()}).then(function(res){ setAuthMsg(res.error?res.error.message:"If that email has an account, a reset link is on its way.", res.error?"err":"ok"); });
+  } else if(act==="set-password" && sb){
+    var np=document.getElementById("np").value; if(np.length<8){ setAuthMsg("Use a password of 8 characters or more.","err"); return; }
+    sb.auth.updateUser({password:np}).then(function(res){ if(res.error){ setAuthMsg(res.error.message,"err"); } else { recovering=false; render(); } });
+  } else if(act==="save-profile" && sb && uid){
+    var pm=document.getElementById("pf-msg"), nm=val("pf-name").slice(0,60), og=val("pf-org").slice(0,80);
+    if(!nm){ pm.textContent="Enter a name."; return; }
+    sb.from("profiles").update({display_name:nm, org:og}).eq("id",uid).then(function(res){
+      if(res && res.error){ pm.textContent="Could not save. Try again."; } else { profile=Object.assign({},profile,{display_name:nm, org:og}); teamScope=norm(og)?"org":"all"; members=null; pm.textContent="Saved"; paintSync(); }
+    });
+  } else if(act==="signout" && sb){
+    sb.auth.signOut();
+  }
+});
+
+/* ---------- start ---------- */
+saveLocal();
+render();
+if(sb){
+  sb.auth.onAuthStateChange(function(event, session){
+    if(event==="PASSWORD_RECOVERY"){ recovering=true; }
+    setTimeout(function(){ onSession(session); if(event==="PASSWORD_RECOVERY"){ location.hash="#me"; render(); } }, 0);
+  });
+  sb.auth.getSession().then(function(r){ onSession(r && r.data ? r.data.session : null); });
+}
+})();
+</script>
+</body>
+</html>
