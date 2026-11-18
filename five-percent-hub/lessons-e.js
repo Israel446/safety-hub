@@ -4,7 +4,7 @@ window.LESSONS.push(
   id: "w7-l1", week: 7, n: 1, track: "safety", area: "Occupational hygiene", minutes: 25,
   title: "How noise destroys hearing",
   book: "Yates, Ch. 10: Noise and OSHA's Hearing Conservation Program",
-  bigIdea: "Loud noise does not wear out the ear like a tyre. It kills the tiny hair cells that turn sound into nerve signals, and in humans they never grow back.",
+  bigIdea: "Loud noise kills the tiny hair cells that turn sound into nerve signals. In humans they never grow back.",
   why: "Workers who say 'my ears are used to it' are describing damage, not adaptation. If you can explain what is happening inside the ear, you can answer that sentence instead of arguing with it.",
   science: [
     "Sound travels through the ear canal, moves the eardrum and three small bones, and sets up waves in the fluid of the <b>cochlea</b>, a snail-shaped tube in the inner ear. Along it sit rows of <b>hair cells</b>. Each region of the cochlea responds to a different pitch, and the hair cells there turn movement into nerve signals.",
@@ -25,7 +25,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Ask five people who work in noisy areas two questions: do your ears ring after a shift, and do you find it hard to follow conversation in a crowd? Record the answers anonymously.", stretch: "Compare their answers with whether they wear hearing protection all the time, some of the time or never." },
   discuss: [
     "Has anyone here walked out of a loud place with ringing ears? What does that tell us about what just happened?",
-    "Would you agree that 'I'm used to it' can be the sound of damage already done?",
+    "When someone says 'I'm used to it', that can be the sound of damage already done, can't it?",
     "Who on our site would notice their hearing loss first, and who would be last to admit it?"
   ],
   reflect: "What would you lose first if your own high-frequency hearing went?",
@@ -65,7 +65,7 @@ window.LESSONS.push(
   assignment: { level: "Investigate", task: "Find your site's most recent noise survey. For three results, write down whether each was an area or personal measurement, its duration, its weighting and the exchange rate used.", stretch: "If no personal dosimetry exists for a high-noise job, draft a short plan for doing it." },
   discuss: [
     "If an area reads 98 dBA, is everyone who works there overexposed?",
-    "Would you agree that a number without its instrument and settings can mislead us?",
+    "Can we agree that a noise number without its instrument and settings can mislead us?",
     "Which job here moves through loud and quiet areas so much that only a dosimeter would tell the truth?"
   ],
   reflect: "When did you last ask how a figure in a report was measured?",
@@ -84,7 +84,7 @@ window.LESSONS.push(
   id: "w7-l3", week: 7, n: 3, track: "people", area: "Habits", minutes: 20,
   title: "How habits form: cue, routine, reward",
   book: null,
-  bigIdea: "A habit is a behaviour your surroundings trigger without a decision. Most of what people do at work, safe or unsafe, runs this way, which is why posters and reminders change so little.",
+  bigIdea: "A habit is a behaviour your surroundings trigger without a decision. Most of what people do at work, safe or unsafe, runs this way. Posters and reminders barely touch it.",
   why: "You spend much of your time trying to change behaviour. If the behaviour is a habit, information will not reach it. You need to change the cue, the routine or the reward.",
   science: [
     "Psychologists describe a habit as an action that has become linked to a context through repetition, so the context starts the action automatically. Wendy Wood's diary studies estimated that roughly <b>43 percent</b> of everyday actions are performed out of habit, often while people are thinking about something else.",
@@ -99,13 +99,13 @@ window.LESSONS.push(
   ],
   techniques: [
     { name: "Find the cue", how: "Ask: what happens just before the behaviour? A sound, a place, a time, a person. That is where you can intervene." },
-    { name: "Name the hidden reward", how: "Shortcuts usually pay in time, comfort or looking competent. You cannot remove the reward without offering another." },
+    { name: "Name the hidden reward", how: "Shortcuts pay out in time, comfort or looking competent. You cannot remove the reward without offering another." },
     { name: "Expect months, not days", how: "Plan follow-up for at least two months after any behaviour change, not a one-off campaign." }
   ],
   assignment: { level: "Think", task: "Choose one unsafe habit you see regularly. Write its cue, routine and reward in one line each. Then write one change to the cue or the reward that could shift it.", stretch: "Do the same for one of your own habits at work." },
   discuss: [
     "What do you do at work every day without deciding to?",
-    "Would you agree that if a behaviour happens without thinking, telling people to think harder will not change it?",
+    "If a behaviour happens without thinking, telling people to think harder won't change it. Does that match your experience?",
     "What reward does our most common shortcut give people?"
   ],
   reflect: "Which of your own safe habits would you struggle to explain, because you never decide to do them?",
@@ -135,7 +135,7 @@ window.LESSONS.push(
   evidenceNote: "These are the published formulas from OSHA 29 CFR 1910.95 Appendix A and the NIOSH criteria document. Your site may follow a different national limit, so check it.",
   work: [
     "NIOSH basis worked example. A driller spends 2 hours at 94 dBA (allowed 1 hour), 3 hours at 88 dBA (allowed 4 hours) and 3 hours at 82 dBA (allowed 16 hours). Dose = 100 x (2/1 + 3/4 + 3/16) = 100 x 2.94 = 294 percent. TWA = 10 x log10(2.94) + 85 = about 89.7 dBA.",
-    "Look at the parts. The two hours at 94 dBA contribute 200 of the 294 percent. Cut that one period and you fix most of the problem. That is the practical value of doing the sum."
+    "Look at the parts. The two hours at 94 dBA contribute 200 of the 294 percent. Cut that one period and you fix most of the problem. Doing the sum by hand is how you spot it."
   ],
   techniques: [
     { name: "Build a little table", how: "Columns for level, time spent, time allowed and fraction. It keeps the arithmetic honest and shows the biggest contributor." },
@@ -145,7 +145,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Build a task log for one noisy job: levels and hours for a typical shift. Calculate the dose and TWA on the NIOSH basis by hand, and identify which task contributes most.", stretch: "Recalculate on the OSHA basis and explain the difference in one sentence." },
   discuss: [
     "If one task gives two-thirds of a person's dose, where should our money go first?",
-    "Would you agree that a single 'average' level hides which part of the day is doing the harm?",
+    "A single 'average' level hides which part of the day does the harm, doesn't it?",
     "Which job here has a short, very loud task that may dominate the whole shift?"
   ],
   reflect: "Have you ever controlled the loudest area rather than the loudest part of a person's day?",
@@ -164,7 +164,7 @@ window.LESSONS.push(
   id: "w7-l5", week: 7, n: 5, track: "craft", area: "Teaching and facilitation", minutes: 20,
   title: "Building a toolbox talk in ten minutes",
   book: "Yates, Ch. 19: Training",
-  bigIdea: "A good toolbox talk is not a short lecture. It is one message, one real example, one question to the crew, and one thing they will do differently on this shift.",
+  bigIdea: "A good toolbox talk has one message, one real example, one question to the crew, and one thing they'll do differently this shift.",
   why: "You will deliver hundreds of these. A simple, repeatable structure lets you prepare one in ten minutes and makes each one far more likely to change what happens next.",
   science: [
     "Robert Gagne's <b>nine events of instruction</b> (1965) set out what effective teaching includes: gain attention, state the objective, recall prior learning, present the content, guide, practise, give feedback, assess and help transfer to the job. A five-minute talk cannot do all nine, but it can do the ones that matter most.",
@@ -185,7 +185,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Prepare and deliver one toolbox talk using the five lines. Time your own speaking. Aim for under half of the total talk.", stretch: "Ask the supervisor to deliver the next one using the same five lines, and coach them." },
   discuss: [
     "In the last talk you sat through, who spoke more, the presenter or the crew?",
-    "Would you agree that a talk the crew helped write is one they are more likely to act on?",
+    "Aren't people more likely to act on a talk they helped write?",
     "What topic do we keep repeating that might work better with this structure?"
   ],
   reflect: "If a crew member could only remember one sentence from your last talk, which would you want it to be?",
@@ -204,7 +204,7 @@ window.LESSONS.push(
   id: "w7-l6", week: 7, n: 6, track: "craft", area: "Attention", minutes: 20,
   title: "The myth of multitasking",
   book: null,
-  bigIdea: "The brain does not do two attention-demanding things at once. It switches between them, and every switch costs time and accuracy, even when it feels smooth.",
+  bigIdea: "Your brain can't do two attention-demanding things at once. It switches between them, and each switch costs time and accuracy, even when it feels smooth.",
   why: "Radios, phones, paperwork and conversation all compete with the task in front of a worker, and with your own inspections. Knowing the cost lets you design work, and your own day, with fewer switches.",
   science: [
     "Joshua Rubinstein, David Meyer and Jeffrey Evans (2001) measured <b>task-switching costs</b>: people were slower and made more errors when alternating between tasks than when repeating one, and the cost grew with task complexity.",
@@ -218,14 +218,14 @@ window.LESSONS.push(
     "Your own inspections suffer the same way. Answering messages while walking a work area means you inspect half of it."
   ],
   techniques: [
-    { name: "Stop to talk", how: "For non-urgent radio calls on the move, the rule can simply be: pull over, then answer." },
+    { name: "Stop to talk", how: "For non-urgent radio calls on the move, the rule can be: pull over, then answer." },
     { name: "Batch the interruptions", how: "Check messages at set times, not continuously, when you need to think." },
     { name: "Single-task the critical step", how: "During isolations, lifts and reversing, no conversation unless it is about the task." }
   ],
   assignment: { level: "Investigate", task: "For one shift, count how many times your own work is interrupted by calls, messages or questions. Note which interruptions could have waited ten minutes.", stretch: "Look at one recent incident and ask whether a radio call or conversation was happening just before it." },
   discuss: [
     "Have you ever finished a phone call while driving and realised you did not remember the last few kilometres?",
-    "Would you agree that hands-free is not the same as attention-free?",
+    "Hands-free and attention-free are different things, aren't they?",
     "Which radio habits on our site make people switch attention at the worst moment?"
   ],
   reflect: "What do you do while 'listening' in meetings, and what does it cost?",
@@ -244,7 +244,7 @@ window.LESSONS.push(
   title: "Social proof: what the crew next door is doing",
   book: null,
   bigIdea: "When people are unsure how to act, they copy what others like them are doing. Telling them that most of their peers already do the right thing can be more persuasive than any reason.",
-  why: "Many safety messages accidentally say 'nobody does this', which tells people the norm is to skip it. Turning the message around costs nothing and uses the strongest pull there is.",
+  why: "Many safety messages accidentally say 'nobody does this', which tells people the norm is to skip it. Turning the message around costs nothing and puts peer pressure on your side.",
   science: [
     "Noah Goldstein, Robert Cialdini and Vladas Griskevicius (2008) tested towel-reuse cards in a hotel. The standard environmental message produced reuse of about <b>35 percent</b>. A card saying most guests reused their towels raised it to about <b>44 percent</b>. A card saying most guests <b>who had stayed in this room</b> reused them did best, about <b>49 percent</b>.",
     "The closer the comparison group is to the reader, the stronger the effect. Cialdini calls this <b>social proof</b>, one of his principles of influence.",
@@ -264,7 +264,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Find one safety message on your site that advertises the wrong norm. Rewrite it to state the good norm with a real, local number. Check the number is true before using it.", stretch: "Use the rewritten version in a toolbox talk and note the crew's reaction." },
   discuss: [
     "When you join a new crew, how do you work out what is really expected?",
-    "Would you agree that 'everyone ignores this rule' is an advertisement for ignoring it?",
+    "Saying 'everyone ignores this rule' advertises ignoring it. Have you seen that happen?",
     "Which good habit do most of our people already have that we never mention?"
   ],
   reflect: "What norm are you advertising by what you complain about in front of crews?",
@@ -284,7 +284,7 @@ window.LESSONS.push(
   title: "Hearing protection: the label versus the ear",
   book: "Yates, Ch. 10: Noise and OSHA's Hearing Conservation Program",
   bigIdea: "The number on the box is what a hearing protector achieves in a laboratory with perfect fitting. On a real worker it is usually much less, and if it comes out for even a few minutes, most of the benefit goes.",
-  why: "Hearing protection is often the main control for noise on mines. Overestimating it is how a site believes it has a hearing programme while its workers lose their hearing.",
+  why: "Hearing protection is often the main control for noise on mines. Overestimate it and a site can believe it has a hearing programme while its workers go deaf.",
   science: [
     "In the US, protectors carry a <b>Noise Reduction Rating (NRR)</b>, measured in a laboratory. OSHA's guidance for estimating protection against an A-weighted exposure is to <b>subtract 7 dB from the NRR and halve the result</b> as a safety margin for real-world use. An NRR 27 earplug is then credited with about 10 dB.",
     "Wearing time matters enormously because of the logarithmic scale. A protector worn for most but not all of a loud shift loses a large share of its benefit: the unprotected minutes dominate the dose.",
@@ -304,7 +304,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Watch five workers fit their hearing protection. Record how many achieve a correct fit and how many have something breaking the seal.", stretch: "For the noisiest job, calculate the derated protection and the estimated exposure at the ear." },
   discuss: [
     "When you take your earplugs out 'just for a minute' to talk, how much of the day's protection do you think you lose?",
-    "Would you agree that a hearing protector we have not seen fitted correctly is a hope, not a control?",
+    "If we've never seen a hearing protector fitted correctly, we're only hoping it works. Fair?",
     "Where on site does PPE get worn but not sealed?"
   ],
   reflect: "If hearing protection is your main noise control, how sure are you that it works on your people today?",
@@ -344,8 +344,8 @@ window.LESSONS.push(
   assignment: { level: "Investigate", task: "Choose your noisiest work area. List at least one possible source control, one path control and one receiver control, other than hearing protection.", stretch: "Estimate the reduction for one of them and find out roughly what it would cost." },
   discuss: [
     "For our loudest machine, has anyone asked the supplier whether a quieter version exists?",
-    "Would you agree that every decibel removed at the source protects everyone, with or without earplugs?",
-    "Which noisy job could simply be done further away?"
+    "A decibel removed at the source protects everyone, earplugs or not. Can we agree on that?",
+    "Which noisy job could be done further away?"
   ],
   reflect: "Have you ever recommended an engineering noise control, or only hearing protection?",
   quiz: [
@@ -364,7 +364,7 @@ window.LESSONS.push(
   title: "Changing a habit: if-then plans",
   book: null,
   bigIdea: "Intentions are weak. Plans tied to a specific moment are strong. 'When I step out of the cab, I will look for the truck' beats 'I will be more careful' by a wide margin.",
-  why: "Last lesson showed habits run on cues. This one gives you the simplest tool for attaching a new behaviour to a cue that already exists in the day.",
+  why: "Week 7 showed habits run on cues. This one gives you the simplest tool for attaching a new behaviour to a cue that already exists in the day.",
   science: [
     "Peter Gollwitzer called these plans <b>implementation intentions</b>: 'If situation X arises, then I will do Y.' Writing the plan in that form links the response to the cue, so the cue later triggers the action with less deliberate thought.",
     "Gollwitzer and Paschal Sheeran pooled <b>94 tests</b> in 2006 and found a <b>medium-to-large</b> average effect on goal attainment (d = 0.65).",
@@ -384,7 +384,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Help one crew write a single if-then plan for a behaviour they agree matters. Check after one week and again after four whether it is happening.", stretch: "Write one if-then plan for your own work habits and track it for a month." },
   discuss: [
     "What is something you intended to do differently that never happened? What was missing?",
-    "Would you agree that 'be careful' gives our brains nothing to hold on to?",
+    "Isn't it true that 'be careful' gives your brain nothing to hold on to?",
     "Which moment in our day could carry a new safe habit, because it already happens every time?"
   ],
   reflect: "What would your own if-then plan be for the habit you most want to change?",
@@ -403,7 +403,7 @@ window.LESSONS.push(
   id: "w8-l4", week: 8, n: 4, track: "safety", area: "Occupational health", minutes: 25,
   title: "Audiometry and a hearing conservation programme",
   book: "Yates, Ch. 10: Noise and OSHA's Hearing Conservation Program",
-  bigIdea: "Hearing tests are not paperwork. They are the only way to see whether the noise controls are working on real people, early enough to stop the damage.",
+  bigIdea: "Hearing tests show whether the noise controls are working on real people, early enough to stop the damage. Nothing else tells you that.",
   why: "Many programmes test hearing every year and never act on the results. You should know what a significant change looks like, and what must happen when one appears.",
   science: [
     "A hearing conservation programme under OSHA 29 CFR 1910.95 has several parts: exposure monitoring, engineering and administrative controls, audiometric testing, hearing protection, training and recordkeeping. The programme is required where exposure reaches an 8-hour TWA of <b>85 dBA</b>.",
@@ -418,13 +418,13 @@ window.LESSONS.push(
   ],
   techniques: [
     { name: "Ask for the shift count", how: "One question to the health provider: how many standard threshold shifts did we have last year, and where?" },
-    { name: "Close the loop", how: "For each STS, check that refitting, retraining and an exposure review actually happened." },
+    { name: "Close the loop", how: "For each STS, check that refitting, retraining and an exposure review happened." },
     { name: "Use it as feedback", how: "Show a crew, anonymously, how their area's hearing results compare. It makes an invisible harm visible." }
   ],
   assignment: { level: "Investigate", task: "Find out how audiometry is done on your site: who tests, when, where results go, and what happens after a shift is found. Write the process as it really runs, step by step.", stretch: "Compare your process with the programme elements in this lesson and list the gaps." },
   discuss: [
-    "If a hearing test shows someone's hearing has worsened, what happens next on our site, really?",
-    "Would you agree that a test nobody acts on is just a record of harm?",
+    "If a hearing test shows someone's hearing has worsened, what happens next on our site?",
+    "A test nobody acts on is only a record of harm, isn't it?",
     "Which department would we expect to see most shifts, and do we know?"
   ],
   reflect: "When did you last see hearing test results used to change a control?",
@@ -444,7 +444,7 @@ window.LESSONS.push(
   title: "Telling a story in a toolbox talk",
   book: null,
   bigIdea: "People argue with facts and remember stories. A short, specific story about a real person carries a safety message past the part of the mind that is busy finding exceptions.",
-  why: "You already have the stories: near misses, incidents, things you have seen. Telling them well is a skill, and it is the difference between a talk that is endured and one that is repeated at lunch.",
+  why: "You already have the stories: near misses, incidents, things you have seen. Telling them well is a skill. Get it right and the crew repeats your talk at lunch instead of sitting through it.",
   science: [
     "Melanie Green and Timothy Brock (2000) described <b>narrative transportation</b>: being absorbed in a story. In their experiments, readers who were more transported found fewer false notes in the story and shifted their beliefs further toward it.",
     "A story works by giving the listener a person to follow, a moment of tension and a consequence. The lesson arrives as something the listener concluded, not something they were told, which fits the hub's principle of letting people reach conclusions themselves.",
@@ -464,7 +464,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Take one near miss from your site. Write it as a two-minute story using the five-part shape. Tell it at a toolbox talk and note whether the crew asks questions afterwards.", stretch: "Record yourself telling it and cut anything that does not serve the turn." },
   discuss: [
     "What is a safety story you heard years ago that you still remember? Why that one?",
-    "Would you agree that people tend to argue with statistics but listen to stories?",
+    "Have you noticed that people argue with statistics but listen to stories?",
     "Which event from our own site should become a story every new starter hears?"
   ],
   reflect: "Do you tell stories to make a point, or to let people find it?",
@@ -503,7 +503,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Take notes at your next meeting or training using a question column and a two-line summary. A week later, cover the notes and answer your own questions.", stretch: "Compare with notes you took the old way and decide which you would rather use." },
   discuss: [
     "When did you last reread notes from a course? What did you find there?",
-    "Would you agree that copying what someone says is not the same as understanding it?",
+    "Copying down what someone says and understanding it are different things. Fair?",
     "What should our investigation notes always capture word for word, and what in our own words?"
   ],
   reflect: "Do your notes help you think, or only prove you were there?",
@@ -543,8 +543,8 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "In your next three observations or coaching conversations, give feedback only about the task: what you saw and one thing to try. Note how each person responded.", stretch: "Ask a colleague to watch one of your feedback conversations and count any comments about the person rather than the work." },
   discuss: [
     "What is the most useful feedback you have ever received? Was it about you or about what you did?",
-    "Would you agree that 'you are careless' leaves a person nothing to do except defend themselves?",
-    "How much of our observation feedback is really about the person?"
+    "Tell someone 'you are careless' and all they can do is defend themselves. Isn't that right?",
+    "How much of our observation feedback is about the person rather than the work?"
   ],
   reflect: "When you give feedback, are you trying to improve the work or to be right?",
   quiz: [

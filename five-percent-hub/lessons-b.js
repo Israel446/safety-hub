@@ -4,18 +4,18 @@ window.LESSONS.push(
   id: "w1-l6", week: 1, n: 6, track: "craft", area: "Learning how to learn", minutes: 20,
   title: "Why this hub keeps testing you: retrieval practice",
   book: null,
-  bigIdea: "Pulling something out of your memory strengthens it far more than putting it in again. Rereading feels like learning. Being tested is learning.",
+  bigIdea: "Pulling something out of your memory strengthens it far more than putting it in again. Rereading feels like learning. Testing yourself is what does the work.",
   why: "You will sit through, and deliver, hundreds of trainings. Most are built on slides and a signature sheet, which is close to the weakest method available. One change, asking people to recall instead of listen again, makes the same hour worth much more.",
   science: [
     "In 2006 Henry Roediger and Jeffrey Karpicke had students read short science passages. One group read a passage four times. Another read it once and then took three recall tests with no feedback. Five minutes later the rereaders did slightly better. <b>One week later the tested group remembered about 61 percent and the rereaders about 40 percent.</b>",
-    "The rereaders were also more confident that they would remember. This is the trap: rereading produces a feeling of fluency that is easy to mistake for knowledge.",
+    "The rereaders were also more confident that they would remember. Rereading gives you a feeling of fluency, and that feeling is easy to mistake for knowledge.",
     "In 2013 John Dunlosky and colleagues reviewed ten common study techniques. They rated <b>practice testing</b> and <b>distributed practice</b> (spreading study over time) as high utility. Highlighting and rereading, the two most popular, were rated low."
   ],
   evidence: "Established",
   evidenceNote: "The testing effect is one of the most repeated findings in learning research. Most studies use students and classroom material, so the size of the benefit for workplace skills is less certain than its direction.",
   work: [
     "Think about an induction. Forty slides, a video, a sign-off. A week later, ask a new starter where the muster point is. Many will hesitate, because nothing ever required them to produce the answer.",
-    "Now picture the same induction ending with five spoken questions, and the supervisor asking two of them again at the next three pre-starts. It costs four minutes in total and turns the content into something people can actually retrieve under pressure."
+    "Now picture the same induction ending with five spoken questions, and the supervisor asking two of them again at the next three pre-starts. It costs four minutes in total and turns the content into something people can retrieve under pressure."
   ],
   techniques: [
     { name: "Close it and write it", how: "After any lesson or course, shut the material and write down everything you can recall for two minutes. Then check what you missed." },
@@ -25,7 +25,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "The day after the next training you deliver or attend, ask three people who were there two questions about it, with no notes. Write down what they could and could not recall.", stretch: "Redesign the last ten minutes of one training you run so that it is all recall questions, and try it." },
   discuss: [
     "Without looking, can you name the five levels of the hierarchy of controls from earlier this week? What did trying feel like?",
-    "Would you agree that a training nobody can recall a week later has not really been delivered?",
+    "Is it fair to say a training nobody can recall a week later hasn't really landed?",
     "Which of our trainings would we be nervous to test people on a week afterwards?"
   ],
   reflect: "How much of your own study time is spent rereading things that already feel familiar?",
@@ -45,7 +45,7 @@ window.LESSONS.push(
   title: "The fundamental attribution error",
   book: null,
   bigIdea: "When someone else slips, we explain it by who they are. When we slip, we explain it by what was going on. Both cannot be right.",
-  why: "Words like careless, complacent and lazy appear in incident reports every week. They feel like explanations. They are descriptions of character, they cannot be fixed, and they close the investigation before the useful part begins.",
+  why: "Words like careless, complacent and lazy appear in incident reports every week. They feel like explanations. They describe character, which you can't fix, and they shut the investigation down before the useful part starts.",
   science: [
     "In 1967 Edward Jones and Victor Harris asked people to read essays for or against Fidel Castro and judge the writer's real opinion. Even when readers were told the writer had been <b>assigned</b> which side to argue, they still assumed the essay reflected the writer's true view. The situation was explained to them and they discounted it anyway.",
     "Lee Ross named this tendency the <b>fundamental attribution error</b> in 1977: we over-weight personality and under-weight the situation when explaining other people's behaviour. Jones and Nisbett (1971) proposed the matching idea for ourselves, that we explain our own actions by circumstances.",
@@ -65,7 +65,7 @@ window.LESSONS.push(
   assignment: { level: "Think", task: "Find one incident report that uses a character word such as careless, complacent, lazy or negligent. Rewrite that finding to describe the situation the person was in, using only facts from the report.", stretch: "Note which facts you needed that the report did not contain." },
   discuss: [
     "Think of the last time you made a mistake at work. Did you explain it by your character or by the circumstances?",
-    "Would you agree that we would want the same fairness applied to us?",
+    "When it's our own mistake, we'd want people to look at the circumstances too. Wouldn't we?",
     "Which words should we agree to keep out of our reports, and what would we write instead?"
   ],
   reflect: "Who on your site have you already decided is \"just careless\", and what do you actually know about their working conditions?",
@@ -85,7 +85,7 @@ window.LESSONS.push(
   id: "w2-l6", week: 2, n: 6, track: "craft", area: "Critical thinking", minutes: 20,
   title: "Checklists: a tool for experts, not beginners",
   book: null,
-  bigIdea: "A checklist is not there because people are ignorant. It is there because skilled people doing complex work under pressure forget simple steps. It works when a team uses it, and fails when a team only signs it.",
+  bigIdea: "Checklists exist because skilled people doing complex work under pressure forget simple steps. A team that uses one catches those steps. A team that only signs it catches nothing.",
   why: "Your site runs on checklists: pre-starts, permits, isolations, inspections. Many are ticked from memory in the cab. Knowing what makes a checklist work lets you fix the ones you own and spot the ones that are theatre.",
   science: [
     "In 1935 Boeing's Model 299 bomber crashed on a demonstration flight at Wright Field because the crew took off with the control locks still engaged. The aircraft was judged too complex to fly from memory. The response was a short pilot's checklist, and the type went on to fly as the B-17. Atul Gawande tells the story in <i>The Checklist Manifesto</i> (2009).",
@@ -106,7 +106,7 @@ window.LESSONS.push(
   assignment: { level: "Investigate", task: "Choose one checklist used daily on your site. Watch it being completed three times. Record how long it took, whether each item was actually checked, and which items have never found a defect.", stretch: "Draft a shorter version with only the critical items and ask the people who use it what they would change." },
   discuss: [
     "Have you ever ticked a box for something you did not check? What made that the easy thing to do?",
-    "Would you agree that a form that is always completed and never finds anything deserves a second look?",
+    "A form that's always completed and never finds anything deserves a second look. Agreed?",
     "If we could keep only five items on our pre-start, which five would we fight for?"
   ],
   reflect: "Which checklist do you own that exists mainly to prove something was done?",
@@ -146,7 +146,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Record two minutes of yourself giving a toolbox talk, audio only. Listen once and write down one specific thing to change. Record it again with that one change.", stretch: "Play both recordings to a colleague and ask which is better and why." },
   discuss: [
     "What is one part of your job you do today exactly as you did it three years ago?",
-    "Would you agree that we get feedback on our paperwork far more often than on how we speak to people?",
+    "Isn't it true that we get feedback on our paperwork far more often than on how we speak to people?",
     "What is one skill each of us is willing to be watched doing this month?"
   ],
   reflect: "When did someone last give you specific feedback on a skill, and what did you do with it?",

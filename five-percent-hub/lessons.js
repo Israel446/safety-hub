@@ -15,18 +15,18 @@ window.LESSONS = [
   evidence: "Established",
   evidenceNote: "These definitions come straight from international standards that most safety management systems are built on.",
   work: [
-    "Pull any risk assessment or JHA from your site and read the hazard column. You will often find events (\"slipping\"), consequences (\"injury\") and hazards (\"wet floor\") mixed together in one column. Each of those belongs in a different place.",
+    "Pull any risk assessment or JHA from your site and read the hazard column. You'll find events (\"slipping\"), consequences (\"injury\") and hazards (\"wet floor\") mixed together in one column. Each of those belongs in a different place.",
     "Sorting them matters because controls attach to different parts. Some controls remove the hazard, some stop the event, some limit the consequence. You cannot see which you are missing until the three are separated."
   ],
   techniques: [
-    { name: "The three-part risk statement", how: "\"There is a risk that [event] because of [hazard], resulting in [consequence].\" Refuse to rate anything that is not written this way." },
+    { name: "The three-part risk statement", how: "\"There is a risk that [event] because of [hazard], resulting in [consequence].\" If a line isn't written this way, don't rate it yet." },
     { name: "The empty-site test", how: "Ask: would this still be here if nobody was on site? If yes, it is a hazard. If it needs a person to exist, it is an event or a behaviour." },
     { name: "One hazard, several events", how: "For each hazard, list at least two different ways it could hurt someone. One hazard rarely has one risk." }
   ],
   assignment: { level: "Practise", task: "Take one JHA or risk assessment you have used this month. Rewrite three of its lines as three-part risk statements. Note whether the risk rating still looks right once the statement is clear.", stretch: "Show the before and after to the supervisor who signed the original and ask what they notice." },
   discuss: [
     "Think of the last risk assessment you signed. Could a new employee have told from it exactly what could go wrong?",
-    "Would we agree that a control is easier to choose when we know which event it is meant to stop?",
+    "Isn't a control easier to choose once you know which event it has to stop?",
     "What would change in our toolbox talks if we always named the event, and never only the hazard?"
   ],
   reflect: "Which hazards on your site have become so familiar that people no longer see the risk in them?",
@@ -45,7 +45,7 @@ window.LESSONS = [
   id: "w1-l2", week: 1, n: 2, track: "safety", area: "Risk management", minutes: 20,
   title: "The hierarchy of controls: why PPE comes last",
   book: "Yates, Ch. 26: Risk Assessment and Management; Ch. 35: Prevention through Design",
-  bigIdea: "Controls are not equal. The ones that change the workplace beat the ones that depend on people remembering, every shift, for years.",
+  bigIdea: "Some controls change the workplace. Others depend on people remembering, every shift, for years. The first kind wins almost every time.",
   why: "Most corrective actions after an incident are retraining, a new procedure or a toolbox talk. Those sit near the bottom of the hierarchy. A safety professional who can argue for a higher control is worth more than one who can only write a new rule.",
   science: [
     "NIOSH ranks controls in five levels, from most to least effective: <b>elimination</b>, <b>substitution</b>, <b>engineering controls</b>, <b>administrative controls</b> and <b>personal protective equipment</b>. ISO 45001 clause 8.1.2 requires organisations to work through a very similar order.",
@@ -66,8 +66,8 @@ window.LESSONS = [
   assignment: { level: "Think", task: "Pick the last three incident reports or near-miss close-outs you can access. Label every corrective action with its level in the hierarchy. Count how many fall in each level.", stretch: "For the most serious of the three, write one engineering or substitution option that nobody proposed, and what it would roughly need." },
   discuss: [
     "When we close out an incident, which level do most of our actions land on? Are we happy with that?",
-    "Would you agree that a control which works on a bad day is worth more than one which works on a good day?",
-    "What stops us proposing engineering controls? Cost, time, or simply habit?"
+    "A control that still works on a bad day beats one that only works on a good day. Does that match what you've seen?",
+    "What stops us proposing engineering controls? Cost, time, or habit?"
   ],
   reflect: "Where on your site is a potentially fatal risk currently held back mainly by a rule and a piece of PPE?",
   quiz: [
@@ -85,8 +85,8 @@ window.LESSONS = [
   id: "w1-l3", week: 1, n: 3, track: "people", area: "Psychology and human behaviour", minutes: 20,
   title: "Two speeds of thinking",
   book: null,
-  bigIdea: "Most of what experienced people do at work runs on fast, automatic thinking. That is why they are good at the job, and also why they miss the one thing that has changed.",
-  why: "\"He should have known better\" is usually true and usually useless. He did know better. Knowing lives in slow thinking. The task was being run by fast thinking. Until you understand that gap, your corrective actions will keep aiming at knowledge that was never missing.",
+  bigIdea: "Most of what experienced people do at work runs on fast, automatic thinking. It's what makes them good at the job. It's also how they miss the one thing that changed today.",
+  why: "\"He should have known better\" is usually true and usually useless. He did know better, but knowing sits in slow thinking, and fast thinking was running the task. Until you see that gap, your corrective actions will keep aiming at knowledge that was never missing.",
   science: [
     "Daniel Kahneman's <i>Thinking, Fast and Slow</i> (2011) describes two modes. <b>System 1</b> is fast, automatic and effortless. <b>System 2</b> is slow, deliberate and tiring. The labels came from Keith Stanovich and Richard West (2000). They are a description of how thinking behaves, not two parts of the brain.",
     "A classic demonstration is Shane Frederick's bat-and-ball question (2005): a bat and a ball cost $1.10 together, and the bat costs $1.00 more than the ball. How much is the ball? Most people's first answer is 10 cents. The correct answer is 5 cents. The wrong answer arrives instantly and feels right, so many people never check it.",
@@ -96,7 +96,7 @@ window.LESSONS = [
   evidenceNote: "The two-mode description is widely used in psychology. Some specific studies cited in Kahneman's book, particularly on behavioural priming, later failed to replicate, and Kahneman acknowledged this. Treat the framework as sound and individual striking experiments with care.",
   work: [
     "A fitter who has isolated the same conveyor two hundred times is not thinking about isolation. Their hands are doing it. On the day the isolation point has been moved, the hands still go to the old place.",
-    "This is why \"be more careful\" does not work. You cannot instruct System 1. You can only interrupt it, or design the task so that the automatic action is the safe one."
+    "So telling him to \"be more careful\" changes nothing. You cannot instruct System 1. You can only interrupt it, or design the task so that the automatic action is the safe one."
   ],
   techniques: [
     { name: "Build in a forced pause", how: "Put a physical or verbal stop at the point where the routine must be checked: a tag that has to be signed, a call-out to a colleague, a lock that needs a second key." },
@@ -126,7 +126,7 @@ window.LESSONS = [
   title: "Swiss cheese: where accidents really come from",
   book: "Yates, Ch. 22: Accident Causation and Investigation Techniques",
   bigIdea: "The person closest to the accident is usually the last hole in a long line of holes. Many of the others were made months earlier, by people who were nowhere near the scene.",
-  why: "If your investigations stop at the operator, you will fix one person and leave the conditions in place for the next one. Learning to look upstream is the single biggest upgrade to how a safety professional investigates.",
+  why: "If your investigations stop at the operator, you will fix one person and leave the conditions in place for the next one. Look upstream and your investigations start finding things you can fix.",
   science: [
     "James Reason set out the model in <i>Human Error</i> (1990) and summarised it in the BMJ in 2000. A system has several layers of defence. Each layer has weaknesses, like holes in slices of cheese. An accident happens when the holes line up and a hazard passes through every layer.",
     "Reason separated two kinds of hole. <b>Active failures</b> are the unsafe acts of people at the sharp end, with effects felt almost immediately. <b>Latent conditions</b> are built in earlier by design, procedures, maintenance, staffing and management decisions. They can lie unnoticed for years.",
@@ -136,7 +136,7 @@ window.LESSONS = [
   evidenceNote: "The model is the most widely used accident metaphor in safety and healthcare. It is a way of thinking, not a predictive tool. Reason, Hollnagel and Paries (2006) themselves reviewed its limits, including that it can be read too linearly.",
   work: [
     "A light vehicle is clipped by a haul truck at an intersection. Active failure: the driver did not stop. Now look at the slices behind it. Was the stop sign visible from the cab? Was the berm at the right height? Had the intersection layout changed? Was the radio channel congested? Was the driver on their fifth night shift?",
-    "Each of those is a latent condition somebody could have found before the event. That is the real value of the model: it tells you where to look during inspections, long before anything goes wrong."
+    "Each of those is a latent condition somebody could have found before the event. Used this way, the model tells you where to look during inspections, long before anything goes wrong."
   ],
   techniques: [
     { name: "List the slices first", how: "Before interviewing anyone, write down every defence that was supposed to stop this event. Then check each one for holes." },
@@ -146,7 +146,7 @@ window.LESSONS = [
   assignment: { level: "Investigate", task: "Take one closed incident report from your site. List the defences that should have stopped it. For each, write whether the report examined it. Identify at least two latent conditions the report did not mention.", stretch: "Draft the one question you would have asked a manager, not the operator, during that investigation." },
   discuss: [
     "In our last investigation, how many of the findings were about one person and how many were about the system?",
-    "Would you agree that if we replaced that person with another competent worker, the same conditions would still be waiting?",
+    "If we put another competent worker in that seat tomorrow, the same conditions would still be waiting for them, wouldn't they?",
     "Which latent conditions on our site do we all know about and work around every day?"
   ],
   reflect: "What is one hole in a defence on your site that you have walked past more than once?",
@@ -166,8 +166,8 @@ window.LESSONS = [
   id: "w1-l5", week: 1, n: 5, track: "craft", area: "Communication", minutes: 20,
   title: "The curse of knowledge and the one-message talk",
   book: "Yates, Ch. 19: Training",
-  bigIdea: "Once you know something well, you can no longer remember what it was like not to know it. That is why the talk that felt perfectly clear to you left the crew with nothing.",
-  why: "Safety professionals speak to crews every day. A toolbox talk with seven points has, in practice, no points. One message that is still remembered at the end of the shift does more than a complete briefing that is forgotten by the gate.",
+  bigIdea: "Once you know something well, you can no longer remember what it was like not to know it. So the talk that felt clear to you can leave the crew with nothing.",
+  why: "Safety professionals speak to crews every day. Give a crew seven points and they'll walk away with none. One message they still remember at the end of the shift does more than a complete briefing they've forgotten by the gate.",
   science: [
     "In 1990 Elizabeth Newton, a Stanford graduate student, asked people to tap the rhythm of well-known songs on a table while a listener tried to name the tune. Tappers predicted listeners would get it right about half the time. Out of 120 songs, listeners named 3, which is 2.5 percent.",
     "The tappers could hear the melody in their heads. The listeners heard knocking. Economists Camerer, Loewenstein and Weber had named this effect the <b>curse of knowledge</b> in 1989, and Chip and Dan Heath made the tapping study famous in <i>Made to Stick</i> (2007).",
@@ -187,7 +187,7 @@ window.LESSONS = [
   assignment: { level: "Practise", task: "Deliver one toolbox talk this week built around a single sentence. One hour later, ask two people from that crew what the talk was about and write down exactly what they say.", stretch: "Ask a colleague to count how many separate instructions you gave." },
   discuss: [
     "Can you recall the message of the last toolbox talk you attended? What does your answer suggest?",
-    "Would you agree that if the crew cannot repeat it, we have not really said it?",
+    "If the crew can't repeat it back, we haven't really said it. Fair?",
     "What would we have to leave out to get down to one message, and where else could that information go?"
   ],
   reflect: "What do you explain so often that you have stopped noticing whether people follow it?",
@@ -215,7 +215,7 @@ window.LESSONS = [
     "Rates built from small counts are unstable. A site with 400,000 hours and one lost time injury has an LTIFR of 2.5. One more injury doubles it. Nothing about the underlying risk has doubled. These are also <b>lagging</b> measures: they count harm that has already happened and say little about exposure to fatal risk."
   ],
   evidence: "Established",
-  evidenceNote: "The formulas are defined by regulators and industry reporting conventions. The statistical instability of small counts is basic arithmetic.",
+  evidenceNote: "Regulators and industry reporting conventions define the formulas. The statistical instability of small counts is basic arithmetic.",
   work: [
     "Worked example. A contractor has 3 recordable cases in 480,000 hours. TRIR = 3 x 200,000 / 480,000 = 1.25. The same data per million hours = 3 x 1,000,000 / 480,000 = 6.25.",
     "Check your own site's definitions too. What counts as recordable, lost time or restricted work differs between OSHA rules, company standards and local regulation. Ghana's mining requirements sit in the Minerals and Mining (Health, Safety and Technical) Regulations, 2012 (L.I. 2182), so confirm what your site reports against."
@@ -228,7 +228,7 @@ window.LESSONS = [
   assignment: { level: "Practise", task: "Get last year's hours worked and injury counts for your department or a contractor. Calculate the rate by hand on both the 200,000 and the 1,000,000 base. Compare with the officially reported figure and explain any difference.", stretch: "Work out how much the rate would move if there had been one more, or one fewer, case." },
   discuss: [
     "If our rate halved this year on two fewer injuries, would you be confident our risk had halved?",
-    "Would you agree that a number we cannot recalculate ourselves is a number we cannot fully trust?",
+    "Can we agree that if we can't recalculate a number ourselves, we shouldn't fully trust it?",
     "What do we measure today that would warn us before someone is hurt?"
   ],
   reflect: "Which number does your site celebrate that you now suspect is mostly chance?",
@@ -263,12 +263,12 @@ window.LESSONS = [
   techniques: [
     { name: "Sort by potential, not outcome", how: "For each near miss ask: under slightly different conditions, could this have killed someone? Investigate those deeply, whatever the actual outcome." },
     { name: "Track the fatal risks separately", how: "Keep a short list of your site's fatal risks and report on the health of their controls, apart from the injury rate." },
-    { name: "Challenge \"88 percent\" calmly", how: "When someone says most accidents are caused by unsafe acts, ask what made the act likely. You are not arguing; you are continuing the investigation." }
+    { name: "Challenge \"88 percent\" calmly", how: "When someone says most accidents are caused by unsafe acts, ask what made the act likely. That keeps the investigation going instead of starting an argument." }
   ],
   assignment: { level: "Investigate", task: "Review the last 20 near-miss or hazard reports on your site. Mark each as having fatal potential or not. Compare how much investigation effort each group received.", stretch: "Read Manuele's 2011 paper and write five lines on which of his arguments you find strongest and weakest." },
   discuss: [
     "Of our last 20 reports, how many could realistically have been fatal? Did they get more attention than the rest?",
-    "Would you agree that a low injury rate and a low fatality risk are two different things?",
+    "A low injury rate and a low fatality risk are two different things, aren't they?",
     "If we stopped saying \"unsafe act\", what would we have to say instead?"
   ],
   reflect: "Which of your own beliefs about accident causes came from a slide you never questioned?",
@@ -310,7 +310,7 @@ window.LESSONS = [
   assignment: { level: "Practise", task: "Choose one behaviour you have struggled to change. This week, replace one instruction with a question that lets the person state the safe standard themselves. Record what they said and what they did afterwards.", stretch: "Use it with the person on site you find hardest to influence." },
   discuss: [
     "Do you find it easier to keep a promise you made yourself, or a rule someone handed you?",
-    "Would you agree that people rarely argue with their own words?",
+    "Have you noticed that people rarely argue with their own words?",
     "Where is the line between influencing someone for their safety and manipulating them? How would we know we had crossed it?"
   ],
   reflect: "Use this honestly. If you would be uncomfortable explaining to the person exactly what you did and why, do not do it.",
@@ -350,7 +350,7 @@ window.LESSONS = [
   assignment: { level: "Practise", task: "Find the most recent noise survey for an area you cover. Pick three measured levels above 85 dBA and calculate the allowable exposure time for each on the 3 dB basis. Compare with how long people actually spend there.", stretch: "For the worst of the three, propose one engineering control and estimate the reduction it would need to achieve." },
   discuss: [
     "If a reading went from 85 to 91, how much more dose is that? Did the answer surprise anyone?",
-    "Would you agree that a harm nobody feels is one we are likely to under-control?",
+    "We tend to under-control a harm nobody feels. Isn't that what happens with noise?",
     "Where on site do we rely on earplugs for a problem that engineering could reduce?"
   ],
   reflect: "How many people on your site already have hearing loss they do not know about?",
@@ -390,7 +390,7 @@ window.LESSONS = [
   assignment: { level: "Practise", task: "At one meeting this week, describe a mistake you made at work and what you learned from it. Afterwards, note whether anyone else offered one of their own.", stretch: "Ask a crew member privately: \"what happens here when someone reports a mistake?\" Write down the answer word for word." },
   discuss: [
     "If one crew reports ten near misses a month and another reports none, which crew are you more worried about?",
-    "Would you agree that people decide whether to speak up based on what happened to the last person who did?",
+    "Don't most people decide whether to speak up based on what happened to the last person who did?",
     "What is one thing each of us does, without meaning to, that makes people less likely to tell us bad news?"
   ],
   reflect: "When did you last stay silent about something at work, and what were you protecting yourself from?",

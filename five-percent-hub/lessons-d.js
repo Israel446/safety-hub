@@ -4,7 +4,7 @@ window.LESSONS.push(
   id: "w5-l1", week: 5, n: 1, track: "safety", area: "Risk management", minutes: 25,
   title: "The risk matrix: useful, and flawed",
   book: "Yates, Ch. 26: Risk Assessment and Management",
-  bigIdea: "A risk matrix is a tool for starting a conversation about priority. It is not a measuring instrument, and treating its colours as measurements leads to wrong decisions.",
+  bigIdea: "A risk matrix gets a conversation about priority started. Treat its colours as measurements and you'll make wrong decisions.",
   why: "You probably fill one in every week. Knowing exactly where matrices mislead lets you keep using them without being fooled, and lets you explain why a 'medium' can deserve more attention than a 'high'.",
   science: [
     "A matrix multiplies or cross-references a likelihood category and a consequence category to give a rating. IEC 31010 lists it as a screening technique: quick, visual, good for sorting many risks roughly.",
@@ -14,7 +14,7 @@ window.LESSONS.push(
   evidence: "Established",
   evidenceNote: "Cox's argument is mathematical and has not been refuted. Matrices remain standard practice because nothing equally simple has replaced them.",
   work: [
-    "Two risks are both rated 'medium'. One is frequent minor hand injuries. The other is a rare vehicle rollover that would kill the driver. Scored as likelihood times consequence they tie. They are not the same kind of problem and should not compete for the same attention.",
+    "Two risks are both rated 'medium'. One is frequent minor hand injuries. The other is a rare vehicle rollover that would kill the driver. Scored as likelihood times consequence they tie. They are different kinds of problem, and they shouldn't compete for the same attention.",
     "Many mining companies now treat anything with a credible fatal consequence separately, whatever its likelihood score, for exactly this reason."
   ],
   techniques: [
@@ -25,7 +25,7 @@ window.LESSONS.push(
   assignment: { level: "Think", task: "Take a risk register or a set of JHAs. Find two risks with the same rating that you would not treat as equal. Write what the matrix hid in each case.", stretch: "Ask three colleagues separately to rate the same hazard and compare their answers." },
   discuss: [
     "Have you ever adjusted a rating until it came out the colour you needed?",
-    "Would you agree that a rare fatality and a frequent bruise should not share a box?",
+    "A rare fatality and a frequent bruise shouldn't share a box, should they?",
     "What do 'unlikely' and 'possible' mean, in numbers, to each of us?"
   ],
   reflect: "How often do you decide the rating first and then choose the scores to match?",
@@ -44,7 +44,7 @@ window.LESSONS.push(
   id: "w5-l2", week: 5, n: 2, track: "safety", area: "Risk management", minutes: 25,
   title: "How low is low enough? ALARP",
   book: "Yates, Ch. 26: Risk Assessment and Management",
-  bigIdea: "Zero risk does not exist, so the real question is when you may stop adding controls. ALARP gives an answer: when the cost of the next control is grossly out of proportion to the risk it would remove.",
+  bigIdea: "Zero risk doesn't exist, so you need a way to decide when to stop adding controls. ALARP gives an answer: when the cost of the next control is grossly out of proportion to the risk it would remove.",
   why: "Sooner or later a manager will ask why you want more spent on a risk that is already controlled, or a worker will ask why the company has not done more. ALARP is the reasoning both of them deserve.",
   science: [
     "ALARP means <b>as low as reasonably practicable</b>. The idea comes from a 1949 English court case, Edwards v National Coal Board. The court held that a risk must be weighed against the money, time and trouble needed to avert it, and that the measure may only be left undone if that sacrifice is <b>grossly disproportionate</b> to the risk.",
@@ -65,7 +65,7 @@ window.LESSONS.push(
   assignment: { level: "Think", task: "Choose one significant risk on your site. List the controls in place, then two further controls that could be added. For each, write whether you think its cost is grossly disproportionate, and why.", stretch: "Find out whether your company's risk standard uses ALARP or another test, and what words it uses." },
   discuss: [
     "When we say a risk is 'acceptable', acceptable to whom?",
-    "Would you agree that the people carrying a risk are owed an explanation of why more was not done?",
+    "If we were the ones carrying a risk, we'd want to know why more wasn't done. Wouldn't we?",
     "Which risk here do we tolerate mainly because it has always been there?"
   ],
   reflect: "Which control did you once argue was too expensive, and would you defend that today?",
@@ -84,7 +84,7 @@ window.LESSONS.push(
   id: "w5-l3", week: 5, n: 3, track: "people", area: "Risk perception", minutes: 20,
   title: "Why people fear the wrong things",
   book: null,
-  bigIdea: "People do not judge risk by counting deaths. They judge it by how dreadful and how unfamiliar it feels. That is why a crew can be anxious about a new chemical and relaxed about the haul road.",
+  bigIdea: "People do not judge risk by counting deaths. They judge it by how dreadful and how unfamiliar it feels. So a crew can worry about a new chemical and stay relaxed on the haul road.",
   why: "If you present statistics and expect behaviour to follow, you will be disappointed. To shift how a crew treats a risk you need to understand what makes it feel large or small to them.",
   science: [
     "Paul Slovic's 1987 paper in Science summarised a decade of studies asking people to rate dozens of hazards. Two factors explained most of the pattern. <b>Dread</b>: is it catastrophic, uncontrollable, fatal, involuntary? <b>Unknown</b>: is it new, invisible, delayed, poorly understood by science?",
@@ -105,7 +105,7 @@ window.LESSONS.push(
   assignment: { level: "Investigate", task: "Ask five workers to name the three most dangerous things on site. Compare their answers with the fatal risks in your register. Note which real fatal risks nobody mentioned.", stretch: "For one neglected risk, plan a two-minute demonstration that would make it feel real." },
   discuss: [
     "What is the most dangerous thing you do in a normal week that does not feel dangerous?",
-    "Would you agree that being in control of something makes it feel safer than it is?",
+    "Haven't you noticed that being in control of something makes it feel safer than it is?",
     "Which of our fatal risks have become so normal that nobody mentions them?"
   ],
   reflect: "Which risk in your own life do you underrate because you chose it?",
@@ -145,7 +145,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Draw a bow-tie by hand for one fatal risk on your site: one top event, at least three threats, two consequences, and the barriers on every line. Mark each barrier H (hard) or P (depends on a person).", stretch: "Add one escalation factor to your most important barrier and say what controls it." },
   discuss: [
     "For our top fatal risk, can we name the barriers on each cause without looking them up?",
-    "Would you agree that a barrier which needs someone to remember is weaker than one that does not?",
+    "A barrier that needs someone to remember is weaker than one that doesn't. Does that fit what you've seen?",
     "Which threat line would we find nearly empty if we drew it honestly?"
   ],
   reflect: "Which item on your site's bow-ties is listed as a barrier but could not stop anything unaided?",
@@ -185,7 +185,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Take three findings from a recent inspection report. Rewrite each with all five elements. For any where the cause is unknown, go and find it.", stretch: "Send one rewritten finding to the area owner and note how the response differs from usual." },
   discuss: [
     "When you receive a finding, what do you need in it before you can act?",
-    "Would you agree that a finding without a cause invites a fix that will not last?",
+    "Isn't it true that a finding without a cause invites a fix that won't last?",
     "Which words do we use in reports that we would never say out loud?"
   ],
   reflect: "Read your last report aloud. Would you speak that way to the person who has to fix it?",
@@ -224,7 +224,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Run a five-minute pre-mortem before one non-routine task this week. Record every reason the team wrote and which ones were not in the JHA.", stretch: "Run one on a plan of your own and ask a colleague to add to the list." },
   discuss: [
     "Have you ever had a doubt about a plan and kept it to yourself? What made that the easier choice?",
-    "Would you agree that people find it easier to explain a failure than to challenge a plan?",
+    "Most people find it easier to explain a failure than to challenge a plan. Is that true here?",
     "Which task this month would be worth five minutes of imagining it gone wrong?"
   ],
   reflect: "What plan are you committed to right now that you have not let anyone attack?",
@@ -264,7 +264,7 @@ window.LESSONS.push(
   assignment: { level: "Think", task: "Before taking this lesson's quiz and the next two, write down the score you expect. Compare with what you get. Note whether you run high or low.", stretch: "Ask a colleague to rate one of your skills from 1 to 10, rate it yourself separately, then compare and discuss." },
   discuss: [
     "What is something you were sure you were good at until you saw an expert do it?",
-    "Would you agree that feeling confident and being competent are different things?",
+    "Feeling confident and being competent are different things, aren't they?",
     "Where do we sign people off on the strength of how sure they sound?"
   ],
   reflect: "In which part of your job have you had no honest feedback for over a year?",
@@ -284,7 +284,7 @@ window.LESSONS.push(
   title: "Critical controls: the few that matter most",
   book: "Yates, Ch. 26: Risk Assessment and Management",
   bigIdea: "A fatal risk may have thirty controls on paper. A handful of them do nearly all the work. Find those, define exactly what working looks like, and check them constantly.",
-  why: "Mining fatalities keep occurring at operations with thick risk registers. The controls existed; nobody knew which ones were essential or whether they were functioning that day. Critical control management is the industry's answer.",
+  why: "Mining fatalities keep occurring at operations with thick risk registers. The controls existed; nobody knew which ones were essential or whether they were functioning that day. Critical control management grew out of that problem.",
   science: [
     "The International Council on Mining and Metals published its Critical Control Management guide in 2015. It starts from <b>material unwanted events</b>: the small number of events that could kill people or cause major harm.",
     "A <b>critical control</b> is one that is crucial to preventing the event or limiting its consequences, such that its absence or failure would significantly increase the risk even with the other controls in place.",
@@ -304,7 +304,7 @@ window.LESSONS.push(
   assignment: { level: "Investigate", task: "Pick one fatal risk on your site. List its controls and choose the three you judge critical. For each, find out whether a written performance standard exists and when it was last verified in the field.", stretch: "Go and verify one yourself against its standard and record the result." },
   discuss: [
     "For our most serious risk, could each of us name the three controls that matter most?",
-    "Would you agree that thirty controls nobody checks protect less than three that are checked every shift?",
+    "Three controls checked every shift protect more than thirty nobody checks. Can we agree on that?",
     "How would we know, today, if one of our critical controls had stopped working?"
   ],
   reflect: "Which control are you assuming is working because nobody has said otherwise?",
@@ -324,7 +324,7 @@ window.LESSONS.push(
   title: "Layers of protection, and the trap of shared weakness",
   book: "Yates, Ch. 26: Risk Assessment and Management",
   bigIdea: "Several layers of protection only multiply your safety if they fail independently. Layers that share a power supply, a sensor or a tired person fail together, and you have far less protection than the count suggests.",
-  why: "People take comfort in defence in depth. Much of it is an illusion created by counting controls that all depend on the same thing. Spotting common-cause failure is one of the most valuable habits in risk work.",
+  why: "People take comfort in defence in depth. Often they're counting controls that all depend on the same thing. Spotting common-cause failure is one of the most valuable habits in risk work.",
   science: [
     "Layer of protection analysis, set out by the Center for Chemical Process Safety in 2001, estimates risk by taking the frequency of an initiating event and multiplying by the failure probability of each protection layer in turn.",
     "That multiplication is valid only for <b>independent protection layers</b>. To count, a layer must be effective by itself, <b>independent</b> of the initiating event and of the other layers, and auditable.",
@@ -344,7 +344,7 @@ window.LESSONS.push(
   assignment: { level: "Think", task: "Choose one risk with at least three listed controls. For each pair, write what they have in common. Decide how many truly independent layers there are.", stretch: "Propose one change that would make two of them properly independent." },
   discuss: [
     "When we say a risk has 'multiple controls', how many of them rely on the same person doing the right thing?",
-    "Would you agree that a copy of a control is worth less than a different kind of control?",
+    "A second copy of the same control is worth less than a different kind of control, isn't it?",
     "What single failure, such as a power cut or one absent person, would take out several of our controls at once?"
   ],
   reflect: "Which two of your controls would the same bad day defeat?",
@@ -384,7 +384,7 @@ window.LESSONS.push(
   assignment: { level: "Investigate", task: "Pick one safety improvement introduced on your site in the last two years. Observe or ask how people's behaviour around it has changed since. Record anything they now do that they did not before.", stretch: "Find the pre-change and post-change data for one behaviour, such as speed, and compare." },
   discuss: [
     "Do you drive any differently in a vehicle with better brakes or more airbags?",
-    "Would you agree that a control people trust completely can become the only control?",
+    "Have you seen a control people trust so completely that it becomes the only one?",
     "Which of our newer safety systems are operators now relying on in place of their own checks?"
   ],
   reflect: "What safety feature do you lean on so heavily that you have stopped doing the thing it was meant to back up?",
@@ -424,7 +424,7 @@ window.LESSONS.push(
   assignment: { level: "Investigate", task: "Collect ten completed pre-task assessments from different jobs. Count how many list hazards specific to that task and day, and how many could have been written without seeing the job.", stretch: "Stand with a crew as they complete one and note how long they look at the job itself." },
   discuss: [
     "Have you ever filled in a Take 5 after the job was done?",
-    "Would you agree that a form completed without looking tells us nothing about the job?",
+    "A form filled in without looking tells us nothing about the job. Fair?",
     "If we stopped collecting the cards tomorrow, what would we lose, and what would we have to do in their place?"
   ],
   reflect: "What do you measure about pre-task assessments, and what behaviour does that measure reward?",
@@ -443,7 +443,7 @@ window.LESSONS.push(
   id: "w6-l5", week: 6, n: 5, track: "craft", area: "Communication", minutes: 20,
   title: "Presenting risk numbers without misleading anyone",
   book: null,
-  bigIdea: "\"Risk doubled\" and \"risk rose from one in seven thousand to two in seven thousand\" describe the same fact. One causes panic and the other informs. How you present a number decides what people do with it.",
+  bigIdea: "\"Risk doubled\" and \"risk rose from one in seven thousand to two in seven thousand\" describe the same fact. The first causes panic. The second lets people judge. How you present a number decides what people do with it.",
   why: "You report rates, trends and comparisons to managers and crews. A relative figure with no baseline can frighten people over nothing or reassure them over something serious, and either way your credibility is spent.",
   science: [
     "In October 1995 the UK Committee on Safety of Medicines warned that a newer contraceptive pill <b>doubled</b> the risk of blood clots, a 100 percent increase. Many women stopped taking it. The underlying figures were about 1 case in 7,000 women rising to 2 in 7,000.",
@@ -464,7 +464,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Find three statistics in a recent safety report or presentation. Rewrite each with count, base and period. Note any that turned out less, or more, alarming than they first sounded.", stretch: "Present one of them both ways to two different colleagues and compare their reactions." },
   discuss: [
     "If I say a risk has doubled, what is the first thing you would want to know?",
-    "Would you agree that a percentage without its starting number can mean almost anything?",
+    "Can we agree that a percentage without its starting number can mean almost anything?",
     "Which figure in our monthly report would look different if we showed the raw counts?"
   ],
   reflect: "Have you ever chosen a way of presenting a number because it made your point stronger?",
@@ -483,10 +483,10 @@ window.LESSONS.push(
   title: "Learn it by teaching it",
   book: null,
   bigIdea: "Preparing to explain something to another person makes you organise it, find the holes and put it in plain words. Then explaining it shows you which parts you only thought you understood.",
-  why: "This hub asks you to teach colleagues on team days. That is not a favour to them. It is the most effective study method you have, and the fastest route to being the person others come to.",
+  why: "This hub asks you to teach colleagues on team days. You'll gain more than they do. Teaching is the best study method you have, and the fastest way to become the person others come to.",
   science: [
-    "John Nestojko and colleagues (2014) had students read a passage. Half were told they would be tested, half that they would teach it to another student. Nobody actually taught. Those <b>expecting to teach</b> recalled more, and organised it better, than those expecting a test.",
-    "Logan Fiorella and Richard Mayer (2013) separated the two steps. Expecting to teach helped on an immediate test. <b>Actually teaching</b> produced the gain that was still there on a delayed test.",
+    "John Nestojko and colleagues (2014) had students read a passage. Half were told they would be tested, half that they would teach it to another student. Nobody taught. Those <b>expecting to teach</b> recalled more, and organised it better, than those expecting a test.",
+    "Logan Fiorella and Richard Mayer (2013) separated the two steps. Expecting to teach helped on an immediate test. <b>Teaching for real</b> produced the gain that was still there on a delayed test.",
     "The popular 'Feynman technique', explaining an idea in simple words as if to a beginner and going back wherever you stumble, is a practical version of the same thing. The name is informal; the research above is what supports it."
   ],
   evidence: "Established, with caveats",
@@ -503,7 +503,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Choose one lesson from the last three weeks. Explain it to a colleague or family member in three minutes without notes. Write down where you got stuck.", stretch: "Volunteer to lead the next team session using that lesson's teaching edition." },
   discuss: [
     "What is something you only really understood once you had to explain it to someone?",
-    "Would you agree that if we cannot explain a control simply, we may not understand it ourselves?",
+    "If we can't explain a control simply, maybe we don't fully understand it ourselves. Is that fair?",
     "Who will lead the next session, and which lesson will they teach?"
   ],
   reflect: "Which topic in your job do you avoid explaining, and what does that tell you?",
@@ -522,7 +522,7 @@ window.LESSONS.push(
   title: "Losses, gains and how a message is framed",
   book: null,
   bigIdea: "People respond differently to the same facts depending on whether they are described as something to gain or something to lose. Offered a sure gain, they play safe. Facing a sure loss, they gamble.",
-  why: "Every safety message is framed, whether you choose the frame or not. And a worker deciding whether to stop a job that is already behind is facing a sure loss, which is exactly when people take chances.",
+  why: "Every safety message is framed, whether you choose the frame or not. And a worker deciding whether to stop a job that is already behind is facing a sure loss, and that's when people take chances.",
   science: [
     "In 1981 Amos Tversky and Daniel Kahneman asked people to choose a programme against a disease expected to kill 600. Framed as lives saved, <b>72 percent</b> chose the certain option (200 saved) over a gamble. Framed as deaths, with identical numbers, <b>78 percent</b> chose the gamble.",
     "This follows from their <b>prospect theory</b> (1979): people judge outcomes as gains or losses from a reference point, avoid risk when ahead, and seek risk to escape a loss. Losses also tend to weigh more than equal gains, known as <b>loss aversion</b>.",
@@ -542,7 +542,7 @@ window.LESSONS.push(
   assignment: { level: "Think", task: "Recall a recent case where someone took a shortcut under time pressure. Describe the choice as they would have seen it: what was the sure loss, and what was the gamble? Write what a supervisor could have said to change the reference point.", stretch: "Rewrite one safety poster or message on your site in the opposite frame and ask three people which they find more convincing." },
   discuss: [
     "When you are running late, are you more or less likely to take a chance?",
-    "Would you agree that people rarely gamble when they feel they have nothing to make up?",
+    "When you've nothing to make up, you rarely gamble. Isn't that how it feels?",
     "What do we say to a crew that is behind schedule, and what does it tell them about stopping?"
   ],
   reflect: "When did you last take a risk mainly to avoid admitting a loss?",

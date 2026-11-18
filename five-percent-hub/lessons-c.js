@@ -4,7 +4,7 @@ window.LESSONS.push(
   id: "w3-l1", week: 3, n: 1, track: "safety", area: "Accident causation", minutes: 25,
   title: "Three families of accident model",
   book: "Yates, Ch. 22: Accident Causation and Investigation Techniques",
-  bigIdea: "Every investigation uses a model of how accidents happen, whether the investigator knows it or not. The model decides what you look for, and so what you find.",
+  bigIdea: "Every investigator carries a model of how accidents happen, even one they've never named. That model decides what you look for, and so what you find.",
   why: "If your model is a chain, you will find a broken link. If it is a set of barriers, you will find holes. If it is a system, you will find pressures and trade-offs. Knowing all three lets you choose, instead of defaulting to the one you were first taught.",
   science: [
     "Erik Hollnagel groups accident models into three families. <b>Sequential</b> models treat an accident as a chain of events. Heinrich's 1931 domino model is the classic: social environment, fault of the person, unsafe act or condition, accident, injury. Remove one domino and the chain stops.",
@@ -25,7 +25,7 @@ window.LESSONS.push(
   assignment: { level: "Think", task: "Take one closed investigation. Decide which model family it used. Then write three findings it would have reached if it had used one of the other two.", stretch: "Read the abstract and conclusion of Rasmussen (1997) and explain 'drift' to a colleague in two minutes." },
   discuss: [
     "Which of the three would describe most of our investigation reports?",
-    "Would you agree that we can only find what our method allows us to look for?",
+    "Can we agree that we only find what our method lets us look for?",
     "What is one pressure on this site that no timeline would ever show?"
   ],
   reflect: "Which model were you taught first, and how much of your thinking still runs on it?",
@@ -67,7 +67,7 @@ window.LESSONS.push(
   assignment: { level: "Investigate", task: "Find out how long your site keeps each of these before it is overwritten: two-way radio recordings, fleet or dispatch data, CCTV, gate access logs. Write the answers and who can preserve each.", stretch: "Build a one-page first-hour card for your department from what you found." },
   discuss: [
     "At our last serious event, what was moved or cleaned before anyone photographed it?",
-    "Would you agree that an hour's delay in restarting costs less than an investigation with no evidence?",
+    "An hour's delay in restarting costs less than an investigation with no evidence. Is that a fair trade?",
     "Who here knows how to get the radio recording saved at two in the morning?"
   ],
   reflect: "If something serious happened on your next shift, what is the first thing you would lose?",
@@ -102,13 +102,13 @@ window.LESSONS.push(
   ],
   techniques: [
     { name: "Rebuild the view from inside", how: "List what the person could see, hear and know at each decision point, and what else was demanding attention. Leave out anything learned afterwards." },
-    { name: "Strike the hindsight phrases", how: "\"Failed to\", \"should have\", \"did not realise\" and \"obvious\" all describe the gap between what you know now and what they knew then. Replace each with what they actually did, and why it made sense." },
+    { name: "Strike the hindsight phrases", how: "\"Failed to\", \"should have\", \"did not realise\" and \"obvious\" all describe the gap between what you know now and what they knew then. Replace each with what they did, and why it made sense to them." },
     { name: "Judge the decision, not the result", how: "Ask: with the same information, would this decision have been criticised if nothing had gone wrong?" }
   ],
   assignment: { level: "Practise", task: "Take one investigation report and underline every \"failed to\", \"should have\" and \"did not\". Rewrite three of those sentences to describe what the person did and what they knew at the time.", stretch: "Ask the person involved, if you can, what was competing for their attention." },
   discuss: [
     "Think of a decision of yours that turned out badly. Was it a bad decision, or a reasonable one with a bad result?",
-    "Would you agree that we would want to be judged on what we knew at the time?",
+    "If it were us, we'd want to be judged on what we knew at the time, wouldn't we?",
     "Which phrases in our report template build hindsight in before we start?"
   ],
   reflect: "How often have you said \"I knew that would happen\" about something you did nothing to stop?",
@@ -128,7 +128,7 @@ window.LESSONS.push(
   title: "Interviewing witnesses without leading them",
   book: "Yates, Ch. 22: Accident Causation and Investigation Techniques",
   bigIdea: "Memory is rebuilt each time it is recalled, and your questions are part of the building material. A single word in a question can change what a witness remembers.",
-  why: "Witness accounts are usually your richest evidence and your easiest to damage. Most damage is done by well-meaning interviewers asking closed, suggestive questions in a hurry.",
+  why: "Witness accounts are usually your richest evidence and your easiest to damage. Most of the damage comes from well-meaning interviewers asking closed, suggestive questions in a hurry.",
   science: [
     "In 1974 Elizabeth Loftus and John Palmer showed people film of car crashes and asked how fast the cars were going when they \"smashed into\" or \"contacted\" each other. The verb changed the answer: about 41 mph for \"smashed\", about 32 mph for \"contacted\". A week later, <b>32 percent</b> of the \"smashed\" group remembered broken glass that was never there, against <b>14 percent</b> of the \"hit\" group.",
     "Ronald Fisher and Edward Geiselman developed the <b>cognitive interview</b> to get more from witnesses without suggestion. Its core moves: build rapport, ask the witness to mentally return to the scene, invite a free account without interruption, and only then probe with open questions.",
@@ -148,7 +148,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Interview a colleague for five minutes about a routine event from yesterday, such as their drive in. Use free recall first and only open questions. Afterwards count how many closed or leading questions slipped out.", stretch: "Record it, with permission, and count how many seconds you let silence run before speaking." },
   discuss: [
     "How many of the questions on our witness statement form can be answered yes or no?",
-    "Would you agree that a witness who feels accused will tell us less?",
+    "Have you noticed that a witness who feels accused tells you less?",
     "What words do we use in interviews that already contain our conclusion?"
   ],
   reflect: "In your last interview, who did most of the talking?",
@@ -169,7 +169,7 @@ window.LESSONS.push(
   title: "Open questions and the power of silence",
   book: null,
   bigIdea: "The quality of what you learn depends on the question you ask and on how long you can bear to wait for the answer.",
-  why: "Inspections, interviews, coaching and toolbox talks all run on questions. Most of us ask closed ones and answer them ourselves within a second. Three seconds of silence is the cheapest skill upgrade available to you.",
+  why: "Inspections, interviews, coaching and toolbox talks all run on questions. Most of us ask closed ones and answer them ourselves within a second. Learn to wait three seconds. It costs nothing and you'll hear things you've been missing.",
   science: [
     "Mary Budd Rowe recorded hundreds of classroom lessons in the 1970s. Teachers waited on average about <b>one second</b> after asking a question before speaking again. When they were trained to wait <b>three seconds or more</b>, students gave longer answers, offered more unprompted contributions, and fewer failed to respond at all.",
     "She found a second pause mattered as much: waiting after the answer, before reacting. That is when people add the part they were unsure about.",
@@ -189,7 +189,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "On your next inspection, ask three people one open question each and wait three full seconds. Write down the question and the most useful thing each person told you.", stretch: "Ask a colleague to time your silences without telling you when." },
   discuss: [
     "When someone asks you a question and immediately answers it themselves, what do you conclude about how much they want your view?",
-    "Would you agree that people tell us more when they do not feel rushed?",
+    "Don't people tell you more when they don't feel rushed?",
     "What is one closed question we ask every day that we could reopen?"
   ],
   reflect: "What makes silence uncomfortable for you, and what do you usually fill it with?",
@@ -207,7 +207,7 @@ window.LESSONS.push(
   id: "w3-l6", week: 3, n: 6, track: "craft", area: "Learning how to learn", minutes: 20,
   title: "Spacing and mixing: how to study so it lasts",
   book: null,
-  bigIdea: "Studying a little, leaving it, and coming back beats studying a lot at once. Mixing topics beats finishing one before starting the next. Both feel worse while you do them and work better.",
+  bigIdea: "Studying a little, leaving it, and coming back beats studying a lot at once. Mixing topics beats finishing one before starting the next. Both feel harder while you do them, and both work better.",
   why: "This hub is built on both ideas: lessons revisit earlier weeks on purpose, and the tracks are mixed. If you are preparing for an exam or training others, the same two changes cost nothing.",
   science: [
     "Hermann Ebbinghaus showed in 1885 that memory fades fast at first and then more slowly, and that relearning after a gap takes less effort each time. In 2006 Nicholas Cepeda and colleagues reviewed more than a century of experiments and confirmed that <b>spaced</b> study beats massed study for long-term retention.",
@@ -228,7 +228,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Pick three lessons from weeks 1 and 2. Without opening them, write what you remember of each. Then check. Put a reminder in your phone to do the same in one month.", stretch: "Redesign one annual refresher on your site as four short sessions and show it to whoever owns the training plan." },
   discuss: [
     "What do you remember from the last full-day training you attended?",
-    "Would you agree that feeling confident right after a course tells us little about what we will know in six months?",
+    "Feeling confident right after a course tells us little about what we'll know in six months. Has that been your experience?",
     "Which of our trainings could be split up without costing any more time?"
   ],
   reflect: "How much of what you studied for your last qualification could you still use today?",
@@ -248,7 +248,7 @@ window.LESSONS.push(
   title: "The bystander effect: why everyone saw it and nobody spoke",
   book: null,
   bigIdea: "The more people who can see a problem, the less each one feels it is theirs to act on. Twenty people walking past a hazard is not twenty chances that it gets reported.",
-  why: "\"If you see something, say something\" assumes that seeing leads to saying. In a crowd it often does not, and a busy mine is a crowd. Understanding why lets you design reporting that does not depend on someone volunteering.",
+  why: "\"If you see something, say something\" assumes that seeing leads to saying. In a crowd it often does not, and a busy mine is a crowd. Once you understand why, you can design reporting that doesn't wait for a volunteer.",
   science: [
     "In 1968 John Darley and Bibb Latane had students overhear what sounded like another participant having a seizure. When a student believed they were the only listener, <b>85 percent</b> went for help. When they believed four others could also hear, <b>31 percent</b> did. The researchers called this <b>diffusion of responsibility</b>.",
     "In a second study, smoke was pumped into a room. Alone, most people reported it. Sitting with others who stayed calm, most did not. People look to each other to decide whether something is an emergency, and each person's stillness tells the others it is fine.",
@@ -268,7 +268,7 @@ window.LESSONS.push(
   assignment: { level: "Investigate", task: "Find one defect or hazard in a shared area that has clearly been there for some time. Ask five people who pass it whether they noticed it and whether they reported it. Record their reasons.", stretch: "Propose one change that would make it obvious to everyone whether that kind of defect has already been reported." },
   discuss: [
     "Have you ever walked past something assuming it had already been reported?",
-    "Would you agree that 'everyone is responsible' can end up meaning nobody is?",
+    "Isn't it true that 'everyone is responsible' can end up meaning nobody is?",
     "Where on site does the number of people passing make reporting less likely, not more?"
   ],
   reflect: "What did you walk past this week?",
@@ -288,7 +288,7 @@ window.LESSONS.push(
   title: "Five Whys: where it works and where it fails",
   book: "Yates, Ch. 22: Accident Causation and Investigation Techniques",
   bigIdea: "Asking why five times is a good way to get past the first answer. It is a poor way to investigate anything with more than one cause, which is nearly everything serious.",
-  why: "Five Whys is on most investigation forms because it is quick and needs no training. You should be able to use it well for small events and explain clearly why it is not enough for large ones.",
+  why: "Five Whys is on most investigation forms because it is quick and needs no training. You should be able to use it well for small events and explain why large ones need more.",
   science: [
     "The method comes from Toyota, credited to Sakichi Toyoda and described by Taiichi Ohno in his account of the Toyota Production System. Its purpose was to stop engineers fixing the symptom of a machine fault: keep asking why until you reach something you can change.",
     "Alan Card set out the weaknesses in a 2017 paper in BMJ Quality and Safety. The method follows <b>one causal path</b>, when real events have several. It <b>stops at an arbitrary point</b>. Different people reach different answers from the same event. And the investigator can only reach causes they already know about.",
@@ -308,7 +308,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Take a recent minor event and run a Five Whys. Then go back and at each step ask \"what else?\" Count how many causes the straight line missed.", stretch: "Have a colleague run their own Five Whys on the same event separately and compare end points." },
   discuss: [
     "When we do a Five Whys, how often does the last answer name a person or a procedure?",
-    "Would you agree that a serious event rarely has a single cause?",
+    "A serious event rarely has a single cause. Does that match what you've seen?",
     "For which kinds of event is a quick single chain good enough?"
   ],
   reflect: "When did you last stop asking why because you had reached an answer you expected?",
@@ -328,7 +328,7 @@ window.LESSONS.push(
   title: "Fault trees and event trees by hand",
   book: "Yates, Ch. 22: Accident Causation and Investigation Techniques; Ch. 26: Risk Assessment and Management",
   bigIdea: "A fault tree works backwards from an unwanted event to its causes. An event tree works forwards from a starting event to its outcomes. Put them together and you have a bow-tie.",
-  why: "These two diagrams sit behind most formal risk studies and appear in every safety exam. You do not need software. If you can draw an AND gate and an OR gate, you can test whether a set of controls really is as strong as people believe.",
+  why: "These two diagrams sit behind most formal risk studies and appear in every safety exam. You do not need software. If you can draw an AND gate and an OR gate, you can test whether a set of controls is as strong as people believe.",
   science: [
     "Fault tree analysis was developed in 1962 at Bell Laboratories by H. A. Watson for the Minuteman missile launch system. The undesired outcome, the <b>top event</b>, goes at the top. Below it, causes are joined by gates. An <b>AND gate</b> means all inputs must occur. An <b>OR gate</b> means any one is enough.",
     "With probabilities, an AND gate <b>multiplies</b> and an OR gate approximately <b>adds</b> (for small, independent probabilities). So AND gates are where safety comes from: two independent barriers each failing one time in ten fail together one time in a hundred.",
@@ -338,7 +338,7 @@ window.LESSONS.push(
   evidenceNote: "The logic is mathematics. The numbers you put in are usually estimates, so treat the answer as a comparison tool, not a prediction.",
   work: [
     "Top event: a light vehicle is struck at a pit intersection. It needs the light vehicle to enter without stopping AND a truck to be passing AND the truck not to avoid it. With illustrative figures of 0.01, 0.1 and 0.5 per crossing, that is 0.0005, or 1 in 2,000 crossings.",
-    "Now look under \"enters without stopping\": brake failure OR sign not seen OR driver chooses not to stop. That is an OR gate. Any one path is enough, so the weakest branch drives the number. The tree tells you where a control actually changes the result."
+    "Now look under \"enters without stopping\": brake failure OR sign not seen OR driver chooses not to stop. That is an OR gate. Any one path is enough, so the weakest branch drives the number. The tree shows you where a control changes the result."
   ],
   techniques: [
     { name: "Hunt for OR gates near the top", how: "An OR gate directly under the top event means a single failure can cause it. Those are your priorities." },
@@ -348,7 +348,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Draw a fault tree for one unwanted event on your site, three levels deep, by hand. Mark each gate AND or OR. Circle any single failure that leads straight to the top.", stretch: "Put rough probabilities on it and find which input, if halved, lowers the top event most." },
   discuss: [
     "For our worst credible event, how many things have to go wrong together? Or is one enough?",
-    "Would you agree that two controls relying on the same person are really one control?",
+    "Two controls that rely on the same person are really one control, aren't they?",
     "Where do we believe we have several barriers when they share a common weakness?"
   ],
   reflect: "Which control on your site is everyone relying on without knowing the others are too?",
@@ -370,7 +370,7 @@ window.LESSONS.push(
   bigIdea: "Once you have a theory, you start collecting evidence for it and stop noticing evidence against it. The first explanation you hear at a scene is the one you are most at risk of proving.",
   why: "By the time you reach an incident, someone has usually told you what happened. From that moment your questions, your photographs and your choice of witnesses lean toward that story unless you deliberately push the other way.",
   science: [
-    "In 1960 Peter Wason gave people the numbers 2, 4, 6 and asked them to discover the rule by proposing other triples. Most guessed \"rising by two\" and tested only triples that fitted, such as 8, 10, 12. Each was confirmed, and they grew confident. The real rule was simply \"any ascending numbers\". Few tried a triple that could have proved them wrong.",
+    "In 1960 Peter Wason gave people the numbers 2, 4, 6 and asked them to discover the rule by proposing other triples. Most guessed \"rising by two\" and tested only triples that fitted, such as 8, 10, 12. Each was confirmed, and they grew confident. The real rule was \"any ascending numbers\". Few tried a triple that could have proved them wrong.",
     "Raymond Nickerson's 1998 review found the same pattern across law, medicine and science. It affects experts too. In 2006 Itiel Dror and colleagues gave five fingerprint examiners prints they had each previously judged a match, with a suggestion that they were not. <b>Four of the five changed their own earlier decision.</b>",
     "In safety, Lundberg, Rollenhagen and Hollnagel (2009) named the result: <b>what you look for is what you find</b>. An investigation manual built around human error finds human error."
   ],
@@ -388,7 +388,7 @@ window.LESSONS.push(
   assignment: { level: "Think", task: "For one open or recent investigation, write the explanation everyone accepts. Then write a different one that fits the same facts. List two pieces of evidence that would tell them apart, and whether anyone collected them.", stretch: "Try the 2-4-6 task on three colleagues and note how many test a triple that breaks their own guess." },
   discuss: [
     "At our last incident, how soon did we have an explanation, and did it change afterwards?",
-    "Would you agree that the first story we hear shapes which questions we ask next?",
+    "Haven't you found that the first story you hear shapes the questions you ask next?",
     "Who in our team is allowed to argue the other side, and do we ever ask them to?"
   ],
   reflect: "What do you already believe about why incidents happen on your site, and when did you last test it?",
@@ -408,7 +408,7 @@ window.LESSONS.push(
   id: "w4-l4", week: 4, n: 4, track: "safety", area: "Investigation", minutes: 25,
   title: "Corrective actions that survive six months",
   book: "Yates, Ch. 22: Accident Causation and Investigation Techniques",
-  bigIdea: "An investigation is only worth its actions. Most actions are weak, are closed on paper, and have faded by the time the same event comes round again.",
+  bigIdea: "An investigation is only worth its actions. Most actions are weak, get closed on paper, and have faded by the time the same event comes round again.",
   why: "You can run a flawless investigation and still change nothing if the action list reads \"retrain, remind, review procedure\". Writing actions that hold is a separate skill from finding causes.",
   science: [
     "The US Veterans Affairs National Center for Patient Safety ranks corrective actions by strength, and the 2015 RCA2 guidance from the National Patient Safety Foundation adopted the same scheme. <b>Stronger actions</b> change the physical world or remove the need to remember: engineering changes, forcing functions, simplifying a process, standardising equipment.",
@@ -429,7 +429,7 @@ window.LESSONS.push(
   assignment: { level: "Investigate", task: "Pick three corrective actions closed more than six months ago. Go and check whether each is still in place and working. Record what you find.", stretch: "For one that has faded, rewrite it as a stronger action with an owner, a date and a six-month test." },
   discuss: [
     "Of the actions we closed last year, how many would we find still working if we walked out now?",
-    "Would you agree that 'closed' and 'effective' are two different things?",
+    "Can we agree that 'closed' and 'effective' are two different things?",
     "What stops us recommending stronger actions: cost, authority, or not thinking of them?"
   ],
   reflect: "Which action have you signed off that you privately doubted would last?",
@@ -469,8 +469,8 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Rewrite the summary of one existing investigation report onto a single page using the five blocks. Give both versions to a supervisor and ask which they would rather receive.", stretch: "Ask them to tell you, an hour later, what the report asked for." },
   discuss: [
     "When a long report lands on your desk, which part do you read first?",
-    "Would you agree that a recommendation nobody reads has the same effect as no recommendation?",
-    "What do our managers actually need from us in the first three lines?"
+    "A recommendation nobody reads has the same effect as none at all. Fair?",
+    "What do our managers need from us in the first three lines?"
   ],
   reflect: "Do you write to show how much work you did, or to get something changed?",
   quiz: [
@@ -507,7 +507,7 @@ window.LESSONS.push(
   assignment: { level: "Think", task: "Choose one screening test or alarm on your site. Find or estimate how often the real condition occurs and the device's false positive rate. Work out, per 1,000, how many positives are real.", stretch: "Explain the result to a supervisor using counts only, no percentages, and note whether it changed their view." },
   discuss: [
     "If an alarm goes off and is false nine times in ten, what do people start doing on the tenth?",
-    "Would you agree that a positive screen is a reason to check, not a verdict?",
+    "Shouldn't a positive screen be treated as a reason to check?",
     "Which of our alarms do people already ignore, and what is its false alarm rate?"
   ],
   reflect: "When did you last treat a single positive result as proof?",
@@ -547,7 +547,7 @@ window.LESSONS.push(
   assignment: { level: "Investigate", task: "For three recent incidents, find the time of day, how far into the shift it occurred, and what the roster had been for the previous three days. Note whether the report mentioned fatigue at all.", stretch: "Work out the hours awake at the end of the longest shift-plus-commute on your site." },
   discuss: [
     "How many hours had you been awake the last time you drove home after overtime?",
-    "Would you agree that asking a tired person whether they are tired is asking the wrong instrument?",
+    "Asking a tired person whether they're tired is asking the wrong instrument, isn't it?",
     "Which of our rosters or overtime habits puts people past seventeen hours awake?"
   ],
   reflect: "How much sleep did you get last night, and would you have admitted it if asked at the gate?",

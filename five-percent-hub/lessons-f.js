@@ -5,7 +5,7 @@ window.LESSONS.push(
   title: "Particle size decides where dust ends up",
   book: "Yates, Ch. 6: Particulates and Gases",
   bigIdea: "The danger of a dust depends as much on the size of its particles as on what it is made of. The smallest ones, which you cannot see, reach the deepest part of the lung and stay there.",
-  why: "Visible dust is what people complain about. Invisible dust is what does lasting harm. If you understand particle size you can explain why a haul road that 'looks fine' can still be the problem.",
+  why: "People complain about the dust they can see. The dust they can't see does the lasting harm. If you understand particle size you can explain why a haul road that 'looks fine' can still be the problem.",
   science: [
     "Hygienists sort airborne particles by where they deposit. The <b>inhalable</b> fraction enters the nose and mouth; the sampling convention is set at 50 percent collection at about <b>100 micrometres</b>. The <b>thoracic</b> fraction passes the larynx into the airways, with a 50 percent cut at about <b>10 micrometres</b>. The <b>respirable</b> fraction reaches the gas-exchange region deep in the lung, with a 50 percent cut at about <b>4 micrometres</b>.",
     "For comparison, a human hair is roughly 50 to 100 micrometres across. Respirable particles are far too small to see individually; a dust cloud you can see is mostly larger particles.",
@@ -25,7 +25,7 @@ window.LESSONS.push(
   assignment: { level: "Investigate", task: "Find your site's most recent dust sampling results. For each, note whether it was inhalable or respirable, personal or area, and which limit it was compared with.", stretch: "Use a torch beam in one dusty workplace at the start of a shift and describe what the crew saw." },
   discuss: [
     "If a work area looks clear, does that mean the air is safe to breathe?",
-    "Would you agree that the dust we cannot see is the dust that reaches deepest?",
+    "The dust we can't see is the dust that reaches deepest. Did you know that before today?",
     "Which of our jobs make the finest particles?"
   ],
   reflect: "Which dusty job on your site have you judged by how it looks?",
@@ -45,7 +45,7 @@ window.LESSONS.push(
   title: "Manganese: the hazard in our own ore",
   book: "Yates, Ch. 6: Particulates and Gases; Ch. 7: Toxicology",
   bigIdea: "Manganese is essential in tiny amounts and harmful to the nervous system when breathed in as fine dust or fume over years. The recommended exposure limit was cut tenfold in 2013 because subtle effects appeared at lower levels than once thought.",
-  why: "This is the material your site exists to produce. Every safety professional at a manganese operation should be able to explain the health risk plainly, and know which limit their monitoring is judged against.",
+  why: "Your site exists to produce it. Every safety professional at a manganese operation should be able to explain the health risk plainly, and know which limit their monitoring is judged against.",
   science: [
     "Long-term inhalation of manganese can cause <b>manganism</b>, a neurological condition with symptoms resembling Parkinson's disease: tremor, slowed movement, gait problems and mood changes. Before that stage, studies of exposed workers have found subtler effects on movement, coordination and reaction time.",
     "In 2013 the American Conference of Governmental Industrial Hygienists (ACGIH) lowered its recommended limit, the <b>TLV</b>, from 0.2 mg/m³ to <b>0.02 mg/m³ for the respirable fraction</b>, and added <b>0.1 mg/m³ for the inhalable fraction</b>, both as 8-hour averages. Its reason was evidence of early nervous-system changes at low chronic exposures.",
@@ -65,7 +65,7 @@ window.LESSONS.push(
   assignment: { level: "Investigate", task: "Find out what manganese exposure monitoring your site does: which jobs, which fraction, how often, and against which limit. Compare the latest results with the ACGIH respirable value of 0.02 mg/m³.", stretch: "Identify the job with the highest likely respirable exposure and list its current controls using the hierarchy." },
   discuss: [
     "If we asked ten workers what manganese dust can do to the body, how many could answer?",
-    "Would you agree that a harm that takes years to appear needs measuring, not waiting for?",
+    "A harm that takes years to show up has to be measured. We can't wait for it, can we?",
     "Which of our tasks makes the finest manganese dust or fume?"
   ],
   reflect: "How confident are you that you know your own site's manganese exposure numbers?",
@@ -85,7 +85,7 @@ window.LESSONS.push(
   id: "w9-l3", week: 9, n: 3, track: "people", area: "Attention", minutes: 20,
   title: "Vigilance: why watching gets harder after half an hour",
   book: null,
-  bigIdea: "Watching for a rare event is hard work, not rest. Detection drops within the first half hour on watch, and the people doing it rarely notice the drop.",
+  bigIdea: "Watching for a rare event is hard work, even though it looks like resting. Detection drops within the first half hour on watch, and the people doing it rarely notice the drop.",
   why: "Spotters, gate guards, control room operators, conveyor watchers and inspectors all do vigilance work. If rosters assume attention lasts all shift, the rare event will arrive during the dip.",
   science: [
     "During the Second World War, Norman Mackworth studied why radar operators missed submarine echoes late in their watch. In his 1948 'clock test', people watched a pointer move in small steps and reported occasional double jumps. Detection fell by roughly <b>10 to 15 percent within the first 30 minutes</b>, then kept declining more slowly over two hours.",
@@ -106,10 +106,10 @@ window.LESSONS.push(
   assignment: { level: "Investigate", task: "List three jobs on your site where a person's main task is watching for something rare. For each, note how long they watch without a break or change of task.", stretch: "Propose one rotation or signal change for the riskiest of the three." },
   discuss: [
     "Have you ever been on watch for something and realised you had not really been looking for the last while?",
-    "Would you agree that 'stay alert' asks for something the brain cannot give for hours on end?",
+    "'Stay alert' asks for something the brain can't give for hours on end. Has that been true for you?",
     "Which jobs here depend on someone noticing a rare event late in a shift?"
   ],
-  reflect: "How long do you actually concentrate during an inspection before your attention drifts?",
+  reflect: "How long do you concentrate during an inspection before your attention drifts?",
   quiz: [
     { q: "Mackworth's clock test was designed to study:", options: ["Memory", "Vigilance during long monitoring", "Reaction to noise", "Fatigue from lifting"], answer: 1, why: "It simulated radar operators' watches." },
     { q: "Detection in the clock test declined notably within about:", options: ["5 minutes", "30 minutes", "4 hours", "8 hours"], answer: 1, why: "Roughly 10 to 15 percent in the first half hour." },
@@ -129,7 +129,7 @@ window.LESSONS.push(
   science: [
     "Breathing <b>respirable crystalline silica</b> over years causes <b>silicosis</b>, a progressive scarring of the lungs that cannot be reversed. It is also linked to lung cancer, tuberculosis, chronic obstructive lung disease and kidney disease.",
     "In 2016 US OSHA lowered its permissible exposure limit to <b>50 micrograms per cubic metre</b> (µg/m³) as an 8-hour average, with an <b>action level of 25 µg/m³</b> that triggers monitoring and medical surveillance. In 2024 the US mining regulator, MSHA, adopted the same 50 µg/m³ limit for all miners. ACGIH recommends 25 µg/m³.",
-    "Fifty micrograms is 0.05 milligrams. The amount that matters is far too small to see. That is why the controls are designed around the process, not around whether the air looks dusty."
+    "Fifty micrograms is 0.05 milligrams. The amount that matters is far too small to see. So you design the controls around the process, whatever the air looks like."
   ],
   evidence: "Established",
   evidenceNote: "The health effects of silica are among the best documented in occupational medicine. Limits differ between countries; confirm which applies on your site.",
@@ -145,7 +145,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Walk one drilling, crushing or screening area. For each place dust is generated, note whether water or extraction is applied at that point. List the gaps.", stretch: "Find out whether your site measures respirable silica and against which limit." },
   discuss: [
     "If silicosis takes years to appear, who on our site is building it now?",
-    "Would you agree that if we can see the dust, we are already too late?",
+    "If we can see the dust, we're already too late, aren't we?",
     "Where do we still dry-sweep or blow down with air?"
   ],
   reflect: "Have you ever used compressed air to clean dust off your own clothes?",
@@ -165,7 +165,7 @@ window.LESSONS.push(
   title: "Explaining an exposure number to a crew",
   book: null,
   bigIdea: "'0.04 mg/m³' means nothing to most people. 'You used up your safe amount for the day by lunchtime' means something to everyone. Translate numbers into time, comparison and action.",
-  why: "Monitoring results only change behaviour if the people exposed understand them. Your job is not to report the number; it is to make the number matter to the person who breathed it.",
+  why: "Monitoring results only change behaviour if the people exposed understand them. Your job is to make the number matter to the person who breathed it.",
   science: [
     "Research on communicating risk numbers, reviewed by Isaac Lipkus in 2007, finds that many people struggle with small decimals and percentages, that frequencies and simple comparisons are understood better, and that visual aids help when they are kept simple.",
     "From earlier weeks: natural frequencies beat percentages (base rates), and absolute numbers beat relative ones (presenting risk numbers). The same principles apply to exposure results.",
@@ -185,7 +185,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Take one real monitoring result from your site. Write a three-sentence explanation for the crew using time, comparison and action. Read it to one worker and ask them to explain it back.", stretch: "Turn it into a single simple chart or picture for the crew notice board." },
   discuss: [
     "When we post monitoring results on a notice board, who reads them, and what do they understand?",
-    "Would you agree that a number nobody understands cannot change what anybody does?",
+    "Can a number nobody understands change what anybody does? Most of us would say no.",
     "Which of our results most needs translating for the people who are exposed?"
   ],
   reflect: "Have you ever delivered a result in a way that protected you more than it informed them?",
@@ -217,14 +217,14 @@ window.LESSONS.push(
     "Most of the papers cited in this hub have a free abstract online. Reading the abstract and methods of one cited study a month is a realistic habit."
   ],
   techniques: [
-    { name: "Who and how many", how: "Who took part, and how many? Thirty students in a laboratory is not three hundred miners on a site." },
+    { name: "Who and how many", how: "Who took part, and how many? Thirty students in a laboratory tell you little about three hundred miners on a site." },
     { name: "Compared with what", how: "Was there a control group? Were people randomly assigned? Without a comparison, an improvement could be anything." },
     { name: "How big, and again?", how: "How large was the effect, and has another team repeated it? Small and once is a clue, not a law." }
   ],
   assignment: { level: "Investigate", task: "Choose one study cited in this hub. Find its abstract online. Answer the five questions: who, how many, compared with what, how big, repeated? Write the answers in five lines.", stretch: "Find one claim in a safety product brochure and apply the same five questions." },
   discuss: [
     "Have you ever repeated a statistic you never checked?",
-    "Would you agree that one study is a clue, not a final answer?",
+    "Shouldn't we treat one study as a clue and keep looking?",
     "Which claim do we hear often on site that nobody has ever checked?"
   ],
   reflect: "Which 'fact' about safety do you believe mainly because you have heard it many times?",
@@ -243,7 +243,7 @@ window.LESSONS.push(
   title: "The invisible gorilla: looking is not seeing",
   book: null,
   bigIdea: "When attention is busy with one task, people can fail to see something obvious directly in front of them. Their eyes were pointed at it; their mind was not.",
-  why: "'He must have seen it, it was right in front of him' appears in investigations and arguments every week. Often he really did not see it, and knowing why changes what you recommend.",
+  why: "'He must have seen it, it was right in front of him' appears in investigations and arguments every week. Often he didn't see it, and knowing why changes what you recommend.",
   science: [
     "In 1999 Daniel Simons and Christopher Chabris asked people to count basketball passes in a short video. Partway through, a person in a gorilla suit walked through the scene. Across their conditions, <b>46 percent</b> of viewers did not notice it.",
     "This is <b>inattentional blindness</b>: failing to perceive an unexpected object because attention is engaged elsewhere. People are also poor at predicting it; most are confident they would have seen the gorilla.",
@@ -253,7 +253,7 @@ window.LESSONS.push(
   evidenceNote: "Inattentional blindness is well replicated. Rates vary with how demanding the main task is and how similar the unexpected object is to what people are watching for.",
   work: [
     "A loader operator concentrating on bucket placement does not see a person walking into the swing area, even though they are in full view. A driver searching for a gap in traffic does not see the pedestrian.",
-    "The useful finding is not 'he was careless'. It is that the design relied on him noticing something unexpected while his attention was fully used."
+    "'He was careless' tells you nothing you can fix. It is that the design relied on him noticing something unexpected while his attention was fully used."
   ],
   techniques: [
     { name: "Ask what they were attending to", how: "In interviews: 'What were you concentrating on at that moment?' The answer explains what they missed." },
@@ -263,7 +263,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Show the 1999 basketball video (search 'selective attention test Simons') to three colleagues without warning. Count how many notice the gorilla, then discuss what it means for spotting people near equipment.", stretch: "Review one incident where someone 'should have seen' something. Note what their attention was on." },
   discuss: [
     "Did you see the gorilla the first time? How sure were you that you would?",
-    "Would you agree that looking straight at something does not guarantee seeing it?",
+    "You can look straight at something and still not see it. Has that ever happened to you?",
     "Where on site do we rely on someone noticing an unexpected person?"
   ],
   reflect: "What have you missed during an inspection because you were looking for something else?",
@@ -303,7 +303,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Find the exposure limits your site uses for carbon monoxide, hydrogen sulphide and one other gas. Convert each between ppm and mg/m³ by hand and check against the published values.", stretch: "Identify three low places on site where a heavy gas could collect and check whether any testing happens there." },
   discuss: [
     "Where on our site could a heavy gas collect without anyone smelling it?",
-    "Would you agree that 'it smells fine' is not a gas test?",
+    "'It smells fine' isn't a gas test. We can all agree on that, can't we?",
     "Which units do our detectors show, and which units are our limits written in?"
   ],
   reflect: "Have you ever entered a low or enclosed space assuming the air was fine?",
@@ -322,7 +322,7 @@ window.LESSONS.push(
   id: "w10-l2", week: 10, n: 2, track: "safety", area: "Occupational hygiene", minutes: 25,
   title: "Exposure limits: what they mean and what they do not",
   book: "Yates, Ch. 6: Particulates and Gases; Ch. 7: Toxicology",
-  bigIdea: "An exposure limit is not a line between safe and poisoned. It is a level at which nearly all workers are expected to be protected, based on the evidence available when it was set, and it comes in three kinds.",
+  bigIdea: "An exposure limit marks the level at which nearly all workers are expected to be protected, based on the evidence when it was set. There are three kinds, and none of them is a clean line between safe and poisoned.",
   why: "Reports often say 'below the limit, therefore safe'. You should know what kind of limit was used, where it came from, and what to do when several chemicals are present at once.",
   science: [
     "There are three common forms. The <b>TWA</b> (time-weighted average) is the average allowed over an 8-hour day. The <b>STEL</b> (short-term exposure limit) is a 15-minute average that should not be exceeded even if the day's average is fine. The <b>ceiling</b> is a level never to be exceeded at any moment.",
@@ -343,7 +343,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Take one exposure report from your site. For each result, note which form of limit was used and who set it. If more than one similar substance was measured, apply the additive formula.", stretch: "For one substance, compare the OSHA PEL with the current ACGIH TLV and note the difference." },
   discuss: [
     "If a result is 90 percent of the limit, are we happy?",
-    "Would you agree that 'below the limit' does not mean 'no harm'?",
+    "'Below the limit' and 'no harm' are two different claims, aren't they?",
     "Where do our people meet several chemicals at once?"
   ],
   reflect: "Which result have you reported as 'compliant' that you would not be comfortable breathing every day for thirty years?",
@@ -383,7 +383,7 @@ window.LESSONS.push(
   assignment: { level: "Think", task: "Take one incident report that says 'loss of situational awareness'. Rewrite that finding as three statements: what was not perceived, what was misunderstood, and what was not predicted. Note which level the evidence supports.", stretch: "Use the three questions in your next interview." },
   discuss: [
     "When we write 'lost situational awareness', what exactly do we mean?",
-    "Would you agree that you cannot understand or predict what you never noticed?",
+    "You can't understand or predict what you never noticed. Fair?",
     "What do our most experienced operators predict that new starters miss?"
   ],
   reflect: "When you walk onto a work area, how quickly do you move from seeing to predicting?",
@@ -401,7 +401,7 @@ window.LESSONS.push(
   id: "w10-l4", week: 10, n: 4, track: "safety", area: "Occupational hygiene", minutes: 25,
   title: "Gas detectors: bump test, calibration and trust",
   book: "Yates, Ch. 6: Particulates and Gases",
-  bigIdea: "A gas detector that switches on and shows zero has told you almost nothing. Only exposing it to a known gas proves the sensors and alarms actually work today.",
+  bigIdea: "A gas detector that switches on and shows zero has told you almost nothing. Expose it to a known gas and you'll know the sensors and alarms work today.",
   why: "Confined space entries, workshop checks and emergency responses depend on portable detectors. A detector with a dead sensor looks exactly like one in clean air.",
   science: [
     "A <b>bump test</b> (function check) briefly exposes the detector to a known gas to confirm the sensors respond and the alarms sound. <b>Calibration</b> adjusts the detector's readings against a certified gas concentration so the numbers are accurate.",
@@ -422,7 +422,7 @@ window.LESSONS.push(
   assignment: { level: "Investigate", task: "Inspect every portable gas detector in your area. Record, for each, the last bump test date, the last calibration date and whether a log exists.", stretch: "Watch someone bump test a detector and check it against the manufacturer's procedure." },
   discuss: [
     "If a detector shows normal readings, how do we know the sensor is not dead?",
-    "Would you agree that an untested detector gives false confidence, which is worse than none?",
+    "An untested detector gives false confidence, and that's worse than having none. Do you agree?",
     "Who on our site owns the detector logs, and when did someone last look?"
   ],
   reflect: "Have you ever trusted a gas reading without knowing when the detector was last tested?",
@@ -442,7 +442,7 @@ window.LESSONS.push(
   title: "Charts that tell the truth quickly",
   book: null,
   bigIdea: "A chart should make one point obvious in five seconds. Bars that start at zero, labels on the data and no decoration usually do that better than anything clever.",
-  why: "Monthly safety reports are full of charts that nobody reads or, worse, that mislead. Good charts get your point to managers who will not read the paragraph underneath.",
+  why: "Monthly safety reports are full of charts that nobody reads, and some that mislead. Good charts get your point to managers who will not read the paragraph underneath.",
   science: [
     "William Cleveland and Robert McGill tested in 1984 how accurately people read different kinds of chart. Judging <b>position along a common scale</b>, as in a bar or dot chart, was most accurate. Judging <b>angles and areas</b>, as in pie charts and bubbles, was less accurate.",
     "Bar charts encode values by length, so a bar axis that does not start at zero exaggerates differences. A drop from 10 to 9 can look like a collapse.",
@@ -462,7 +462,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Take one chart from your last monthly safety report. Redraw it on paper or in a spreadsheet using the three techniques. Show both versions to a manager and ask which point each makes.", stretch: "Replace one pie chart in your reports permanently with a sorted bar chart." },
   discuss: [
     "Which chart in our monthly report could you explain without reading the text?",
-    "Would you agree that a chart which needs a paragraph to explain it has not done its job?",
+    "If a chart needs a paragraph to explain it, it hasn't done its job, has it?",
     "Where might our current charts be making small changes look large?"
   ],
   reflect: "When you make a chart, are you trying to show the data or to look thorough?",
@@ -480,7 +480,7 @@ window.LESSONS.push(
   id: "w10-l6", week: 10, n: 6, track: "craft", area: "Learning how to learn", minutes: 20,
   title: "The memory palace",
   book: null,
-  bigIdea: "People remember places extraordinarily well. Attach what you need to learn to locations along a route you know, and you can walk the route in your head to recall it, in order.",
+  bigIdea: "People remember places far better than lists. Attach what you need to learn to locations along a route you know, and you can walk the route in your head to recall it, in order.",
   why: "Safety professionals carry long ordered lists: isolation steps, emergency sequences, exam content. This ancient technique turns a list into a walk you already know.",
   science: [
     "The <b>method of loci</b> dates back to ancient Greek and Roman orators, who used it to deliver long speeches without notes. Nearly all memory champions use it today.",
@@ -501,7 +501,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Pick one ordered list from your work, such as an isolation sequence or emergency steps. Place each item on a stop along a route you know. Recall it tomorrow and in a week without notes.", stretch: "Teach the method to a colleague using the same list." },
   discuss: [
     "Can you walk through your own house in your mind and name what is in each room?",
-    "Would you agree that we remember places far better than lists?",
+    "Try it with your own house. Isn't the route easier to recall than any list?",
     "Which ordered list on our site matters most for people to recall under pressure?"
   ],
   reflect: "Which sequence do you still have to look up every time?",
@@ -520,7 +520,7 @@ window.LESSONS.push(
   title: "Goals that help and goals that backfire",
   book: null,
   bigIdea: "Specific, challenging goals raise performance. Narrow numerical goals can also push people to hit the number by any means, including hiding what the number measures. Safety targets do both.",
-  why: "Zero-harm and injury-rate targets are everywhere. If you understand when goals help and when they distort, you can argue for measures that improve safety rather than reporting.",
+  why: "Zero-harm and injury-rate targets are everywhere. If you understand when goals help and when they distort, you can argue for measures that improve safety instead of measures that improve the report.",
   science: [
     "Edwin Locke and Gary Latham summarised decades of research in 2002: <b>specific, difficult goals</b> lead to higher performance than vague 'do your best' goals, provided people are committed, have the ability, and get feedback.",
     "In 2009 Lisa Ordóñez, Maurice Schweitzer, Adam Galinsky and Max Bazerman argued in 'Goals Gone Wild' that goal setting has been over-prescribed. Its side effects include a <b>narrow focus that neglects non-goal areas</b>, <b>more unethical behaviour</b>, distorted risk-taking and weaker intrinsic motivation.",
@@ -540,7 +540,7 @@ window.LESSONS.push(
   assignment: { level: "Think", task: "List every safety target or KPI your department is measured on. For each, write one honest way it could be hit without improving safety. Mark which ones carry that risk most.", stretch: "Propose one replacement or paired measure for the riskiest target." },
   discuss: [
     "Has a target ever made you, or someone you know, do something you knew was not the point?",
-    "Would you agree that people will hit the number we choose, one way or another?",
+    "Haven't you seen people hit the number they're given, one way or another?",
     "Which of our safety targets could be quietly discouraging reporting?"
   ],
   reflect: "Which number are you most measured on, and what does it make you do?",

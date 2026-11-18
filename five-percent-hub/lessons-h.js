@@ -14,7 +14,7 @@ window.LESSONS.push(
   evidence: "Established",
   evidenceNote: "These findings come from the official Royal Commission report and press coverage of it. Read the report itself for detail; this lesson is a summary.",
   work: [
-    "Ask of our own site: what warnings get reported over and over without action? Repeated gas alarms, repeated near misses on one haul road, a pump that keeps tripping. Repetition is not a sign the risk is small. It may be a sign the system has stopped listening.",
+    "Ask of our own site: what warnings get reported over and over without action? Repeated gas alarms, repeated near misses on one haul road, a pump that keeps tripping. Hearing it often doesn't make the risk small. It may be a sign the system has stopped listening.",
     "Pike River is a Swiss cheese case and a drift case at once: holes in many layers, and a slow normalisation of readings that should have stopped work."
   ],
   techniques: [
@@ -25,7 +25,7 @@ window.LESSONS.push(
   assignment: { level: "Investigate", task: "Find three hazards on site that have been reported more than once in the last three months without being closed. For each, write who knew, what was done, and what would stop it being 'normal'.", stretch: "Draw the Swiss cheese layers for one of them, naming the hole in each." },
   discuss: [
     "If twenty-one warnings were not enough at Pike River, how many would be enough here?",
-    "Would you agree that a warning heard every week can stop sounding like a warning?",
+    "A warning you hear every week can stop sounding like a warning. Has that happened here?",
     "Who on our site has the authority, and the courage, to stop production for a reading?"
   ],
   reflect: "Which warning have you stopped hearing because it comes so often?",
@@ -54,7 +54,7 @@ window.LESSONS.push(
   evidenceNote: "The hygiene framework is standard. The learning-science claims rest on well-replicated studies of interleaving and retrieval practice.",
   work: [
     "Pick one work area, such as the crusher, the workshop or the laboratory. For each agent present, answer from memory: route, acute effect, chronic effect, which limit applies, how we would measure it, and the main control.",
-    "Expect gaps. The gaps are the point; they show you what to review."
+    "Expect gaps. The gaps show you what to review."
   ],
   techniques: [
     { name: "Recall before checking", how: "Write your answers first, then open your notes or the SDS." },
@@ -64,7 +64,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Walk one area and fill this table from memory for every agent present: route, acute effect, chronic effect, limit type, measurement method, main control. Then check and correct it.", stretch: "Teach the table to one colleague in ten minutes." },
   discuss: [
     "Which hazard in our busiest area would you find hardest to explain fully?",
-    "Would you agree that knowing facts separately is not the same as seeing them together?",
+    "Knowing six facts separately and seeing how they fit together are different skills, aren't they?",
     "What did the walk show that a desk review would have missed?"
   ],
   reflect: "Which of the last six weeks has stuck least, and why?",
@@ -93,7 +93,7 @@ window.LESSONS.push(
   evidence: "Myth",
   evidenceNote: "The popular rule misstates the research. The narrow finding about mixed emotional signals is reasonable but rests on small, old studies.",
   work: [
-    "A supervisor says 'I'm fine with you stopping the job' while sighing and looking at his watch. Workers will believe the sigh. That is the real lesson.",
+    "A supervisor says 'I'm fine with you stopping the job' while sighing and looking at his watch. Workers will believe the sigh. That part of the research holds up.",
     "But in a briefing on isolation points, the words carry the content. Nobody can learn a lockout sequence from your face."
   ],
   techniques: [
@@ -104,7 +104,7 @@ window.LESSONS.push(
   assignment: { level: "Investigate", task: "Find one training slide, poster or course on site that quotes a communication statistic. Trace it to the original study, and write two lines on whether it is used fairly.", stretch: "Rewrite the slide so it states only what the research supports." },
   discuss: [
     "Have you ever been told only 7 percent of communication is words? Did it seem right?",
-    "Would you agree that a lockout briefing depends mostly on the words?",
+    "In a lockout briefing, the words carry the content. We'd all agree on that, wouldn't we?",
     "When have you trusted someone's tone over what they said?"
   ],
   reflect: "Which 'fact' do you repeat in training without knowing where it came from?",
@@ -124,7 +124,7 @@ window.LESSONS.push(
   title: "When warnings become wallpaper",
   book: "Review: Yates, Ch. 2 to 4",
   bigIdea: "A warning that repeats without consequence slowly turns into background. Diane Vaughan called it the normalisation of deviance: each time nothing bad happens, the deviation becomes the new normal.",
-  why: "Pike River, Challenger and many smaller events share this pattern. It is not one bad decision; it is a hundred small acceptances. You can only catch it if you know what to look for.",
+  why: "Pike River, Challenger and many smaller events share this pattern. A hundred small acceptances add up to it. You can only catch it if you know what to look for.",
   science: [
     "Diane Vaughan studied the 1986 Challenger launch decision. She found engineers and managers had repeatedly seen seal erosion on earlier flights and, each time the shuttle returned safely, accepted a little more. She named this the <b>normalisation of deviance</b>.",
     "The same drift appears in alarm handling. When alarms are frequent and often false, people learn to silence or ignore them, a pattern studied as <b>alarm fatigue</b> in hospitals and control rooms.",
@@ -144,7 +144,7 @@ window.LESSONS.push(
   assignment: { level: "Think", task: "List three conditions on site that people describe as 'always like that'. For each, find the original standard and how far the current state has drifted from it.", stretch: "Propose a written stop-work line for one of them." },
   discuss: [
     "What on our site 'has always been like that'?",
-    "Would you agree that every day nothing happens makes the risk feel smaller, even when it is not?",
+    "Each day nothing happens, the risk feels a little smaller. Have you felt that?",
     "Which alarm here do people silence without looking?"
   ],
   reflect: "What have you personally learned to live with that you once would have stopped?",
@@ -163,7 +163,7 @@ window.LESSONS.push(
   title: "Growth mindset: what the evidence actually says",
   book: null,
   bigIdea: "Believing ability can grow is a sound idea. But large reviews found that mindset training alone does little for most learners. Practice, feedback and good teaching do more.",
-  why: "Safety trainers often use growth mindset messages. Knowing how strong the evidence is helps you spend training time on what actually works.",
+  why: "Safety trainers often use growth mindset messages. If you know how strong the evidence is, you can spend training time on what works.",
   science: [
     "Carol Dweck's work proposed that people who believe ability is malleable (a <b>growth mindset</b>) learn and persist better than those who see it as fixed.",
     "Victoria Sisk, Brooke Macnamara and colleagues published two meta-analyses in 2018. The first, covering <b>273 effect sizes and about 366,000 students</b>, found only a weak link between mindset and achievement. The second, <b>43 studies and about 57,000 students</b>, found weak effects of mindset interventions overall.",
@@ -183,7 +183,7 @@ window.LESSONS.push(
   assignment: { level: "Think", task: "Look at one training course you deliver or attended. Estimate how many minutes go to motivation and how many to practice with feedback. Propose one swap.", stretch: "Redesign one 30-minute session so at least 20 minutes are practice." },
   discuss: [
     "Have you ever left a motivating training session and found nothing changed on the job?",
-    "Would you agree that people get better by doing, with someone telling them how it went?",
+    "People get better by doing the task with someone telling them how it went. Isn't that how you learned?",
     "Which of our courses is mostly talk?"
   ],
   reflect: "What made you better at something hard: belief, or practice with feedback?",
@@ -201,7 +201,7 @@ window.LESSONS.push(
   id: "w13-l6", week: 13, n: 6, track: "craft", area: "Personal development", minutes: 20,
   title: "Your twelve-week review",
   book: null,
-  bigIdea: "Three months in, pause. What have you actually used at work? What has faded? What will you aim at next? A short written review turns lessons into a direction.",
+  bigIdea: "Three months in, pause. What have you used at work? What has faded? What will you aim at next? A short written review turns lessons into a direction.",
   why: "Daily learning feels like progress, but without review it scatters. A quarterly look back is where 5 percent a day becomes a visible change.",
   science: [
     "Giada Di Stefano and colleagues found in 2014 that people who spent a few minutes at the end of a training day writing about what they had learned performed better on later tests than those who kept practising. They called it <b>learning by thinking</b>.",
@@ -222,7 +222,7 @@ window.LESSONS.push(
   assignment: { level: "Think", task: "Write one page: three lessons you have used, three you have forgotten, and one skill target for the next twelve weeks with a sign that would show you hit it.", stretch: "Ask a colleague what change, if any, they have noticed in your work since you started." },
   discuss: [
     "What have you actually done differently at work in the last three months?",
-    "Would you agree that learning you never use fades?",
+    "Learning you never use fades. Have you found that?",
     "What would you want people to notice about you in three months' time?"
   ],
   reflect: "If you kept going at this pace for a year, what would you be able to do that you cannot now?",
@@ -243,8 +243,8 @@ window.LESSONS.push(
   bigIdea: "Numbers like '7 percent', '10,000 hours' or '21 days to form a habit' spread because they are tidy. Real findings are usually messier. Tidiness is a reason to check, not to trust.",
   why: "This week exposed two popular claims that outran their evidence. A few quick questions let you test the next one in minutes.",
   science: [
-    "Ideas spread when they are simple and memorable, and Chip and Dan Heath's work on 'sticky' ideas explains why: concrete, simple and surprising messages are retold. That is good for teaching and bad for accuracy.",
-    "The habit study often quoted as '21 days' actually found a <b>median of 66 days</b> with a wide range (Lally et al., 2010, Week 7). The '10,000 hours' rule was a popularisation of research by Anders Ericsson, who himself said it oversimplified his findings.",
+    "Ideas spread when they are simple and memorable, and Chip and Dan Heath's work on 'sticky' ideas explains why: concrete, simple and surprising messages are retold. Good for teaching. Bad for accuracy.",
+    "The habit study behind the '21 days' claim found a <b>median of 66 days</b> with a wide range (Lally et al., 2010, Week 7). The '10,000 hours' rule was a popularisation of research by Anders Ericsson, who himself said it oversimplified his findings.",
     "Useful checks: Who measured it? How many people? In what setting? Has anyone repeated it? Does the original author say the same thing as the poster?"
   ],
   evidence: "Practice-based",
@@ -261,7 +261,7 @@ window.LESSONS.push(
   assignment: { level: "Investigate", task: "Pick one statistic used in safety training on site. Apply the five questions and write a short verdict: supported, overstated, or untraceable.", stretch: "Share your verdict with the person who uses the statistic, kindly." },
   discuss: [
     "Which safety statistic have you heard most often? Do you know where it came from?",
-    "Would you agree that a tidy number is easier to remember than to verify?",
+    "A tidy number is easier to remember than to check, isn't it?",
     "How should we handle a number we like but cannot trace?"
   ],
   reflect: "Which number do you quote most confidently? Could you name its source?",
@@ -280,7 +280,7 @@ window.LESSONS.push(
   id: "w14-l1", week: 14, n: 1, track: "safety", area: "Occupational hygiene", minutes: 25,
   title: "Why sample, and whom to sample",
   book: "Yates, Ch. 8: Air Sampling",
-  bigIdea: "Air sampling is not about collecting numbers. It answers a question: is this group of workers exposed above a level we accept? Choosing the question and the people comes before choosing the pump.",
+  bigIdea: "Air sampling answers a question: is this group of workers exposed above a level we accept? Choosing the question and the people comes before choosing the pump.",
   why: "Sampling is expensive and slow. Samples taken without a clear question often answer nothing, or answer the wrong thing for the wrong people.",
   science: [
     "The American Industrial Hygiene Association's exposure assessment strategy starts with <b>basic characterisation</b>: the work, the agents, the people and existing controls. Then workers are grouped into <b>similar exposure groups (SEGs)</b>, people expected to have similar exposure because they do similar tasks in similar conditions.",
@@ -301,7 +301,7 @@ window.LESSONS.push(
   assignment: { level: "Think", task: "For one hazard on site (for example respirable dust), list the job roles exposed and group them into similar exposure groups. Write one sampling question for each group.", stretch: "Find out which groups have been sampled in the last two years and which have not." },
   discuss: [
     "If we sample one person on one day, what have we really learned?",
-    "Would you agree that the person with the highest exposure is not always the one we think?",
+    "The person with the highest exposure isn't always the one we'd guess. Has that surprised you before?",
     "Which group on our site has never been sampled?"
   ],
   reflect: "When did you last see a sampling result and know exactly what question it answered?",
@@ -340,7 +340,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Work out the concentration for this sample: 10-mm nylon cyclone at 1.7 L/min, 450 minutes, lab result 0.030 mg of respirable crystalline silica. Show each step.", stretch: "Repeat for a 240-minute sample with the same mass, and explain why the result differs." },
   discuss: [
     "If the pump ran at 2.5 L/min instead of 1.7, what would happen to the dust that reached the filter?",
-    "Would you agree that a result is only as good as the record that comes with it?",
+    "A result is only as good as the record that comes with it. Fair?",
     "Who on our site knows how our dust samples are actually taken?"
   ],
   reflect: "Could you explain to the wearer what their result means in two sentences?",
@@ -380,7 +380,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "After your next talk or meeting, ask two people what they remember about it. Compare with what you worried about.", stretch: "Before a colleague presents, tell them about the illusion of transparency and ask afterward if it helped." },
   discuss: [
     "Have you ever worried all day about a mistake nobody else remembered?",
-    "Would you agree that most people in a room are thinking about themselves?",
+    "Most people in a room are busy thinking about themselves, aren't they?",
     "What question have you held back because you feared looking foolish?"
   ],
   reflect: "What would you say at work if you were sure fewer people were judging you?",
@@ -419,7 +419,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "A pump read 1.71 L/min before and 1.64 L/min after sampling. Calculate the average flow and the percentage change, and decide whether it is within ±5 percent.", stretch: "Draft a one-page chain-of-custody form suitable for your site." },
   discuss: [
     "If a high result were challenged tomorrow, could we prove the sample was good?",
-    "Would you agree that a sample nobody can defend is worth little, however carefully it was taken?",
+    "If nobody can defend a sample, it's worth little, however carefully someone took it. Do you agree?",
     "Who signs for our samples between collection and the lab?"
   ],
   reflect: "Which step in your sampling would be the easiest for a sceptic to attack?",
@@ -441,7 +441,7 @@ window.LESSONS.push(
   bigIdea: "Before a talk, telling yourself to calm down rarely works. Telling yourself 'I am excited' turns the same racing heart into energy, and audiences notice the difference.",
   why: "Safety professionals speak to crews, managers and visitors every week. Nerves are normal. What you do with them decides how the talk lands.",
   science: [
-    "Alison Wood Brooks tested this in 2014. People about to give a speech, sing or do a maths test said one short phrase first. Those who said <b>'I am excited'</b> did better than those who said 'I am calm' or nothing. Their speeches were rated more persuasive, competent and confident.",
+    "Alison Wood Brooks tested this in 2014. People about to give a speech, sing or do a maths test said one short phrase first. Those who said <b>'I am excited'</b> did better than those who said 'I am calm' or nothing. Listeners rated their speeches more persuasive, competent and confident.",
     "Anxiety and excitement share the same body state: fast heart, alertness. Calming down is hard because it fights that state. Reappraising it as excitement keeps the energy and changes its meaning.",
     "In the same studies, most people believed that trying to calm down was the best advice, which is why this finding surprises people."
   ],
@@ -459,7 +459,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Before your next talk, use the 'I am excited' reappraisal and a memorised first line. Afterward, note how it felt compared with your last talk.", stretch: "Teach the technique to a colleague who dreads speaking, before their next talk." },
   discuss: [
     "What happens in your body before you speak to a big group?",
-    "Would you agree that 'calm down' rarely works when you are nervous?",
+    "When you're nervous, 'calm down' rarely works. Isn't that your experience too?",
     "Who here dreads speaking, and what would help them?"
   ],
   reflect: "What would you say yes to if speaking did not frighten you?",
@@ -497,7 +497,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Write a five-minute talk on one hazard using the template: one message, three points, one story, one action. Give it to a crew.", stretch: "Ask three crew members afterward what the message was. Score how many get it right." },
   discuss: [
     "Think of the last toolbox talk you heard. What was its one message?",
-    "Would you agree that a talk with ten points is often remembered as zero?",
+    "Give people ten points and they often remember none. Have you seen that happen?",
     "Which hazard here most needs a short, sharp talk?"
   ],
   reflect: "Could you state the message of your last talk in one sentence?",
@@ -515,7 +515,7 @@ window.LESSONS.push(
   id: "w14-l7", week: 14, n: 7, track: "craft", area: "Critical thinking", minutes: 20,
   title: "Steelmanning: argue their best case first",
   book: null,
-  bigIdea: "Before you disagree with someone, state their view so well that they would say 'yes, that's exactly it'. Then you are arguing with what they actually think, and they are far more likely to listen.",
+  bigIdea: "Before you disagree with someone, state their view so well that they would say 'yes, that's exactly it'. Then you're arguing with what they think, and they're far more likely to listen.",
   why: "Safety officers disagree with people daily: about rules, shortcuts, budgets. Attacking a weak version of their view wins nothing. Stating the strong version builds trust and often reveals a point you missed.",
   science: [
     "The philosopher Daniel Dennett summarised a set of rules, credited to the game theorist Anatol Rapoport, for criticising a view: first restate it so clearly the other person wishes they had put it that way; then list points of agreement; then what you learned; only then criticise.",
@@ -536,7 +536,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "In your next disagreement at work, restate the other person's view until they say 'yes, exactly' before giving yours. Note how the conversation changed.", stretch: "Write the strongest possible case against one safety rule you support, then decide whether the rule still stands." },
   discuss: [
     "When did someone last argue against a view you did not actually hold?",
-    "Would you agree that people listen more after they feel understood?",
+    "Don't you listen more once you feel understood?",
     "Which complaint from the crews deserves its strongest hearing?"
   ],
   reflect: "Whose view at work have you dismissed without being able to state it fairly?",

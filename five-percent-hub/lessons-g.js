@@ -22,10 +22,10 @@ window.LESSONS.push(
     { name: "Ask how much and how long", how: "Replace 'is it dangerous?' with 'how much gets in, and for how long?'" },
     { name: "Wash before eating", how: "Handwashing facilities before crib rooms close the ingestion route cheaply." }
   ],
-  assignment: { level: "Investigate", task: "Pick three chemicals used on your site. For each, write which of the four routes are realistic in the way it is actually used, and which control covers each route.", stretch: "Find one route that has no control at all and propose one." },
+  assignment: { level: "Investigate", task: "Pick three chemicals used on your site. For each, write which of the four routes are realistic in the way people use it, and which control covers each route.", stretch: "Find one route that has no control at all and propose one." },
   discuss: [
     "If a chemical is 'safe', does that mean any amount is fine?",
-    "Would you agree that a respirator cannot protect against what goes in through the skin or mouth?",
+    "A respirator can't stop what goes in through the skin or the mouth, can it?",
     "Where do our people eat or smoke with unwashed hands after handling something?"
   ],
   reflect: "Which chemical do you handle so often you have stopped thinking about how it gets in?",
@@ -54,7 +54,7 @@ window.LESSONS.push(
   evidenceNote: "These are standard toxicology categories. One substance can have several: a solvent can cause acute dizziness, local skin damage and chronic nerve effects.",
   work: [
     "A worker cleaning parts with solvent may feel a headache that day (acute, systemic), develop cracked skin over weeks (chronic, local) and, after years, nerve effects (chronic, systemic). Only the first is likely to be reported.",
-    "That is why health surveillance and exposure monitoring exist: to catch chronic harm before symptoms."
+    "Health surveillance and exposure monitoring exist to catch chronic harm before symptoms."
   ],
   techniques: [
     { name: "Sort by timing", how: "For each chemical, list one acute and one chronic effect. If you cannot name the chronic effect, find it." },
@@ -64,7 +64,7 @@ window.LESSONS.push(
   assignment: { level: "Think", task: "For three chemicals or agents on your site (include manganese dust), fill a small table: acute effect, chronic effect, local or systemic, target organ.", stretch: "Check one against its safety data sheet and note anything you had missed." },
   discuss: [
     "Which harm on our site would show up the same day, and which would take twenty years?",
-    "Would you agree that what we never see reported can still be what hurts people most?",
+    "The harm we never see reported can still be what hurts people most. Does that worry you too?",
     "Who here would notice if their nervous system was slowly being affected?"
   ],
   reflect: "How much of your attention goes to harms that are visible today?",
@@ -103,7 +103,7 @@ window.LESSONS.push(
   assignment: { level: "Think", task: "Take three recent incidents or near misses. Classify the main unsafe act in each as slip, lapse, mistake or violation. Check whether the corrective action fits the type.", stretch: "For any mismatch, write a better-fitting action." },
   discuss: [
     "Have you ever done exactly what you meant to do and still got it wrong?",
-    "Would you agree that retraining someone who already knew the job will not prevent a slip?",
+    "If someone already knew the job, retraining them won't prevent the next slip. Fair?",
     "Which of our rules are broken most often, and what do people gain by breaking them?"
   ],
   reflect: "Which type of error do you make most often yourself?",
@@ -143,7 +143,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Find the safety data sheets for three chemicals on site. Record each one's oral LD50 (if given), its GHS acute toxicity category, and any chronic effects listed.", stretch: "Find one where a low acute toxicity hides a serious chronic hazard." },
   discuss: [
     "If a product has a high LD50, does that mean it is safe to use every day?",
-    "Would you agree that 'it won't kill you' and 'it won't harm you' are different claims?",
+    "'It won't kill you' and 'it won't harm you' are different claims, aren't they?",
     "Which product on site do people treat as harmless because it is not acutely toxic?"
   ],
   reflect: "When did you last read section 11 of a safety data sheet?",
@@ -183,7 +183,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Run a ten-minute debrief after one non-routine job this week using the four questions. Record the one action that came out of it.", stretch: "Run one after a job that went well and note what the crew said made it work." },
   discuss: [
     "After a big job here, what happens to what we learned?",
-    "Would you agree that ten minutes while it is fresh is worth more than a report a week later?",
+    "Isn't ten minutes while it's fresh worth more than a report a week later?",
     "Which regular job would benefit most from a debrief every time?"
   ],
   reflect: "When did you last ask a crew what they would do differently next time?",
@@ -222,7 +222,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Keep a decision journal for two weeks: at least three significant work decisions, five lines each. Do not reread until the two weeks are up.", stretch: "When you reread, note one decision whose outcome was good but whose reasoning was weak, or the reverse." },
   discuss: [
     "Have you ever been praised for a decision that was really just lucky?",
-    "Would you agree that we judge ourselves more fairly with a record made at the time?",
+    "We'd judge ourselves more fairly with a record made at the time. Can we agree on that?",
     "Which decisions in our job would be worth writing down?"
   ],
   reflect: "What is a decision you remember differently from how you made it?",
@@ -250,7 +250,7 @@ window.LESSONS.push(
   evidence: "Established, with caveats",
   evidenceNote: "Reciprocity is a robust social norm. The restaurant figures come from small field studies and should be read as illustrations of direction, not fixed sizes.",
   work: [
-    "Fix the broken crib room fan the crew has complained about for months. Walk the job with them and carry something. Get the missing gloves sized properly. None of it is a trade, and that is the point.",
+    "Fix the broken crib room fan the crew has complained about for months. Walk the job with them and carry something. Get the missing gloves sized properly. None of it is a trade, and the crew can tell.",
     "Use it honestly. A favour done only to collect later is a trick, and crews notice."
   ],
   techniques: [
@@ -261,7 +261,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Ask one crew this week: 'What is one small thing that makes your job harder that nobody has fixed?' Fix it, or get it fixed, within a week.", stretch: "A month later, note how that crew responds to your next safety request." },
   discuss: [
     "Who at work have you gone out of your way to help, because they once helped you?",
-    "Would you agree that people listen more to someone who has already done something for them?",
+    "Have you noticed that people listen more to someone who has already done something for them?",
     "What small problem do our crews keep raising that we could simply fix?"
   ],
   reflect: "What have you given your crews lately that they did not have to ask for?",
@@ -280,7 +280,7 @@ window.LESSONS.push(
   title: "Carcinogens, sensitisers and diesel exhaust",
   book: "Yates, Ch. 7: Toxicology",
   bigIdea: "Some substances cause cancer years after exposure. Others turn the body against itself, so that a tiny later exposure triggers asthma or dermatitis. Neither gives an early warning.",
-  why: "Diesel exhaust and silica, both present on most mines, are classed as known human carcinogens. Sensitisers can end a person's ability to do their job. These hazards need prevention, because there is no 'feel it and react'.",
+  why: "Diesel exhaust and silica, both present on most mines, are classed as known human carcinogens. Sensitisers can end a person's ability to do their job. You can't wait to feel these hazards and react. You have to prevent them.",
   science: [
     "The International Agency for Research on Cancer (IARC) classifies agents as <b>Group 1</b> (carcinogenic to humans), <b>Group 2A</b> (probably), <b>Group 2B</b> (possibly) and <b>Group 3</b> (not classifiable). The groups describe the strength of evidence that something can cause cancer, not how strong the risk is.",
     "In June 2012 IARC moved <b>diesel engine exhaust</b> from Group 2A to <b>Group 1</b>, based on sufficient evidence of lung cancer, influenced by a large US study of exposed miners. Respirable crystalline silica is also Group 1.",
@@ -290,7 +290,7 @@ window.LESSONS.push(
   evidenceNote: "IARC classifications are authoritative statements of evidence. A Group 1 label does not say how much risk a given exposure carries; that depends on dose.",
   work: [
     "Diesel exhaust: haul trucks idling near people, generators in enclosed areas, workshops with engines running. Controls include engine maintenance, low-emission engines, exhaust filters, ventilation, and switching engines off.",
-    "For sensitisers, the first exposures often feel harmless. That is when protection matters most, before sensitisation happens."
+    "For sensitisers, the first exposures often feel harmless. Protection matters most then, before sensitisation happens."
   ],
   techniques: [
     { name: "List the Group 1s", how: "Know which known carcinogens exist on your site: likely diesel exhaust and silica at least." },
@@ -300,7 +300,7 @@ window.LESSONS.push(
   assignment: { level: "Investigate", task: "List every place on site where people spend time near running diesel engines. Note whether engines idle unnecessarily and whether ventilation exists.", stretch: "Check the safety data sheets of paints, resins and adhesives on site for 'may cause sensitisation' statements." },
   discuss: [
     "Did you know diesel exhaust is classed in the same evidence group as asbestos?",
-    "Would you agree that a hazard with no early warning has to be controlled before anyone complains?",
+    "If a hazard gives no early warning, we have to control it before anyone complains. Agreed?",
     "Where do engines idle near people on our site for no good reason?"
   ],
   reflect: "How many hours a week do you yourself spend near idling diesel engines?",
@@ -319,7 +319,7 @@ window.LESSONS.push(
   id: "w12-l2", week: 12, n: 2, track: "safety", area: "Occupational health", minutes: 25,
   title: "Biological monitoring: what the body tells us",
   book: "Yates, Ch. 7: Toxicology",
-  bigIdea: "Air sampling measures what was in the air. Biological monitoring measures what actually got into the person, through every route, including skin and swallowing.",
+  bigIdea: "Air sampling measures what was in the air. Biological monitoring measures what got into the person, through every route, including skin and swallowing.",
   why: "Two workers in the same air can absorb very different amounts, depending on hygiene, PPE fit, workload and habits. Where a good biological test exists, it is the most direct check that controls are working for that person.",
   science: [
     "<b>Biological monitoring</b> measures a chemical or its breakdown products in blood, urine or exhaled breath. ACGIH publishes <b>Biological Exposure Indices (BEIs)</b>, reference values for some substances, alongside its air limits.",
@@ -340,7 +340,7 @@ window.LESSONS.push(
   assignment: { level: "Investigate", task: "Find out what biological monitoring or health surveillance your site does, for which hazards, and how results are communicated to workers.", stretch: "Identify one hazard on site where a validated biological test exists but is not used." },
   discuss: [
     "If two people work side by side, could one absorb far more than the other? How?",
-    "Would you agree that what gets into the body matters more than what was in the air?",
+    "What gets into the body matters more than what was in the air, doesn't it?",
     "Who should see a worker's biological test results, and who should not?"
   ],
   reflect: "If your own blood were tested for what you work with, what would you expect to find?",
@@ -359,8 +359,8 @@ window.LESSONS.push(
   id: "w12-l3", week: 12, n: 3, track: "people", area: "Human error", minutes: 20,
   title: "Why good people break rules",
   book: null,
-  bigIdea: "Most rule-breaking at work is not rebellion. It is people trying to get the job done when the rule makes that harder. Find what they gain from breaking it and you will find the fix.",
-  why: "Discipline for violations feels decisive and often changes nothing. Understanding the types of violation lets you aim at the reason, not just the person.",
+  bigIdea: "Most people who break a rule at work are trying to finish the job, and the rule is in their way. Find out what breaking it saves them and you've usually found the fix.",
+  why: "A warning letter feels like doing something. A week later the same crew skips the same step. Knowing which kind of violation you're looking at tells you where to aim.",
   science: [
     "James Reason and the UK Health and Safety Executive describe three common kinds. <b>Routine violations</b> become normal practice over time, often because everyone does it and nothing bad has happened. <b>Situational violations</b> happen because the rule cannot be followed as written in that situation: the wrong tool, not enough people, no time. <b>Optimising violations</b> are done for personal gain, such as finishing early, or for the thrill.",
     "Reason argued violations are shaped by beliefs and incentives: the perceived benefit of breaking the rule, the low chance of being caught, and what colleagues expect.",
@@ -369,7 +369,7 @@ window.LESSONS.push(
   evidence: "Established",
   evidenceNote: "The violation types come from Reason's work and HSE guidance (HSG48), widely used across industries. Individual cases often mix types.",
   work: [
-    "A permit for a five-minute job takes forty minutes to issue. Crews start before it arrives. That is a situational violation becoming routine. The fix is a faster permit route for low-risk tasks, not a warning letter.",
+    "A permit for a five-minute job takes forty minutes to issue. Crews start before it arrives. It started as a situational violation and has turned into a routine one. What fixes it is a faster permit route for low-risk jobs.",
     "Optimising violations, such as racing to finish early, respond better to supervision, peer norms and removing the reward."
   ],
   techniques: [
@@ -380,7 +380,7 @@ window.LESSONS.push(
   assignment: { level: "Investigate", task: "Pick one rule you know is often broken. Ask three people who do the work, privately and without blame, why it is hard to follow. Classify the violation type.", stretch: "Propose one change to the rule or the system that removes the reason to break it." },
   discuss: [
     "Is there a rule here that everybody breaks, and everybody knows it?",
-    "Would you agree that if a rule cannot be followed on a normal day, the rule is part of the problem?",
+    "If a rule can't be followed on a normal day, the rule is part of the problem, isn't it?",
     "What would we learn if we asked, without blame, why people skip it?"
   ],
   reflect: "Which rule do you yourself bend, and what does it save you?",
@@ -399,8 +399,8 @@ window.LESSONS.push(
   id: "w12-l4", week: 12, n: 4, track: "safety", area: "Hazard communication", minutes: 20,
   title: "Reading a safety data sheet in two minutes",
   book: "Yates, Ch. 7: Toxicology; Ch. 27: Hazardous Materials Management",
-  bigIdea: "A safety data sheet has sixteen sections, always in the same order. You do not need to read all of them every time. Four sections answer most practical questions.",
-  why: "People are told to 'read the SDS' and rarely do, because the document is long. Knowing where to look turns it into a two-minute tool you can actually teach.",
+  bigIdea: "A safety data sheet has sixteen sections, always in the same order. Four of them answer most practical questions, so you rarely need the rest.",
+  why: "People are told to 'read the SDS' and rarely do, because the document is long. Once you know where to look, it becomes a two-minute tool you can teach.",
   science: [
     "Under the Globally Harmonized System (GHS), safety data sheets follow a fixed <b>16-section format</b>, so the same information is always in the same place regardless of supplier or country.",
     "Four sections carry most of what a user needs. <b>Section 2</b>: hazards, pictograms and signal word (Danger or Warning). <b>Section 4</b>: first aid. <b>Section 7</b>: safe handling and storage. <b>Section 8</b>: exposure limits and personal protection.",
@@ -417,10 +417,10 @@ window.LESSONS.push(
     { name: "Check the glove type", how: "Section 8 often names the glove material. 'Wear gloves' is not enough; the wrong material lets chemicals through." },
     { name: "Keep it where the work is", how: "An SDS locked in an office is useless at 2 a.m. Put it, or a summary card, at the point of use." }
   ],
-  assignment: { level: "Practise", task: "Take one chemical used regularly on site. Using only sections 2, 4, 7 and 8 of its SDS, write a one-page summary card for the people who use it.", stretch: "Check whether the gloves actually used match the material named in section 8." },
+  assignment: { level: "Practise", task: "Take one chemical used regularly on site. Using only sections 2, 4, 7 and 8 of its SDS, write a one-page summary card for the people who use it.", stretch: "Check whether the gloves people wear match the material named in section 8." },
   discuss: [
     "When did any of us last read an SDS before using a product?",
-    "Would you agree that information nobody can find in two minutes might as well not exist?",
+    "If nobody can find it in two minutes, it might as well not exist. Fair?",
     "Which chemical here is used daily by people who have never seen its SDS?"
   ],
   reflect: "Could you find the first aid instructions for the chemicals in your area in under a minute?",
@@ -439,7 +439,7 @@ window.LESSONS.push(
   id: "w12-l5", week: 12, n: 5, track: "craft", area: "Communication", minutes: 20,
   title: "Explaining a chemical hazard without causing panic or shrugs",
   book: null,
-  bigIdea: "If you frighten people they stop listening; if you reassure them they stop caring. The way through is to be honest about the hazard, specific about the dose, and clear about what they can do.",
+  bigIdea: "If you frighten people they stop listening; if you reassure them they stop caring. Be honest about the hazard and specific about the dose, then tell them exactly what they can do.",
   why: "Words like 'cancer' and 'toxic' trigger fear. Repeated warnings trigger indifference. Getting the tone right decides whether a crew changes how it works.",
   science: [
     "Paul Slovic's research (Week 5) showed that dread and unfamiliarity make risks feel larger, while control and familiarity make them feel smaller. A new chemical with a frightening name will feel worse than daily diesel exhaust, whatever the real risk.",
@@ -450,7 +450,7 @@ window.LESSONS.push(
   evidenceNote: "The pairing of threat with a doable action is well supported. Exact effects vary with audience and topic.",
   work: [
     "Too frightening: 'This stuff causes cancer.' Too soft: 'It's fine if you're careful.' Balanced: 'Breathing this vapour regularly over years raises cancer risk. Short, occasional exposure is a much smaller risk. With the extraction on and these gloves, your exposure stays very low. Here is how to check the extraction is working.'",
-    "Always finish with the action, and make sure the action is actually available: the gloves are in the store, the fan works."
+    "Always finish with the action, and make sure the action is available: the gloves are in the store, the fan works."
   ],
   techniques: [
     { name: "Hazard, dose, action", how: "Say what it can do, how much and how often matters, and exactly what protects them." },
@@ -460,7 +460,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "Choose one chemical hazard on site. Write a three-sentence explanation using hazard, dose and action. Try it on one worker and ask them to tell you what they will do differently.", stretch: "Test a scary version and a balanced version on two different people and compare their reactions." },
   discuss: [
     "When someone warns you about something frightening and gives you nothing to do, what do you do with that fear?",
-    "Would you agree that people protect themselves when they believe they can?",
+    "People protect themselves when they believe they can. Isn't that what you've seen?",
     "Which hazard here have we oversold or undersold?"
   ],
   reflect: "Do your warnings leave people more able to act, or just more worried?",
@@ -490,17 +490,17 @@ window.LESSONS.push(
   evidenceNote: "The 2 to 5 versus 70 to 90 percent figures are executives' estimates reported by Edmondson, not measured rates. The underlying pattern is consistent with wider research on reporting.",
   work: [
     "A crew reports a dropped load. The first question is 'who was the rigger?' The next dropped load is not reported. Compare 'thank you, let's walk it through' and a review of the lift plan.",
-    "Blameless does not mean consequence-free. Reckless or deliberate violations still need a response. The point is not to treat everything as if it were reckless."
+    "Blameless does not mean consequence-free. Reckless or deliberate violations still need a response. Just don't treat everything as if it were reckless."
   ],
   techniques: [
     { name: "Place it on the spectrum", how: "Before reacting, ask where on Edmondson's spectrum this failure sits." },
     { name: "Thank the reporter", how: "The person who reports a failure should leave the conversation glad they did." },
     { name: "Ask the system question", how: "'What made this possible?' before 'who did this?'" }
   ],
-  assignment: { level: "Think", task: "Take three recent failures or incidents. Place each on the spectrum of reasons for failure. Compare where they sit with how they were actually treated.", stretch: "Draft a short one-page guide for supervisors on how to respond in the first five minutes after someone reports a failure." },
+  assignment: { level: "Think", task: "Take three recent failures or incidents. Place each on the spectrum of reasons for failure. Compare where they sit with how people treated them.", stretch: "Draft a short one-page guide for supervisors on how to respond in the first five minutes after someone reports a failure." },
   discuss: [
     "Think of the last time you reported a mistake at work. What happened next, and would you report the next one?",
-    "Would you agree that most failures here are not really anyone's fault?",
+    "Think of our last ten failures. Most of them weren't anyone's fault in a moral sense, were they?",
     "What would change if we treated only the truly reckless cases as blameworthy?"
   ],
   reflect: "When something goes wrong, how quickly do you look for a person to hold responsible?",
@@ -519,7 +519,7 @@ window.LESSONS.push(
   title: "Liking: people say yes to people they like",
   book: null,
   bigIdea: "People are more easily persuaded by someone they like, and they like people who are similar to them, who show genuine interest in them, and who cooperate with them.",
-  why: "The safety officer who is liked gets told about problems early and gets cooperation late in the shift. Being liked is not a soft extra; it is part of how influence works.",
+  why: "The safety officer who is liked gets told about problems early and gets cooperation late in the shift. Being liked is part of how influence works.",
   science: [
     "Cialdini lists <b>liking</b> as a principle of influence. People are more likely to agree with those they like, and liking grows from similarity, compliments, contact and cooperation toward shared goals.",
     "Jerry Burger and colleagues showed in 2004 that even trivial similarities raise compliance. Students who believed they <b>shared a birthday or first name</b> with a requester were more likely to agree to a favour, and the effect vanished when the shared feature was presented as common.",
@@ -539,7 +539,7 @@ window.LESSONS.push(
   assignment: { level: "Practise", task: "This week, learn the names of five people on a crew you work with but do not know well. Have one non-work conversation with each.", stretch: "Note whether those people raise issues with you more easily over the next month." },
   discuss: [
     "Who at work do you find it easiest to say yes to? Why them?",
-    "Would you agree that people raise problems more readily with someone they trust and like?",
+    "Don't people raise problems sooner with someone they trust and like?",
     "What do we and the crews genuinely have in common?"
   ],
   reflect: "How many people on your site would you say know you as a person, not just as 'safety'?",
